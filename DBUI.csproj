@@ -58,6 +58,18 @@
     <Compile Include="BirthDayFriendList.Designer.cs">
       <DependentUpon>BirthDayFriendList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChatList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatList.Designer.cs">
+      <DependentUpon>ChatList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChatRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatRoom.Designer.cs">
+      <DependentUpon>ChatRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="FriendList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +81,12 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewChat.Designer.cs">
+      <DependentUpon>NewChat.cs</DependentUpon>
     </Compile>
     <Compile Include="ProfileSettings.cs">
       <SubType>Form</SubType>
@@ -102,11 +120,20 @@
     <EmbeddedResource Include="BirthDayFriendList.resx">
       <DependentUpon>BirthDayFriendList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChatList.resx">
+      <DependentUpon>ChatList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChatRoom.resx">
+      <DependentUpon>ChatRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FriendList.resx">
       <DependentUpon>FriendList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewChat.resx">
+      <DependentUpon>NewChat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfileSettings.resx">
       <DependentUpon>ProfileSettings.cs</DependentUpon>
@@ -199,6 +226,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\confetti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\talk-bubble-with-plus-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_minimize_icon_1380091.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

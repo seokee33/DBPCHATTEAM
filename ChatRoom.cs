@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace DBUI
 {
-    public partial class Login : Form
+    public partial class ChatRoom : Form
     {
-        public Login()
+        public ChatRoom()
         {
             InitializeComponent();
-            this.panelBorder.MouseDown += panelBorder_MouseDown;
         }
+        #region 상단부분
 
         private void panelBorder_MouseDown(object sender, MouseEventArgs e)
         {
@@ -57,19 +57,6 @@ namespace DBUI
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void labelSignUp_Click(object sender, EventArgs e)
-        {
-            SignUp signUp = new SignUp();
-            this.Hide();
-            signUp.Show();
-        }
-
-        private void buttonLogin_Click(object sender, EventArgs e)
-        {
-            FriendList fl = new FriendList();
-            this.Hide();
-            fl.Show();
-        }
-
+        #endregion
     }
 }

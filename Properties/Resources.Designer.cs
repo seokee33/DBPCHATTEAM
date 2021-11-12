@@ -183,6 +183,16 @@ namespace DBUI.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap pin {
+            get {
+                object obj = ResourceManager.GetObject("pin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap plus {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
@@ -196,6 +206,16 @@ namespace DBUI.Properties {
         internal static System.Drawing.Bitmap substract {
             get {
                 object obj = ResourceManager.GetObject("substract", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap talk_bubble_with_plus_sign {
+            get {
+                object obj = ResourceManager.GetObject("talk-bubble-with-plus-sign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,6 +276,16 @@ namespace DBUI.Properties {
         internal static System.Drawing.Bitmap window_minimize_icon_138009 {
             get {
                 object obj = ResourceManager.GetObject("window_minimize_icon_138009", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap window_minimize_icon_1380091 {
+            get {
+                object obj = ResourceManager.GetObject("window_minimize_icon_1380091", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

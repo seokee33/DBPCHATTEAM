@@ -62,16 +62,31 @@ namespace DBUI
         #endregion
 
         #region 메뉴
+
+        private void pictureBoxFriendhideList_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void pictureBoxChatListhide_Click(object sender, EventArgs e)
         {
-            // form 열기          
+            pictureBoxChatList.Visible = true;
+            pictureBoxChatListhide.Visible = false;
+            pictureBoxFriendListhide.Visible = true;
+            pictureBoxFriendList.Visible = false;
+            panelFriendList.Controls.Clear();
+            ChatList fm = new ChatList();
+            fm.TopLevel = false;
+            fm.Dock = DockStyle.Fill;
+            panelFriendList.Controls.Add(fm);
+            fm.Show();
         }
 
         private void pictureBoxBell_Click(object sender, EventArgs e)
         {
             pictureBoxBell.Visible = false;
             pictureBoxBellhide.Visible = true;
-            
+
             //알림 끄기
         }
 
@@ -91,8 +106,6 @@ namespace DBUI
             profileSettings.ShowDialog();
 
         }
-
-
 
         #endregion
 
