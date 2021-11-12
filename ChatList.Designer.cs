@@ -77,7 +77,7 @@ namespace DBUI
             // 
             this.pictureBoxPin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxPin.Image = global::DBUI.Properties.Resources.pin;
-            this.pictureBoxPin.Location = new System.Drawing.Point(180, 26);
+            this.pictureBoxPin.Location = new System.Drawing.Point(260, 16);
             this.pictureBoxPin.Name = "pictureBoxPin";
             this.pictureBoxPin.Size = new System.Drawing.Size(15, 15);
             this.pictureBoxPin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
