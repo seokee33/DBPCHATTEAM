@@ -39,18 +39,6 @@ namespace DBUI
             this.ChattingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelFriendList = new System.Windows.Forms.Panel();
-            this.buttonFriendSearch = new System.Windows.Forms.Button();
-            this.myTextBoxFriendSearch = new DBUI.UIControls.MyTextBox();
-            this.panelBirthDay = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelFriend2 = new System.Windows.Forms.Panel();
-            this.labelFriend2Name = new System.Windows.Forms.Label();
-            this.panelMyProfile = new System.Windows.Forms.Panel();
-            this.labelMyProfileName = new System.Windows.Forms.Label();
-            this.panelFriend1 = new System.Windows.Forms.Panel();
-            this.labelFriend1Name = new System.Windows.Forms.Label();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.pictureBoxMax = new System.Windows.Forms.PictureBox();
             this.pictureBoxMax2 = new System.Windows.Forms.PictureBox();
@@ -63,21 +51,29 @@ namespace DBUI
             this.pictureBoxFriendListhide = new System.Windows.Forms.PictureBox();
             this.pictureBoxChatList = new System.Windows.Forms.PictureBox();
             this.pictureBoxFriendList = new System.Windows.Forms.PictureBox();
-            this.pictureBoxAddFriendID = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBirthDay = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLine2 = new System.Windows.Forms.PictureBox();
-            this.roundPictureBoxFriend2 = new DBUI.RoundPictureBox();
-            this.roundPictureBoxMyProfilePoto = new DBUI.RoundPictureBox();
-            this.pictureBoxLine = new System.Windows.Forms.PictureBox();
             this.roundPictureBoxFriend1 = new DBUI.RoundPictureBox();
+            this.labelFriend1Name = new System.Windows.Forms.Label();
+            this.panelFriend1 = new System.Windows.Forms.Panel();
+            this.pictureBoxLine = new System.Windows.Forms.PictureBox();
+            this.roundPictureBoxMyProfilePoto = new DBUI.RoundPictureBox();
+            this.labelMyProfileName = new System.Windows.Forms.Label();
+            this.panelMyProfile = new System.Windows.Forms.Panel();
+            this.labelFriend2Name = new System.Windows.Forms.Label();
+            this.roundPictureBoxFriend2 = new DBUI.RoundPictureBox();
+            this.panelFriend2 = new System.Windows.Forms.Panel();
+            this.pictureBoxLine2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxBirthDay = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panelBirthDay = new System.Windows.Forms.Panel();
+            this.pictureBoxAddFriendID = new System.Windows.Forms.PictureBox();
+            this.myTextBoxFriendSearch = new DBUI.UIControls.MyTextBox();
+            this.buttonFriendSearch = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelBorder.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panelFriendList.SuspendLayout();
-            this.panelBirthDay.SuspendLayout();
-            this.panelFriend2.SuspendLayout();
-            this.panelMyProfile.SuspendLayout();
-            this.panelFriend1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax2)).BeginInit();
@@ -90,13 +86,17 @@ namespace DBUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriendListhide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChatList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriendList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddFriendID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBirthDay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLine2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxFriend2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxMyProfilePoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxFriend1)).BeginInit();
+            this.panelFriend1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxMyProfilePoto)).BeginInit();
+            this.panelMyProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxFriend2)).BeginInit();
+            this.panelFriend2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLine2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBirthDay)).BeginInit();
+            this.panelBirthDay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddFriendID)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -131,9 +131,9 @@ namespace DBUI
             this.panelBorder.Controls.Add(this.pictureBoxMax);
             this.panelBorder.Controls.Add(this.pictureBoxMax2);
             this.panelBorder.Controls.Add(this.pictureBoxMini);
-            this.panelBorder.Location = new System.Drawing.Point(65, 0);
+            this.panelBorder.Location = new System.Drawing.Point(66, 0);
             this.panelBorder.Name = "panelBorder";
-            this.panelBorder.Size = new System.Drawing.Size(416, 60);
+            this.panelBorder.Size = new System.Drawing.Size(415, 60);
             this.panelBorder.TabIndex = 1;
             this.panelBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBorder_MouseDown);
             // 
@@ -186,133 +186,11 @@ namespace DBUI
             this.panelFriendList.Size = new System.Drawing.Size(415, 627);
             this.panelFriendList.TabIndex = 38;
             // 
-            // buttonFriendSearch
-            // 
-            this.buttonFriendSearch.BackColor = System.Drawing.Color.White;
-            this.buttonFriendSearch.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.buttonFriendSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFriendSearch.Location = new System.Drawing.Point(319, 13);
-            this.buttonFriendSearch.Name = "buttonFriendSearch";
-            this.buttonFriendSearch.Size = new System.Drawing.Size(45, 27);
-            this.buttonFriendSearch.TabIndex = 51;
-            this.buttonFriendSearch.Text = "검색";
-            this.buttonFriendSearch.UseVisualStyleBackColor = false;
-            // 
-            // myTextBoxFriendSearch
-            // 
-            this.myTextBoxFriendSearch.BorderColor = System.Drawing.Color.LightGray;
-            this.myTextBoxFriendSearch.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.myTextBoxFriendSearch.Location = new System.Drawing.Point(6, 13);
-            this.myTextBoxFriendSearch.Name = "myTextBoxFriendSearch";
-            this.myTextBoxFriendSearch.Size = new System.Drawing.Size(307, 27);
-            this.myTextBoxFriendSearch.TabIndex = 50;
-            // 
-            // panelBirthDay
-            // 
-            this.panelBirthDay.Controls.Add(this.label4);
-            this.panelBirthDay.Controls.Add(this.pictureBoxBirthDay);
-            this.panelBirthDay.Location = new System.Drawing.Point(0, 184);
-            this.panelBirthDay.Name = "panelBirthDay";
-            this.panelBirthDay.Size = new System.Drawing.Size(395, 56);
-            this.panelBirthDay.TabIndex = 44;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(104, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(219, 21);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "친구의 생일을 확인해보세요!";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(14, 261);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 25);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "친구";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(14, 156);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 25);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "생일";
-            // 
-            // panelFriend2
-            // 
-            this.panelFriend2.ContextMenuStrip = this.contextMenuStrip1;
-            this.panelFriend2.Controls.Add(this.roundPictureBoxFriend2);
-            this.panelFriend2.Controls.Add(this.labelFriend2Name);
-            this.panelFriend2.Location = new System.Drawing.Point(6, 387);
-            this.panelFriend2.Name = "panelFriend2";
-            this.panelFriend2.Size = new System.Drawing.Size(396, 92);
-            this.panelFriend2.TabIndex = 48;
-            // 
-            // labelFriend2Name
-            // 
-            this.labelFriend2Name.AutoSize = true;
-            this.labelFriend2Name.ContextMenuStrip = this.contextMenuStrip1;
-            this.labelFriend2Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelFriend2Name.Location = new System.Drawing.Point(105, 34);
-            this.labelFriend2Name.Name = "labelFriend2Name";
-            this.labelFriend2Name.Size = new System.Drawing.Size(42, 21);
-            this.labelFriend2Name.TabIndex = 23;
-            this.labelFriend2Name.Text = "이름";
-            // 
-            // panelMyProfile
-            // 
-            this.panelMyProfile.Controls.Add(this.labelMyProfileName);
-            this.panelMyProfile.Controls.Add(this.roundPictureBoxMyProfilePoto);
-            this.panelMyProfile.Controls.Add(this.pictureBoxLine);
-            this.panelMyProfile.Location = new System.Drawing.Point(6, 46);
-            this.panelMyProfile.Name = "panelMyProfile";
-            this.panelMyProfile.Size = new System.Drawing.Size(396, 92);
-            this.panelMyProfile.TabIndex = 42;
-            // 
-            // labelMyProfileName
-            // 
-            this.labelMyProfileName.AutoSize = true;
-            this.labelMyProfileName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelMyProfileName.Location = new System.Drawing.Point(107, 34);
-            this.labelMyProfileName.Name = "labelMyProfileName";
-            this.labelMyProfileName.Size = new System.Drawing.Size(42, 21);
-            this.labelMyProfileName.TabIndex = 23;
-            this.labelMyProfileName.Text = "이름";
-            // 
-            // panelFriend1
-            // 
-            this.panelFriend1.ContextMenuStrip = this.contextMenuStrip1;
-            this.panelFriend1.Controls.Add(this.labelFriend1Name);
-            this.panelFriend1.Controls.Add(this.roundPictureBoxFriend1);
-            this.panelFriend1.Location = new System.Drawing.Point(6, 289);
-            this.panelFriend1.Name = "panelFriend1";
-            this.panelFriend1.Size = new System.Drawing.Size(396, 92);
-            this.panelFriend1.TabIndex = 47;
-            // 
-            // labelFriend1Name
-            // 
-            this.labelFriend1Name.AutoSize = true;
-            this.labelFriend1Name.ContextMenuStrip = this.contextMenuStrip1;
-            this.labelFriend1Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelFriend1Name.Location = new System.Drawing.Point(107, 34);
-            this.labelFriend1Name.Name = "labelFriend1Name";
-            this.labelFriend1Name.Size = new System.Drawing.Size(42, 21);
-            this.labelFriend1Name.TabIndex = 23;
-            this.labelFriend1Name.Text = "이름";
-            // 
             // pictureBoxClose
             // 
             this.pictureBoxClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxClose.Image = global::DBUI.Properties.Resources.window_close_icon_135015;
-            this.pictureBoxClose.Location = new System.Drawing.Point(387, 5);
+            this.pictureBoxClose.Location = new System.Drawing.Point(386, 5);
             this.pictureBoxClose.Name = "pictureBoxClose";
             this.pictureBoxClose.Size = new System.Drawing.Size(15, 15);
             this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -335,7 +213,7 @@ namespace DBUI
             // 
             this.pictureBoxMax2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxMax2.Image = global::DBUI.Properties.Resources.window_maximize_icon_181228;
-            this.pictureBoxMax2.Location = new System.Drawing.Point(371, 5);
+            this.pictureBoxMax2.Location = new System.Drawing.Point(370, 5);
             this.pictureBoxMax2.Name = "pictureBoxMax2";
             this.pictureBoxMax2.Size = new System.Drawing.Size(15, 15);
             this.pictureBoxMax2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -348,7 +226,7 @@ namespace DBUI
             // 
             this.pictureBoxMini.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxMini.Image = global::DBUI.Properties.Resources.window_minimize_icon_138009;
-            this.pictureBoxMini.Location = new System.Drawing.Point(355, 5);
+            this.pictureBoxMini.Location = new System.Drawing.Point(354, 5);
             this.pictureBoxMini.Name = "pictureBoxMini";
             this.pictureBoxMini.Size = new System.Drawing.Size(15, 15);
             this.pictureBoxMini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -422,6 +300,7 @@ namespace DBUI
             this.pictureBoxFriendListhide.TabIndex = 18;
             this.pictureBoxFriendListhide.TabStop = false;
             this.pictureBoxFriendListhide.Visible = false;
+            this.pictureBoxFriendListhide.Click += new System.EventHandler(this.pictureBoxFriendListhide_Click);
             // 
             // pictureBoxChatList
             // 
@@ -444,35 +323,88 @@ namespace DBUI
             this.pictureBoxFriendList.TabIndex = 0;
             this.pictureBoxFriendList.TabStop = false;
             // 
-            // pictureBoxAddFriendID
+            // roundPictureBoxFriend1
             // 
-            this.pictureBoxAddFriendID.Image = global::DBUI.Properties.Resources.add_friend__1_;
-            this.pictureBoxAddFriendID.Location = new System.Drawing.Point(370, 13);
-            this.pictureBoxAddFriendID.Name = "pictureBoxAddFriendID";
-            this.pictureBoxAddFriendID.Size = new System.Drawing.Size(36, 27);
-            this.pictureBoxAddFriendID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxAddFriendID.TabIndex = 49;
-            this.pictureBoxAddFriendID.TabStop = false;
+            this.roundPictureBoxFriend1.ContextMenuStrip = this.contextMenuStrip1;
+            this.roundPictureBoxFriend1.Image = global::DBUI.Properties.Resources.프로필;
+            this.roundPictureBoxFriend1.Location = new System.Drawing.Point(15, 12);
+            this.roundPictureBoxFriend1.Name = "roundPictureBoxFriend1";
+            this.roundPictureBoxFriend1.Size = new System.Drawing.Size(70, 70);
+            this.roundPictureBoxFriend1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundPictureBoxFriend1.TabIndex = 34;
+            this.roundPictureBoxFriend1.TabStop = false;
             // 
-            // pictureBoxBirthDay
+            // labelFriend1Name
             // 
-            this.pictureBoxBirthDay.Image = global::DBUI.Properties.Resources.balloons;
-            this.pictureBoxBirthDay.Location = new System.Drawing.Point(30, 10);
-            this.pictureBoxBirthDay.Name = "pictureBoxBirthDay";
-            this.pictureBoxBirthDay.Size = new System.Drawing.Size(55, 36);
-            this.pictureBoxBirthDay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxBirthDay.TabIndex = 33;
-            this.pictureBoxBirthDay.TabStop = false;
+            this.labelFriend1Name.AutoSize = true;
+            this.labelFriend1Name.ContextMenuStrip = this.contextMenuStrip1;
+            this.labelFriend1Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelFriend1Name.Location = new System.Drawing.Point(107, 34);
+            this.labelFriend1Name.Name = "labelFriend1Name";
+            this.labelFriend1Name.Size = new System.Drawing.Size(42, 21);
+            this.labelFriend1Name.TabIndex = 23;
+            this.labelFriend1Name.Text = "이름";
             // 
-            // pictureBoxLine2
+            // panelFriend1
             // 
-            this.pictureBoxLine2.Image = global::DBUI.Properties.Resources.substract;
-            this.pictureBoxLine2.Location = new System.Drawing.Point(19, 232);
-            this.pictureBoxLine2.Name = "pictureBoxLine2";
-            this.pictureBoxLine2.Size = new System.Drawing.Size(376, 41);
-            this.pictureBoxLine2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLine2.TabIndex = 45;
-            this.pictureBoxLine2.TabStop = false;
+            this.panelFriend1.ContextMenuStrip = this.contextMenuStrip1;
+            this.panelFriend1.Controls.Add(this.labelFriend1Name);
+            this.panelFriend1.Controls.Add(this.roundPictureBoxFriend1);
+            this.panelFriend1.Location = new System.Drawing.Point(6, 289);
+            this.panelFriend1.Name = "panelFriend1";
+            this.panelFriend1.Size = new System.Drawing.Size(396, 92);
+            this.panelFriend1.TabIndex = 47;
+            // 
+            // pictureBoxLine
+            // 
+            this.pictureBoxLine.Image = global::DBUI.Properties.Resources.substract;
+            this.pictureBoxLine.Location = new System.Drawing.Point(13, 71);
+            this.pictureBoxLine.Name = "pictureBoxLine";
+            this.pictureBoxLine.Size = new System.Drawing.Size(376, 41);
+            this.pictureBoxLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLine.TabIndex = 24;
+            this.pictureBoxLine.TabStop = false;
+            // 
+            // roundPictureBoxMyProfilePoto
+            // 
+            this.roundPictureBoxMyProfilePoto.Image = global::DBUI.Properties.Resources.프로필;
+            this.roundPictureBoxMyProfilePoto.Location = new System.Drawing.Point(15, 10);
+            this.roundPictureBoxMyProfilePoto.Name = "roundPictureBoxMyProfilePoto";
+            this.roundPictureBoxMyProfilePoto.Size = new System.Drawing.Size(70, 70);
+            this.roundPictureBoxMyProfilePoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundPictureBoxMyProfilePoto.TabIndex = 22;
+            this.roundPictureBoxMyProfilePoto.TabStop = false;
+            // 
+            // labelMyProfileName
+            // 
+            this.labelMyProfileName.AutoSize = true;
+            this.labelMyProfileName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelMyProfileName.Location = new System.Drawing.Point(107, 34);
+            this.labelMyProfileName.Name = "labelMyProfileName";
+            this.labelMyProfileName.Size = new System.Drawing.Size(42, 21);
+            this.labelMyProfileName.TabIndex = 23;
+            this.labelMyProfileName.Text = "이름";
+            // 
+            // panelMyProfile
+            // 
+            this.panelMyProfile.Controls.Add(this.labelMyProfileName);
+            this.panelMyProfile.Controls.Add(this.roundPictureBoxMyProfilePoto);
+            this.panelMyProfile.Controls.Add(this.pictureBoxLine);
+            this.panelMyProfile.Location = new System.Drawing.Point(6, 46);
+            this.panelMyProfile.Name = "panelMyProfile";
+            this.panelMyProfile.Size = new System.Drawing.Size(396, 92);
+            this.panelMyProfile.TabIndex = 42;
+            // 
+            // labelFriend2Name
+            // 
+            this.labelFriend2Name.AutoSize = true;
+            this.labelFriend2Name.ContextMenuStrip = this.contextMenuStrip1;
+            this.labelFriend2Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelFriend2Name.Location = new System.Drawing.Point(105, 34);
+            this.labelFriend2Name.Name = "labelFriend2Name";
+            this.labelFriend2Name.Size = new System.Drawing.Size(42, 21);
+            this.labelFriend2Name.TabIndex = 23;
+            this.labelFriend2Name.Text = "이름";
             // 
             // roundPictureBoxFriend2
             // 
@@ -485,36 +417,105 @@ namespace DBUI
             this.roundPictureBoxFriend2.TabIndex = 37;
             this.roundPictureBoxFriend2.TabStop = false;
             // 
-            // roundPictureBoxMyProfilePoto
+            // panelFriend2
             // 
-            this.roundPictureBoxMyProfilePoto.Image = global::DBUI.Properties.Resources.프로필;
-            this.roundPictureBoxMyProfilePoto.Location = new System.Drawing.Point(15, 10);
-            this.roundPictureBoxMyProfilePoto.Name = "roundPictureBoxMyProfilePoto";
-            this.roundPictureBoxMyProfilePoto.Size = new System.Drawing.Size(70, 70);
-            this.roundPictureBoxMyProfilePoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundPictureBoxMyProfilePoto.TabIndex = 22;
-            this.roundPictureBoxMyProfilePoto.TabStop = false;
+            this.panelFriend2.ContextMenuStrip = this.contextMenuStrip1;
+            this.panelFriend2.Controls.Add(this.roundPictureBoxFriend2);
+            this.panelFriend2.Controls.Add(this.labelFriend2Name);
+            this.panelFriend2.Location = new System.Drawing.Point(6, 387);
+            this.panelFriend2.Name = "panelFriend2";
+            this.panelFriend2.Size = new System.Drawing.Size(396, 92);
+            this.panelFriend2.TabIndex = 48;
             // 
-            // pictureBoxLine
+            // pictureBoxLine2
             // 
-            this.pictureBoxLine.Image = global::DBUI.Properties.Resources.substract;
-            this.pictureBoxLine.Location = new System.Drawing.Point(13, 71);
-            this.pictureBoxLine.Name = "pictureBoxLine";
-            this.pictureBoxLine.Size = new System.Drawing.Size(376, 41);
-            this.pictureBoxLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLine.TabIndex = 24;
-            this.pictureBoxLine.TabStop = false;
+            this.pictureBoxLine2.Image = global::DBUI.Properties.Resources.substract;
+            this.pictureBoxLine2.Location = new System.Drawing.Point(19, 232);
+            this.pictureBoxLine2.Name = "pictureBoxLine2";
+            this.pictureBoxLine2.Size = new System.Drawing.Size(376, 41);
+            this.pictureBoxLine2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLine2.TabIndex = 45;
+            this.pictureBoxLine2.TabStop = false;
             // 
-            // roundPictureBoxFriend1
+            // label2
             // 
-            this.roundPictureBoxFriend1.ContextMenuStrip = this.contextMenuStrip1;
-            this.roundPictureBoxFriend1.Image = global::DBUI.Properties.Resources.프로필;
-            this.roundPictureBoxFriend1.Location = new System.Drawing.Point(15, 12);
-            this.roundPictureBoxFriend1.Name = "roundPictureBoxFriend1";
-            this.roundPictureBoxFriend1.Size = new System.Drawing.Size(70, 70);
-            this.roundPictureBoxFriend1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundPictureBoxFriend1.TabIndex = 34;
-            this.roundPictureBoxFriend1.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(14, 156);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 25);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "생일";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(14, 261);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 25);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "친구";
+            // 
+            // pictureBoxBirthDay
+            // 
+            this.pictureBoxBirthDay.Image = global::DBUI.Properties.Resources.balloons;
+            this.pictureBoxBirthDay.Location = new System.Drawing.Point(30, 10);
+            this.pictureBoxBirthDay.Name = "pictureBoxBirthDay";
+            this.pictureBoxBirthDay.Size = new System.Drawing.Size(55, 36);
+            this.pictureBoxBirthDay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBirthDay.TabIndex = 33;
+            this.pictureBoxBirthDay.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(104, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(219, 21);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "친구의 생일을 확인해보세요!";
+            // 
+            // panelBirthDay
+            // 
+            this.panelBirthDay.Controls.Add(this.label4);
+            this.panelBirthDay.Controls.Add(this.pictureBoxBirthDay);
+            this.panelBirthDay.Location = new System.Drawing.Point(0, 184);
+            this.panelBirthDay.Name = "panelBirthDay";
+            this.panelBirthDay.Size = new System.Drawing.Size(395, 56);
+            this.panelBirthDay.TabIndex = 44;
+            // 
+            // pictureBoxAddFriendID
+            // 
+            this.pictureBoxAddFriendID.Image = global::DBUI.Properties.Resources.add_friend__1_;
+            this.pictureBoxAddFriendID.Location = new System.Drawing.Point(370, 13);
+            this.pictureBoxAddFriendID.Name = "pictureBoxAddFriendID";
+            this.pictureBoxAddFriendID.Size = new System.Drawing.Size(36, 27);
+            this.pictureBoxAddFriendID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxAddFriendID.TabIndex = 49;
+            this.pictureBoxAddFriendID.TabStop = false;
+            // 
+            // myTextBoxFriendSearch
+            // 
+            this.myTextBoxFriendSearch.BorderColor = System.Drawing.Color.LightGray;
+            this.myTextBoxFriendSearch.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.myTextBoxFriendSearch.Location = new System.Drawing.Point(6, 13);
+            this.myTextBoxFriendSearch.Name = "myTextBoxFriendSearch";
+            this.myTextBoxFriendSearch.Size = new System.Drawing.Size(307, 27);
+            this.myTextBoxFriendSearch.TabIndex = 50;
+            // 
+            // buttonFriendSearch
+            // 
+            this.buttonFriendSearch.BackColor = System.Drawing.Color.White;
+            this.buttonFriendSearch.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.buttonFriendSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFriendSearch.Location = new System.Drawing.Point(319, 13);
+            this.buttonFriendSearch.Name = "buttonFriendSearch";
+            this.buttonFriendSearch.Size = new System.Drawing.Size(45, 27);
+            this.buttonFriendSearch.TabIndex = 51;
+            this.buttonFriendSearch.Text = "검색";
+            this.buttonFriendSearch.UseVisualStyleBackColor = false;
             // 
             // FriendList
             // 
@@ -535,19 +536,12 @@ namespace DBUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FriendList";
             this.Text = "FriendList";
+            this.Load += new System.EventHandler(this.FriendList_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelBorder.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.panelFriendList.ResumeLayout(false);
             this.panelFriendList.PerformLayout();
-            this.panelBirthDay.ResumeLayout(false);
-            this.panelBirthDay.PerformLayout();
-            this.panelFriend2.ResumeLayout(false);
-            this.panelFriend2.PerformLayout();
-            this.panelMyProfile.ResumeLayout(false);
-            this.panelMyProfile.PerformLayout();
-            this.panelFriend1.ResumeLayout(false);
-            this.panelFriend1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax2)).EndInit();
@@ -560,13 +554,21 @@ namespace DBUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriendListhide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChatList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriendList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddFriendID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBirthDay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLine2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxFriend2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxMyProfilePoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxFriend1)).EndInit();
+            this.panelFriend1.ResumeLayout(false);
+            this.panelFriend1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxMyProfilePoto)).EndInit();
+            this.panelMyProfile.ResumeLayout(false);
+            this.panelMyProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxFriend2)).EndInit();
+            this.panelFriend2.ResumeLayout(false);
+            this.panelFriend2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLine2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBirthDay)).EndInit();
+            this.panelBirthDay.ResumeLayout(false);
+            this.panelBirthDay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddFriendID)).EndInit();
             this.ResumeLayout(false);
 
         }

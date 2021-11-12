@@ -63,9 +63,20 @@ namespace DBUI
 
         #region 메뉴
 
-        private void pictureBoxFriendhideList_Click(object sender, EventArgs e)
+        private void pictureBoxFriendListhide_Click(object sender, EventArgs e)
         {
-
+            pictureBoxFriendList.Visible = true;
+            pictureBoxFriendListhide.Visible = false;
+            pictureBoxSettings.Visible = false;
+            pictureBoxSettingshide.Visible = true;
+            pictureBoxChatList.Visible = false;
+            pictureBoxChatListhide.Visible = true;
+            panelFriendList.Controls.Clear();
+            ListOfFriend fm = new ListOfFriend();
+            fm.TopLevel = false;
+            fm.Dock = DockStyle.Fill;
+            panelFriendList.Controls.Add(fm);
+            fm.Show();
         }
 
         private void pictureBoxChatListhide_Click(object sender, EventArgs e)
@@ -74,6 +85,8 @@ namespace DBUI
             pictureBoxChatListhide.Visible = false;
             pictureBoxFriendListhide.Visible = true;
             pictureBoxFriendList.Visible = false;
+            pictureBoxSettingshide.Visible = true;
+            pictureBoxSettings.Visible = false;
             panelFriendList.Controls.Clear();
             ChatList fm = new ChatList();
             fm.TopLevel = false;
@@ -101,10 +114,18 @@ namespace DBUI
 
         private void pictureBoxSettingshide_Click(object sender, EventArgs e)
         {
-            ProfileSettings profileSettings = new ProfileSettings();
-            this.Hide();
-            profileSettings.ShowDialog();
-
+            pictureBoxFriendList.Visible = false;
+            pictureBoxFriendListhide.Visible = true;
+            pictureBoxChatList.Visible = false;
+            pictureBoxChatListhide.Visible = true;
+            pictureBoxSettings.Visible = true;
+            pictureBoxSettingshide.Visible = false;
+            panelFriendList.Controls.Clear();
+            ProfileSettings fm = new ProfileSettings();
+            fm.TopLevel = false;
+            fm.Dock = DockStyle.Fill;
+            panelFriendList.Controls.Add(fm);
+            fm.Show();
         }
 
         #endregion
@@ -214,6 +235,15 @@ namespace DBUI
         private void PanelFriendList_MouseWheel(object sender, MouseEventArgs e)
         {
             panelFriendList.Focus();
+        }
+
+        private void FriendList_Load(object sender, EventArgs e)
+        {
+            ListOfFriend fm = new ListOfFriend();
+            fm.TopLevel = false;
+            fm.Dock = DockStyle.Fill;
+            panelFriendList.Controls.Add(fm);
+            fm.Show();
         }
     }
 }

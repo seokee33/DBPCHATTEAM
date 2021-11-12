@@ -10,16 +10,13 @@ using System.Windows.Forms;
 
 namespace DBUI
 {
-    public partial class NewChat : Form
+    public partial class GropuChatRoom : Form
     {
-        public NewChat()
+        public GropuChatRoom()
         {
             InitializeComponent();
-            this.MouseWheel += new MouseEventHandler(PanelFriendList_MouseWheel);
         }
-
         #region 상단부분
-
         private void panelBorder_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -40,13 +37,6 @@ namespace DBUI
             Application.Exit();
         }
 
-        private void pictureBoxMax_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            pictureBoxMax2.Visible = true;
-            pictureBoxMax.Visible = false;
-        }
-
         private void pictureBoxMax2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
@@ -54,20 +44,17 @@ namespace DBUI
             pictureBoxMax.Visible = true;
         }
 
+        private void pictureBoxMax_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            pictureBoxMax2.Visible = true;
+            pictureBoxMax.Visible = false;
+        }
+
         private void pictureBoxMini_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        #endregion
-
-        private void buttonConfirm_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void PanelFriendList_MouseWheel(object sender, MouseEventArgs e)
-        {
-            panelFriendList.Focus();
-        }
+#endregion
     }
 }

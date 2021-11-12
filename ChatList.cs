@@ -15,12 +15,17 @@ namespace DBUI
         public ChatList()
         {
             InitializeComponent();
+            this.MouseWheel += new MouseEventHandler(PanelChatList_MouseWheel);
         }
 
         private void pictureBoxNewChat_Click(object sender, EventArgs e)
         {
             NewChat newForm = new NewChat();
             newForm.Show();
+        }
+        private void PanelChatList_MouseWheel(object sender, MouseEventArgs e)
+        {
+            panelChatList.Focus();
         }
     }
 }

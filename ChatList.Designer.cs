@@ -36,9 +36,11 @@ namespace DBUI
             this.DelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBoxPin = new System.Windows.Forms.PictureBox();
             this.pictureBoxNewChat = new System.Windows.Forms.PictureBox();
+            this.panelChatList = new System.Windows.Forms.Panel();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewChat)).BeginInit();
+            this.panelChatList.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -75,7 +77,7 @@ namespace DBUI
             // 
             this.pictureBoxPin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxPin.Image = global::DBUI.Properties.Resources.pin;
-            this.pictureBoxPin.Location = new System.Drawing.Point(298, 49);
+            this.pictureBoxPin.Location = new System.Drawing.Point(180, 26);
             this.pictureBoxPin.Name = "pictureBoxPin";
             this.pictureBoxPin.Size = new System.Drawing.Size(15, 15);
             this.pictureBoxPin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -94,13 +96,21 @@ namespace DBUI
             this.pictureBoxNewChat.TabStop = false;
             this.pictureBoxNewChat.Click += new System.EventHandler(this.pictureBoxNewChat_Click);
             // 
+            // panelChatList
+            // 
+            this.panelChatList.Controls.Add(this.pictureBoxPin);
+            this.panelChatList.Location = new System.Drawing.Point(0, 37);
+            this.panelChatList.Name = "panelChatList";
+            this.panelChatList.Size = new System.Drawing.Size(415, 532);
+            this.panelChatList.TabIndex = 34;
+            // 
             // ChatList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(415, 627);
-            this.Controls.Add(this.pictureBoxPin);
+            this.Controls.Add(this.panelChatList);
             this.Controls.Add(this.pictureBoxNewChat);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -109,6 +119,7 @@ namespace DBUI
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewChat)).EndInit();
+            this.panelChatList.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +133,6 @@ namespace DBUI
         private System.Windows.Forms.ToolStripMenuItem FixToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DelToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBoxPin;
+        private System.Windows.Forms.Panel panelChatList;
     }
 }

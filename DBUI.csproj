@@ -52,6 +52,12 @@
     <Compile Include="AddFriendID.Designer.cs">
       <DependentUpon>AddFriendID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bell.Designer.cs">
+      <DependentUpon>Bell.cs</DependentUpon>
+    </Compile>
     <Compile Include="BirthDayFriendList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,18 @@
     </Compile>
     <Compile Include="FriendList.Designer.cs">
       <DependentUpon>FriendList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GropuChatRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GropuChatRoom.Designer.cs">
+      <DependentUpon>GropuChatRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfFriend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfFriend.Designer.cs">
+      <DependentUpon>ListOfFriend.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -117,6 +135,9 @@
     <EmbeddedResource Include="AddFriendID.resx">
       <DependentUpon>AddFriendID.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bell.resx">
+      <DependentUpon>Bell.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BirthDayFriendList.resx">
       <DependentUpon>BirthDayFriendList.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FriendList.resx">
       <DependentUpon>FriendList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GropuChatRoom.resx">
+      <DependentUpon>GropuChatRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfFriend.resx">
+      <DependentUpon>ListOfFriend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -235,6 +262,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\window_minimize_icon_1380091.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\message.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
