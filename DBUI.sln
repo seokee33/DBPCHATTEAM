@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBTeamUI", "DBTeamUI.csproj", "{3D37800C-32C5-45F2-BBDD-747800FB73D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBUI", "DBUI.csproj", "{3D37800C-32C5-45F2-BBDD-747800FB73D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
