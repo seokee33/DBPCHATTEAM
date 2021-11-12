@@ -65,9 +65,7 @@ namespace DBUI
         {
             MessageBox.Show("회원가입이 완료 되었습니다.");
 
-            Login login = new Login();
-            this.Hide();
-            login.Show();
+            this.Close();
         }
 
         private void roundedPictureBoxAddPoto_Click(object sender, EventArgs e)

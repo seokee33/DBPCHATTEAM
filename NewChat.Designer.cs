@@ -30,13 +30,13 @@ namespace DBUI
         private void InitializeComponent()
         {
             this.panelBorder = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonConfirm = new System.Windows.Forms.Button();
             this.pictureBoxMax = new System.Windows.Forms.PictureBox();
             this.pictureBoxMini = new System.Windows.Forms.PictureBox();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.pictureBoxMax2 = new System.Windows.Forms.PictureBox();
-            this.panelFriendList = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonConfirm = new System.Windows.Forms.Button();
+            this.panelFriendList = new System.Windows.Forms.FlowLayoutPanel();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMini)).BeginInit();
@@ -57,30 +57,6 @@ namespace DBUI
             this.panelBorder.Size = new System.Drawing.Size(406, 60);
             this.panelBorder.TabIndex = 9;
             this.panelBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBorder_MouseDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 21);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "대화상대 선택";
-            // 
-            // buttonConfirm
-            // 
-            this.buttonConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonConfirm.BackColor = System.Drawing.Color.White;
-            this.buttonConfirm.FlatAppearance.BorderSize = 0;
-            this.buttonConfirm.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConfirm.Location = new System.Drawing.Point(29, 619);
-            this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(332, 32);
-            this.buttonConfirm.TabIndex = 15;
-            this.buttonConfirm.Text = "확인";
-            this.buttonConfirm.UseVisualStyleBackColor = false;
-            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // pictureBoxMax
             // 
@@ -130,8 +106,34 @@ namespace DBUI
             this.pictureBoxMax2.Visible = false;
             this.pictureBoxMax2.Click += new System.EventHandler(this.pictureBoxMax2_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 21);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "대화상대 선택";
+            // 
+            // buttonConfirm
+            // 
+            this.buttonConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonConfirm.BackColor = System.Drawing.Color.White;
+            this.buttonConfirm.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfirm.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConfirm.Location = new System.Drawing.Point(36, 619);
+            this.buttonConfirm.Name = "buttonConfirm";
+            this.buttonConfirm.Size = new System.Drawing.Size(332, 32);
+            this.buttonConfirm.TabIndex = 15;
+            this.buttonConfirm.Text = "확인";
+            this.buttonConfirm.UseVisualStyleBackColor = false;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
+            // 
             // panelFriendList
             // 
+            this.panelFriendList.AutoScroll = true;
             this.panelFriendList.Location = new System.Drawing.Point(0, 88);
             this.panelFriendList.Name = "panelFriendList";
             this.panelFriendList.Size = new System.Drawing.Size(406, 525);
@@ -150,6 +152,7 @@ namespace DBUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NewChat";
             this.Text = "NewChat";
+            this.Load += new System.EventHandler(this.NewChat_Load);
             this.panelBorder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMini)).EndInit();
@@ -169,6 +172,6 @@ namespace DBUI
         private System.Windows.Forms.Panel panelBorder;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonConfirm;
-        private System.Windows.Forms.Panel panelFriendList;
+        private System.Windows.Forms.FlowLayoutPanel panelFriendList;
     }
 }

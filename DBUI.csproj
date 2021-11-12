@@ -120,11 +120,41 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIControls\BirthDayFriendProfileForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIControls\BirthDayFriendProfileForm.Designer.cs">
+      <DependentUpon>BirthDayFriendProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\ChatListForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIControls\ChatListForm.Designer.cs">
+      <DependentUpon>ChatListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIControls\CircularButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UIControls\ColorChangeTextBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UIControls\FriendListForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIControls\FriendListForm.Designer.cs">
+      <DependentUpon>FriendListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\GroupChatForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIControls\GroupChatForm.Designer.cs">
+      <DependentUpon>GroupChatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\NewChatForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIControls\NewChatForm.Designer.cs">
+      <DependentUpon>NewChatForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UIControls\RoundedPictureBox.cs">
       <SubType>Component</SubType>
@@ -177,6 +207,21 @@
     </Compile>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIControls\BirthDayFriendProfileForm.resx">
+      <DependentUpon>BirthDayFriendProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIControls\ChatListForm.resx">
+      <DependentUpon>ChatListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIControls\FriendListForm.resx">
+      <DependentUpon>FriendListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIControls\GroupChatForm.resx">
+      <DependentUpon>GroupChatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIControls\NewChatForm.resx">
+      <DependentUpon>NewChatForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

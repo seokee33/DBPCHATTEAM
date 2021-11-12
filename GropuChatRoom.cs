@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBUI.UIControls;
 
 namespace DBUI
 {
@@ -55,6 +56,32 @@ namespace DBUI
         {
             this.WindowState = FormWindowState.Minimized;
         }
-#endregion
+        #endregion
+
+        private void GropuChatRoom_Load(object sender, EventArgs e)
+        {
+            populatItems();
+        }
+
+        private void populatItems()
+        {
+            GroupChatForm[] groupChatForms = new GroupChatForm[5];
+
+            for (int i = 0; i < groupChatForms.Length; i++)
+            {
+                groupChatForms[i] = new GroupChatForm();
+                groupChatForms[i].FriendName = "ㅇㅇㅇ";
+                // 사진 db에서 받아오기
+
+                if (flowLayoutPanel.Controls.Count < 0)
+                {
+                    flowLayoutPanel.Controls.Clear();
+                }
+                else
+                    flowLayoutPanel.Controls.Add(groupChatForms[i]);
+            }
+        }
     }
+
+
 }

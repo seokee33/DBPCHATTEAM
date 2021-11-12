@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DBUI.UIControls;
 namespace DBUI
 {
     public partial class BirthDayFriendList : Form
@@ -37,7 +37,7 @@ namespace DBUI
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
 
@@ -46,22 +46,31 @@ namespace DBUI
 
         private void PanelBirthDayFriendList_MouseWheel(object sender, MouseEventArgs e)
         {
-            panelBirthDayFriendList.Focus();
+            flowLayoutPanelBirthDayFriendList.Focus();
         }
 
-        private void panelBirthDayFriend1_Paint(object sender, PaintEventArgs e)
-        {
-            //채팅 폼
+        private void populatItems()
+        { 
+            BirthDayFriendProfileForm[] birthDayFriendListsform = new BirthDayFriendProfileForm[10];
+            
+            for (int i = 0; i < birthDayFriendListsform.Length; i++)
+            {
+                birthDayFriendListsform[i] = new BirthDayFriendProfileForm();
+                birthDayFriendListsform[i].BDFriendName = "ㅇㅇㅇ";
+                // 사진 db에서 받아오기
+
+                if (flowLayoutPanelBirthDayFriendList.Controls.Count < 0)
+                {
+                    flowLayoutPanelBirthDayFriendList.Controls.Clear();
+                }
+                else
+                    flowLayoutPanelBirthDayFriendList.Controls.Add(birthDayFriendListsform[i]);
+            }
         }
 
-        private void roundPictureBoxBirthDayFriendPoto1_Click(object sender, EventArgs e)
+        private void BirthDayFriendList_Load(object sender, EventArgs e)
         {
-            //채팅 폼
-        }
-
-        private void labelBirthDayFriendName1_Click(object sender, EventArgs e)
-        {
-            //채팅 폼
+            populatItems();
         }
     }
 }

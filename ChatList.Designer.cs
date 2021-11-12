@@ -29,18 +29,10 @@ namespace DBUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.FixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBoxPin = new System.Windows.Forms.PictureBox();
             this.pictureBoxNewChat = new System.Windows.Forms.PictureBox();
-            this.panelChatList = new System.Windows.Forms.Panel();
-            this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPin)).BeginInit();
+            this.flowLayoutPanelChatList = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewChat)).BeginInit();
-            this.panelChatList.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -53,38 +45,6 @@ namespace DBUI
             this.label2.TabIndex = 30;
             this.label2.Text = "채팅";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FixToolStripMenuItem,
-            this.DelToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 48);
-            // 
-            // FixToolStripMenuItem
-            // 
-            this.FixToolStripMenuItem.Name = "FixToolStripMenuItem";
-            this.FixToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.FixToolStripMenuItem.Text = "상단고정";
-            // 
-            // DelToolStripMenuItem
-            // 
-            this.DelToolStripMenuItem.Name = "DelToolStripMenuItem";
-            this.DelToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.DelToolStripMenuItem.Text = "대화삭제";
-            // 
-            // pictureBoxPin
-            // 
-            this.pictureBoxPin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxPin.Image = global::DBUI.Properties.Resources.pin;
-            this.pictureBoxPin.Location = new System.Drawing.Point(260, 16);
-            this.pictureBoxPin.Name = "pictureBoxPin";
-            this.pictureBoxPin.Size = new System.Drawing.Size(15, 15);
-            this.pictureBoxPin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxPin.TabIndex = 33;
-            this.pictureBoxPin.TabStop = false;
-            this.pictureBoxPin.Visible = false;
-            // 
             // pictureBoxNewChat
             // 
             this.pictureBoxNewChat.Image = global::DBUI.Properties.Resources.talk_bubble_with_plus_sign;
@@ -96,13 +56,13 @@ namespace DBUI
             this.pictureBoxNewChat.TabStop = false;
             this.pictureBoxNewChat.Click += new System.EventHandler(this.pictureBoxNewChat_Click);
             // 
-            // panelChatList
+            // flowLayoutPanelChatList
             // 
-            this.panelChatList.Controls.Add(this.pictureBoxPin);
-            this.panelChatList.Location = new System.Drawing.Point(0, 37);
-            this.panelChatList.Name = "panelChatList";
-            this.panelChatList.Size = new System.Drawing.Size(415, 532);
-            this.panelChatList.TabIndex = 34;
+            this.flowLayoutPanelChatList.AutoScroll = true;
+            this.flowLayoutPanelChatList.Location = new System.Drawing.Point(0, 37);
+            this.flowLayoutPanelChatList.Name = "flowLayoutPanelChatList";
+            this.flowLayoutPanelChatList.Size = new System.Drawing.Size(415, 532);
+            this.flowLayoutPanelChatList.TabIndex = 32;
             // 
             // ChatList
             // 
@@ -110,16 +70,14 @@ namespace DBUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(415, 627);
-            this.Controls.Add(this.panelChatList);
+            this.Controls.Add(this.flowLayoutPanelChatList);
             this.Controls.Add(this.pictureBoxNewChat);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChatList";
             this.Text = "ChatList";
-            this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPin)).EndInit();
+            this.Load += new System.EventHandler(this.ChatList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewChat)).EndInit();
-            this.panelChatList.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,10 +87,6 @@ namespace DBUI
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBoxNewChat;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem FixToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem DelToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBoxPin;
-        private System.Windows.Forms.Panel panelChatList;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelChatList;
     }
 }

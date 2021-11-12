@@ -60,8 +60,7 @@ namespace DBUI
         private void labelSignUp_Click(object sender, EventArgs e)
         {
             SignUp signUp = new SignUp();
-            this.Hide();
-            signUp.Show();
+            signUp.ShowDialog();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -70,6 +69,5 @@ namespace DBUI
             this.Hide();
             fl.Show();
         }
-
     }
 }

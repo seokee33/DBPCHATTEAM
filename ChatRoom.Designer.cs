@@ -43,6 +43,8 @@ namespace DBUI
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxMessage = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.roundPictureBoxFDpoto = new DBUI.RoundPictureBox();
+            this.labelFDName = new System.Windows.Forms.Label();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMini)).BeginInit();
@@ -50,6 +52,7 @@ namespace DBUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxFDpoto)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBorder
@@ -149,6 +152,8 @@ namespace DBUI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panel1.Controls.Add(this.labelFDName);
+            this.panel1.Controls.Add(this.roundPictureBoxFDpoto);
             this.panel1.Controls.Add(this.buttonSearch);
             this.panel1.Controls.Add(this.textBoxSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -204,6 +209,26 @@ namespace DBUI
             this.panel4.Size = new System.Drawing.Size(400, 1);
             this.panel4.TabIndex = 18;
             // 
+            // roundPictureBoxFDpoto
+            // 
+            this.roundPictureBoxFDpoto.Image = global::DBUI.Properties.Resources.프로필;
+            this.roundPictureBoxFDpoto.Location = new System.Drawing.Point(27, 15);
+            this.roundPictureBoxFDpoto.Name = "roundPictureBoxFDpoto";
+            this.roundPictureBoxFDpoto.Size = new System.Drawing.Size(60, 60);
+            this.roundPictureBoxFDpoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundPictureBoxFDpoto.TabIndex = 3;
+            this.roundPictureBoxFDpoto.TabStop = false;
+            // 
+            // labelFDName
+            // 
+            this.labelFDName.AutoSize = true;
+            this.labelFDName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelFDName.Location = new System.Drawing.Point(114, 40);
+            this.labelFDName.Name = "labelFDName";
+            this.labelFDName.Size = new System.Drawing.Size(31, 15);
+            this.labelFDName.TabIndex = 4;
+            this.labelFDName.Text = "이름";
+            // 
             // ChatRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -228,6 +253,7 @@ namespace DBUI
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxFDpoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +275,7 @@ namespace DBUI
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBoxMessage;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label labelFDName;
+        private RoundPictureBox roundPictureBoxFDpoto;
     }
 }

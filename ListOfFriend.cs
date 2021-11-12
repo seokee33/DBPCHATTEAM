@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBUI.UIControls;
 //panelFriendList 내용담은 Form
 namespace DBUI
 {
@@ -22,22 +23,43 @@ namespace DBUI
             panelFriendList.Focus();
         }
         //아이디로 친구추가
+
+        private void populatItems()
+        {
+            FriendListForm[] friendListForm = new FriendListForm[5];
+            
+            for (int i = 0; i < friendListForm.Length; i++)
+            {
+                friendListForm[i] = new FriendListForm();
+                friendListForm[i].FriendListName = "ㅇㅇㅇ";
+                // 사진 db에서 받아오기
+
+                if (flowLayoutPanelFriendList.Controls.Count < 0)
+                {
+                    flowLayoutPanelFriendList.Controls.Clear();
+                }
+                else
+                    flowLayoutPanelFriendList.Controls.Add(friendListForm[i]);
+            }
+        }
+
+        private void ListOfFriend_Load(object sender, EventArgs e)
+        {
+            populatItems();
+        }
+
         private void pictureBoxAddFriendID_Click(object sender, EventArgs e)
         {
             AddFriendID addFriendID = new AddFriendID();
             addFriendID.Show();
         }
 
-        private void ChattingToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void BirthDay_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //우크릭시 채팅하기 선택
-            //채팅방 나오도록 show()
+            BirthDayFriendList birthDayFriendList = new BirthDayFriendList();
+            birthDayFriendList.Show();
         }
 
-        private void DeleteFriendToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //우클릭시 친구삭제 선택
-            //친구 삭제기능
-        }
     }
 }

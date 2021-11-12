@@ -43,6 +43,7 @@ namespace DBUI
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.panelBorder = new System.Windows.Forms.Panel();
             this.pictureBoxMax = new System.Windows.Forms.PictureBox();
+            this.buttonDuplicateCheck = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBoxAddPoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxProfilePoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax2)).BeginInit();
@@ -125,7 +126,7 @@ namespace DBUI
             this.myTextBoxID.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.myTextBoxID.Location = new System.Drawing.Point(35, 282);
             this.myTextBoxID.Name = "myTextBoxID";
-            this.myTextBoxID.Size = new System.Drawing.Size(332, 27);
+            this.myTextBoxID.Size = new System.Drawing.Size(273, 27);
             this.myTextBoxID.TabIndex = 11;
             this.myTextBoxID.Text = "아이디";
             // 
@@ -206,12 +207,25 @@ namespace DBUI
             this.pictureBoxMax.TabStop = false;
             this.pictureBoxMax.Click += new System.EventHandler(this.pictureBoxMax_Click);
             // 
+            // buttonDuplicateCheck
+            // 
+            this.buttonDuplicateCheck.BackColor = System.Drawing.Color.White;
+            this.buttonDuplicateCheck.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.buttonDuplicateCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDuplicateCheck.Location = new System.Drawing.Point(315, 282);
+            this.buttonDuplicateCheck.Name = "buttonDuplicateCheck";
+            this.buttonDuplicateCheck.Size = new System.Drawing.Size(52, 27);
+            this.buttonDuplicateCheck.TabIndex = 21;
+            this.buttonDuplicateCheck.Text = "확인";
+            this.buttonDuplicateCheck.UseVisualStyleBackColor = false;
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(400, 686);
+            this.Controls.Add(this.buttonDuplicateCheck);
             this.Controls.Add(this.pictureBoxMax);
             this.Controls.Add(this.pictureBoxMax2);
             this.Controls.Add(this.pictureBoxMini);
@@ -255,5 +269,6 @@ namespace DBUI
         private System.Windows.Forms.PictureBox pictureBoxClose;
         private System.Windows.Forms.Panel panelBorder;
         private System.Windows.Forms.PictureBox pictureBoxMax;
+        private System.Windows.Forms.Button buttonDuplicateCheck;
     }
 }

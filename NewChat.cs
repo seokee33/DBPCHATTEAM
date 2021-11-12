@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DBUI.UIControls;
 using System.Windows.Forms;
 
 namespace DBUI
@@ -37,7 +38,7 @@ namespace DBUI
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void pictureBoxMax_Click(object sender, EventArgs e)
@@ -68,6 +69,30 @@ namespace DBUI
         private void PanelFriendList_MouseWheel(object sender, MouseEventArgs e)
         {
             panelFriendList.Focus();
+        }
+
+        private void populatItems()
+        {
+            NewChatForm[] newChatForms = new NewChatForm[10];
+
+            for (int i = 0; i < newChatForms.Length; i++)
+            {
+                newChatForms[i] = new NewChatForm();
+                newChatForms[i].FriendListName = "ㅇㅇㅇ";
+                // 사진 db에서 받아오기
+
+                if (panelFriendList.Controls.Count < 0)
+                {
+                    panelFriendList.Controls.Clear();
+                }
+                else
+                    panelFriendList.Controls.Add(newChatForms[i]);
+            }
+        }
+
+        private void NewChat_Load(object sender, EventArgs e)
+        {
+            populatItems();
         }
     }
 }

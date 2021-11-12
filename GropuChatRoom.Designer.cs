@@ -29,42 +29,33 @@ namespace DBUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxMessage = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonMessageSend = new System.Windows.Forms.Button();
             this.textBoxMessageSend = new System.Windows.Forms.TextBox();
-            this.pictureBoxMax = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMax2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMini = new System.Windows.Forms.PictureBox();
             this.panelBorder = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBoxMax = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMini = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMax2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3.SuspendLayout();
+            this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMini)).BeginInit();
-            this.panelBorder.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 686);
-            this.panel1.TabIndex = 1;
             // 
             // textBoxMessage
             // 
             this.textBoxMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxMessage.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMessage.Location = new System.Drawing.Point(193, 43);
+            this.textBoxMessage.Location = new System.Drawing.Point(193, 46);
             this.textBoxMessage.Multiline = true;
             this.textBoxMessage.Name = "textBoxMessage";
-            this.textBoxMessage.Size = new System.Drawing.Size(395, 553);
+            this.textBoxMessage.Size = new System.Drawing.Size(395, 550);
             this.textBoxMessage.TabIndex = 7;
             // 
             // panel3
@@ -98,6 +89,28 @@ namespace DBUI
             this.textBoxMessageSend.Size = new System.Drawing.Size(326, 64);
             this.textBoxMessageSend.TabIndex = 0;
             // 
+            // panelBorder
+            // 
+            this.panelBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panelBorder.Controls.Add(this.pictureBoxMax);
+            this.panelBorder.Controls.Add(this.pictureBoxMini);
+            this.panelBorder.Controls.Add(this.pictureBoxMax2);
+            this.panelBorder.Controls.Add(this.pictureBoxClose);
+            this.panelBorder.Location = new System.Drawing.Point(191, 0);
+            this.panelBorder.Name = "panelBorder";
+            this.panelBorder.Size = new System.Drawing.Size(398, 40);
+            this.panelBorder.TabIndex = 13;
+            this.panelBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBorder_MouseDown);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 686);
+            this.panel2.TabIndex = 14;
+            // 
             // pictureBoxMax
             // 
             this.pictureBoxMax.Image = global::DBUI.Properties.Resources.window_maximize_icon_137012;
@@ -108,6 +121,18 @@ namespace DBUI
             this.pictureBoxMax.TabIndex = 12;
             this.pictureBoxMax.TabStop = false;
             this.pictureBoxMax.Click += new System.EventHandler(this.pictureBoxMax_Click);
+            // 
+            // pictureBoxMini
+            // 
+            this.pictureBoxMini.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxMini.Image = global::DBUI.Properties.Resources.window_minimize_icon_138009;
+            this.pictureBoxMini.Location = new System.Drawing.Point(347, 3);
+            this.pictureBoxMini.Name = "pictureBoxMini";
+            this.pictureBoxMini.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxMini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMini.TabIndex = 9;
+            this.pictureBoxMini.TabStop = false;
+            this.pictureBoxMini.Click += new System.EventHandler(this.pictureBoxMini_Click);
             // 
             // pictureBoxMax2
             // 
@@ -134,39 +159,13 @@ namespace DBUI
             this.pictureBoxClose.TabStop = false;
             this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
             // 
-            // pictureBoxMini
+            // flowLayoutPanel
             // 
-            this.pictureBoxMini.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxMini.Image = global::DBUI.Properties.Resources.window_minimize_icon_138009;
-            this.pictureBoxMini.Location = new System.Drawing.Point(347, 3);
-            this.pictureBoxMini.Name = "pictureBoxMini";
-            this.pictureBoxMini.Size = new System.Drawing.Size(15, 15);
-            this.pictureBoxMini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxMini.TabIndex = 9;
-            this.pictureBoxMini.TabStop = false;
-            this.pictureBoxMini.Click += new System.EventHandler(this.pictureBoxMini_Click);
-            // 
-            // panelBorder
-            // 
-            this.panelBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panelBorder.Controls.Add(this.pictureBoxMax);
-            this.panelBorder.Controls.Add(this.pictureBoxMini);
-            this.panelBorder.Controls.Add(this.pictureBoxMax2);
-            this.panelBorder.Controls.Add(this.pictureBoxClose);
-            this.panelBorder.Location = new System.Drawing.Point(191, 0);
-            this.panelBorder.Name = "panelBorder";
-            this.panelBorder.Size = new System.Drawing.Size(398, 40);
-            this.panelBorder.TabIndex = 13;
-            this.panelBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBorder_MouseDown);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(188, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 686);
-            this.panel2.TabIndex = 14;
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(189, 686);
+            this.flowLayoutPanel.TabIndex = 15;
             // 
             // GropuChatRoom
             // 
@@ -174,29 +173,28 @@ namespace DBUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(591, 686);
+            this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelBorder);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.textBoxMessage);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GropuChatRoom";
             this.Text = "GropuChatRoom";
+            this.Load += new System.EventHandler(this.GropuChatRoom_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panelBorder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMini)).EndInit();
-            this.panelBorder.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxMessage;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button buttonMessageSend;
@@ -207,5 +205,6 @@ namespace DBUI
         private System.Windows.Forms.PictureBox pictureBoxMini;
         private System.Windows.Forms.Panel panelBorder;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
     }
 }

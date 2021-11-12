@@ -112,7 +112,7 @@ namespace DBUI
         }
 
 
-        private void pictureBoxSettingshide_Click(object sender, EventArgs e)
+        public void pictureBoxSettingshide_Click(object sender, EventArgs e)
         {
             pictureBoxFriendList.Visible = false;
             pictureBoxFriendListhide.Visible = true;
@@ -153,42 +153,6 @@ namespace DBUI
         }
         #endregion
 
-        #region friend1
-        private void panelFriend1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            // 채팅 form으로 이동
-        }
-
-        private void roundPictureBoxFriend1_Click(object sender, MouseEventArgs e)
-        {
-            // 채팅 form으로 이동
-        }
-
-        private void labelFriend1Name_Click(object sender, MouseEventArgs e)
-        {
-            // 채팅 form으로 이동
-        }
-
-
-        #endregion
-
-        #region friend2
-        private void panelFriend2_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            // 채팅 form으로 이동
-        }
-
-        private void roundPictureBoxFriend2_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            // 채팅 form으로 이동
-        }
-
-        private void labelFriend2Name_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            // 채팅 form으로 이동
-        }
-
-        #endregion
 
         #region 생일
         private void panelBirthDay_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -220,17 +184,6 @@ namespace DBUI
             addFriendID.Show();
         }
 
-        private void ChattingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //우크릭시 채팅하기 선택
-            //채팅방 나오도록 show()
-        }
-
-        private void DeleteFriendToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //우클릭시 친구삭제 선택
-            //친구 삭제기능
-        }
 
         private void PanelFriendList_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -245,5 +198,6 @@ namespace DBUI
             panelFriendList.Controls.Add(fm);
             fm.Show();
         }
+
     }
 }
