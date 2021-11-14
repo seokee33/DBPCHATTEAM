@@ -65,9 +65,39 @@ namespace DBUI
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            FriendList fl = new FriendList();
-            this.Hide();
-            fl.Show();
+            
+            UserInfo user = new UserInfo();
+            Encry encry = new Encry();
+            if (myTextBoxID.Text.Equals("아이디")|| myTextBoxID.Text.Length ==  0 || myTextBoxPW.Text.Equals("비밀번호") || myTextBoxPW.Text.Length == 0){
+                MessageBox.Show("아이디와 비밀번호를 입력해주세요!!");
+                return;
+            }
+            if (DBManager.GetInstance().exist("SELECT EXISTS (SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "') AS exist;") == 1) {
+                DataTable dt = DBManager.GetInstance().select("SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "';", "Login").Tables["Login"];
+                string str_Encry = encry.EncryptString(myTextBoxID.Text, myTextBoxID.Text);
+                foreach(DataRow data in dt.Rows)
+                    user = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]));
+
+                if (str_Encry.Equals(user.get_Password()))
+                {
+                    UserData.Ct = user;
+                    FriendList fl = new FriendList();
+                    this.Hide();
+                    fl.Show();
+                }
+                else
+                {
+                    MessageBox.Show("비밀번호를 다시 확인해주세요!!");
+                    return;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("아이디와 비번을 확인하세요!!");
+            }
+
+            
         }
     }
 }
