@@ -26,12 +26,20 @@ namespace DBUI
 
         private void populatItems()
         {
-            FriendListForm[] friendListForm = new FriendListForm[5];
             
-            for (int i = 0; i < friendListForm.Length; i++)
+            List<UserInfo> friendsList = new List<UserInfo>();
+            UserInfo friend = new UserInfo();
+
+            DataTable dt = DBManager.GetInstance().select("SELECT f.UserID, u.Seq, u.UID, u.Address, u.Birth, u.NickName From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = "+UserData.Ct.get_Seq()+";","SelectFriendsList").Tables["SelectFriendsList"];
+            foreach(DataRow data in dt.Rows)
+                friendsList.Add(new UserInfo( Convert.ToInt32(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5])));
+
+
+            FriendListForm[] friendListForm = new FriendListForm[friendsList.Count];
+            for (int i = 0; i < friendsList.Count; i++)
             {
                 friendListForm[i] = new FriendListForm();
-                friendListForm[i].FriendListName = "ㅇㅇㅇ";
+                friendListForm[i].FriendListName = friendsList[i].get_NickName();
                 // 사진 db에서 받아오기
 
                 if (flowLayoutPanelFriendList.Controls.Count < 0)

@@ -28,10 +28,26 @@ namespace DBUI
             Birth = birth;
             NickName = nickName;
         }
+        public UserInfo(int seq, string uID, string address, DateTime birth, string nickName)
+        {
+            Seq = seq;
+            UID = uID;
+            Address = address;
+            Birth = birth;
+            NickName = nickName;
+        }
 
+        public string get_NickName()
+        {
+            return this.NickName;
+        }
         public string get_Password()
         {
             return this.Password;
+        }
+        public int get_Seq()
+        {
+            return this.Seq;
         }
     }
 }

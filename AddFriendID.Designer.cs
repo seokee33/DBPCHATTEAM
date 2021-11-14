@@ -81,6 +81,7 @@ namespace DBUI
             this.buttonAddFriendID.TabIndex = 4;
             this.buttonAddFriendID.Text = "친구 추가";
             this.buttonAddFriendID.UseVisualStyleBackColor = false;
+            this.buttonAddFriendID.Click += new System.EventHandler(this.buttonAddFriendID_Click);
             // 
             // myTextBoxFriendID
             // 

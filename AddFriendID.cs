@@ -36,9 +36,31 @@ namespace DBUI
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
+
             this.Close();
         }
         #endregion
 
+        private void buttonAddFriendID_Click(object sender, EventArgs e)
+        {
+            UserInfo user = UserData.Ct;
+            UserInfo friend = new UserInfo();
+            if (DBManager.GetInstance().exist("SELECT EXISTS (SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxFriendID.Text + "') AS exist;") == 1)
+            {
+                DBManager.GetInstance().clear_DataSet("SelectID");
+                DataTable dt = DBManager.GetInstance().select("SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxFriendID.Text + "';", "SelectID").Tables["SelectID"];
+                foreach(DataRow data in dt.Rows)
+                    friend = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]));
+
+                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`Friends` (`UserID`, `FriendID`) VALUES ('"+user.get_Seq()+"', '"+friend.get_Seq()+"');");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("아이디가 존재하지않습니다.");
+                return;
+            }
+                
+        }
     }
 }

@@ -24,6 +24,18 @@ namespace DBUI
             return instance_;
         }
 
+        public void clear_DataSet(string dt)
+        {
+            try
+            {
+                ds.Tables.Remove(ds.Tables[dt]);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
         public DataSet select(string SQL, string dt)
         {
             MySqlDataAdapter da = new MySqlDataAdapter();
@@ -36,7 +48,22 @@ namespace DBUI
             return ds;
         }
 
-
+        public void executeQuerry(string SQL)
+        {
+            using (conn)
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlCommand command = new MySqlCommand(SQL, conn);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+            }
+        }
         public int exist(string SQL)
         {
             using (conn)
