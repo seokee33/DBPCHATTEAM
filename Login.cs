@@ -74,7 +74,7 @@ namespace DBUI
             }
             if (DBManager.GetInstance().exist("SELECT EXISTS (SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "') AS exist;") == 1) {
                 DataTable dt = DBManager.GetInstance().select("SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "';", "Login").Tables["Login"];
-                string str_Encry = encry.EncryptString(myTextBoxID.Text, myTextBoxID.Text);
+                string str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
                 foreach(DataRow data in dt.Rows)
                     user = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]));
 
@@ -90,11 +90,11 @@ namespace DBUI
                     MessageBox.Show("비밀번호를 다시 확인해주세요!!");
                     return;
                 }
-
             }
             else
             {
                 MessageBox.Show("아이디와 비번을 확인하세요!!");
+                return;
             }
 
             
