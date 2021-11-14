@@ -11,10 +11,9 @@ namespace DBUI
     class DBManager
     {
         MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021");
-        private DataSet ds;
+        DataSet ds = new DataSet();
 
         private DBManager() {
-            ds = new DataSet();
         }
 
         private static DBManager instance_ = new DBManager();
@@ -24,20 +23,10 @@ namespace DBUI
             return instance_;
         }
 
-        public void clear_DataSet(string dt)
-        {
-            try
-            {
-                ds.Tables.Remove(ds.Tables[dt]);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-        }
-
         public DataSet select(string SQL, string dt)
         {
+
+            ds.Clear();
             MySqlDataAdapter da = new MySqlDataAdapter();
             MySqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = SQL;
@@ -70,7 +59,6 @@ namespace DBUI
             {
                 try
                 {
-
                     conn.Open();
                     MySqlCommand command = new MySqlCommand(SQL, conn);
                     MySqlDataReader rdr = command.ExecuteReader();

@@ -12,6 +12,15 @@ namespace DBUI
 {
     public partial class AddFriendID : Form
     {
+        ListOfFriend listOfFriend;
+        
+        public AddFriendID(ListOfFriend listOfFriend)
+        {
+            InitializeComponent();
+            this.listOfFriend = listOfFriend;
+            this.panelBorder.MouseDown += panelBorder_MouseDown;
+
+        }
         public AddFriendID()
         {
             InitializeComponent();
@@ -47,12 +56,13 @@ namespace DBUI
             UserInfo friend = new UserInfo();
             if (DBManager.GetInstance().exist("SELECT EXISTS (SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxFriendID.Text + "') AS exist;") == 1)
             {
-                DBManager.GetInstance().clear_DataSet("SelectID");
                 DataTable dt = DBManager.GetInstance().select("SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxFriendID.Text + "';", "SelectID").Tables["SelectID"];
-                foreach(DataRow data in dt.Rows)
+                foreach (DataRow data in dt.Rows)
                     friend = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]));
 
                 DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`Friends` (`UserID`, `FriendID`) VALUES ('"+user.get_Seq()+"', '"+friend.get_Seq()+"');");
+                
+                listOfFriend.ListOfFriend_Load(sender, e);
                 this.Close();
             }
             else

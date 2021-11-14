@@ -13,6 +13,7 @@ namespace DBUI
 {
     public partial class ListOfFriend : Form
     {
+
         public ListOfFriend()
         {
             InitializeComponent();
@@ -26,10 +27,8 @@ namespace DBUI
 
         private void populatItems()
         {
-            
             List<UserInfo> friendsList = new List<UserInfo>();
             UserInfo friend = new UserInfo();
-
             DataTable dt = DBManager.GetInstance().select("SELECT f.UserID, u.Seq, u.UID, u.Address, u.Birth, u.NickName From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = "+UserData.Ct.get_Seq()+";","SelectFriendsList").Tables["SelectFriendsList"];
             foreach(DataRow data in dt.Rows)
                 friendsList.Add(new UserInfo( Convert.ToInt32(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5])));
@@ -51,14 +50,14 @@ namespace DBUI
             }
         }
 
-        private void ListOfFriend_Load(object sender, EventArgs e)
+        public void ListOfFriend_Load(object sender, EventArgs e)
         {
             populatItems();
         }
 
         private void pictureBoxAddFriendID_Click(object sender, EventArgs e)
         {
-            AddFriendID addFriendID = new AddFriendID();
+            AddFriendID addFriendID = new AddFriendID(this);
             addFriendID.Show();
         }
 
