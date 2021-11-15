@@ -13,11 +13,13 @@ namespace DBUI
 {
     public partial class ListOfFriend : Form
     {
-
+        private List<UserInfo> friendsList;
         public ListOfFriend()
         {
             InitializeComponent();
+            friendsList = new List<UserInfo>();
             this.MouseWheel += new MouseEventHandler(PanelFriendList_MouseWheel);
+            
         }
         private void PanelFriendList_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -27,7 +29,7 @@ namespace DBUI
 
         private void populatItems()
         {
-            List<UserInfo> friendsList = new List<UserInfo>();
+            friendsList = new List<UserInfo>();
             UserInfo friend = new UserInfo();
             DataTable dt = DBManager.GetInstance().select("SELECT f.UserID, u.Seq, u.UID, u.Address, u.Birth, u.NickName From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = "+UserData.Ct.get_Seq()+";","SelectFriendsList").Tables["SelectFriendsList"];
             foreach(DataRow data in dt.Rows)
@@ -68,5 +70,32 @@ namespace DBUI
             birthDayFriendList.Show();
         }
 
+        private void buttonFriendSearch_Click(object sender, EventArgs e)
+        {
+            List<UserInfo> searchFriend = new List<UserInfo>();
+            foreach(UserInfo user in friendsList)
+            {
+                if (user.get_NickName().Equals(myTextBoxFriendSearch.Text))
+                {
+                    searchFriend.Add(user);
+                }
+            }
+            flowLayoutPanelFriendList.Controls.Clear();
+            FriendListForm[] friendListForm = new FriendListForm[searchFriend.Count];
+            for (int i = 0; i < searchFriend.Count; i++)
+            {
+                friendListForm[i] = new FriendListForm();
+                friendListForm[i].FriendListName = searchFriend[i].get_NickName();
+                // 사진 db에서 받아오기
+
+                if (flowLayoutPanelFriendList.Controls.Count < 0)
+                {
+                    flowLayoutPanelFriendList.Controls.Clear();
+                }
+                else
+                    flowLayoutPanelFriendList.Controls.Add(friendListForm[i]);
+            }
+
+        }
     }
 }
