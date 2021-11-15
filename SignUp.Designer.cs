@@ -218,6 +218,7 @@ namespace DBUI
             this.buttonDuplicateCheck.TabIndex = 21;
             this.buttonDuplicateCheck.Text = "확인";
             this.buttonDuplicateCheck.UseVisualStyleBackColor = false;
+            this.buttonDuplicateCheck.Click += new System.EventHandler(this.buttonDuplicateCheck_Click);
             // 
             // SignUp
             // 
