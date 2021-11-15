@@ -119,20 +119,13 @@ namespace DBUI
             {
                 if (DBManager.GetInstance().exist("SELECT EXISTS (SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "') AS exist;") == 1)
                 {
-                    DataTable dt = DBManager.GetInstance().select("SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "';", "SignUp").Tables["SignUp"];
-                    foreach (DataRow data in dt.Rows)
-                        user = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]), Convert.ToString(data[6]));
-
-                    if (myTextBoxID.Equals(user.get_UID()))
-                    {
-                        MessageBox.Show("같은 아이디가 존재합니다!");
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("사용 가능한 아이디입니다!");
-                        return;
-                    }
+                    MessageBox.Show("같은 아이디가 존재합니다!");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("사용 가능한 아이디입니다!");
+                    return;
                 }
             }
         }
