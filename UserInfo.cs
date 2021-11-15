@@ -51,5 +51,9 @@ namespace DBUI
         {
             return this.Seq;
         }
+        public string get_UID()
+        {
+            return this.UID;
+        }
     }
 }
