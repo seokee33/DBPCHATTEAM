@@ -12,10 +12,14 @@ namespace DBUI
 {
     public partial class SignUp : Form
     {
+
+        private bool id_Duplicate;
+
         public SignUp()
         {
             InitializeComponent();
             this.panelBorder.MouseDown += panelBorder_MouseDown;
+            id_Duplicate = false;
         }
 
         #region 상단
@@ -70,7 +74,11 @@ namespace DBUI
                 MessageBox.Show("정보를 입력하세요!!");
                 return;
             }
-
+            if(!id_Duplicate)
+            {
+                MessageBox.Show("중복체크를 해주세요.");
+                return;
+            }
             UserInfo user = new UserInfo();
             Encry encry = new Encry();
             string str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
@@ -125,6 +133,7 @@ namespace DBUI
                 else
                 {
                     MessageBox.Show("사용 가능한 아이디입니다!");
+                    id_Duplicate = true;
                     return;
                 }
             }
