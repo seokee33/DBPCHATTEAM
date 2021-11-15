@@ -33,7 +33,7 @@ namespace DBUI
             foreach(DataRow data in dt.Rows)
                 friendsList.Add(new UserInfo( Convert.ToInt32(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5])));
 
-
+            flowLayoutPanelFriendList.Controls.Clear();
             FriendListForm[] friendListForm = new FriendListForm[friendsList.Count];
             for (int i = 0; i < friendsList.Count; i++)
             {

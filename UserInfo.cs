@@ -14,12 +14,12 @@ namespace DBUI
         private string Address;
         private DateTime Birth;
         private string NickName;
-
+        private string Name;
         public UserInfo()
         {
         }
 
-        public UserInfo(int seq, string uID, string password, string address, DateTime birth, string nickName)
+        public UserInfo(int seq, string uID, string password, string address, DateTime birth, string nickName, string name)
         {
             Seq = seq;
             UID = uID;
@@ -27,6 +27,8 @@ namespace DBUI
             Address = address;
             Birth = birth;
             NickName = nickName;
+            Name = name;
+
         }
         public UserInfo(int seq, string uID, string address, DateTime birth, string nickName)
         {

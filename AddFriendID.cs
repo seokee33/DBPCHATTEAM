@@ -58,7 +58,7 @@ namespace DBUI
             {
                 DataTable dt = DBManager.GetInstance().select("SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxFriendID.Text + "';", "SelectID").Tables["SelectID"];
                 foreach (DataRow data in dt.Rows)
-                    friend = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]));
+                    friend = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]),Convert.ToString(data[6]));
 
                 DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`Friends` (`UserID`, `FriendID`) VALUES ('"+user.get_Seq()+"', '"+friend.get_Seq()+"');");
                 

@@ -76,7 +76,7 @@ namespace DBUI
                 DataTable dt = DBManager.GetInstance().select("SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "';", "Login").Tables["Login"];
                 string str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
                 foreach(DataRow data in dt.Rows)
-                    user = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]));
+                    user = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]),Convert.ToString(data[6]));
 
                 if (str_Encry.Equals(user.get_Password()))
                 {
