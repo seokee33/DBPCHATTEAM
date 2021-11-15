@@ -63,6 +63,19 @@ namespace DBUI
 
         private void buttonSginUp_Click(object sender, EventArgs e)
         {
+            if (myTextBoxName.Text.Equals("이름") || myTextBoxName.Text.Length == 0 || myTextBoxID.Text.Equals("아이디") || myTextBoxID.Text.Length == 0 ||
+              myTextBoxPW.Text.Equals("비밀번호") || myTextBoxPW.Text.Length == 0 || myTextBoxAdress.Text.Equals("주소") || myTextBoxAdress.Text.Length == 0 ||
+              myTextBoxBirth.Text.Equals("생일") || myTextBoxBirth.Text.Length == 0 || myTextBoxNickName.Text.Equals("별명") || myTextBoxNickName.Text.Length == 0)
+            {
+                MessageBox.Show("정보를 입력하세요!!");
+                return;
+            }
+
+            UserInfo user = new UserInfo();
+            Encry encry = new Encry();
+            string str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
+            DBManager.GetInstance().executeQuerry("INSERT INTO CHAT.UserInfo (UID, Password, Address, Birth, NickName, Name) VALUE ('" + myTextBoxID.Text + "', '" + str_Encry + "', '" + myTextBoxAdress.Text + "', '" + myTextBoxBirth.Text + "', '" + myTextBoxNickName.Text + "', '" + myTextBoxName.Text + "')");
+
             MessageBox.Show("회원가입이 완료 되었습니다.");
 
             this.Close();
@@ -94,5 +107,18 @@ namespace DBUI
             }
         }
 
+        private void buttonDuplicateCheck_Click(object sender, EventArgs e)
+        {
+            UserInfo user = new UserInfo();
+            if (myTextBoxID.Text.Length == 0 || myTextBoxID.Text == "아이디")
+            {
+                MessageBox.Show("ID를 입력해 주세요");
+                return;
+            }
+            else
+            {
+
+            }
+        }
     }
 }

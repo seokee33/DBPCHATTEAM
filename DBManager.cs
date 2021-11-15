@@ -10,7 +10,7 @@ namespace DBUI
 {
     class DBManager
     {
-        MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021");
+        MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
         DataSet ds = new DataSet();
 
         private DBManager() {
