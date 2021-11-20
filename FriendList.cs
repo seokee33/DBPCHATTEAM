@@ -63,6 +63,22 @@ namespace DBUI
 
         #region 메뉴
 
+        private void pictureBoxFriendList_Click(object sender, EventArgs e)
+        {
+            pictureBoxFriendList.Visible = true;
+            pictureBoxFriendListhide.Visible = false;
+            pictureBoxSettings.Visible = false;
+            pictureBoxSettingshide.Visible = true;
+            pictureBoxChatList.Visible = false;
+            pictureBoxChatListhide.Visible = true;
+            panelFriendList.Controls.Clear();
+            ListOfFriend fm = new ListOfFriend();
+            fm.TopLevel = false;
+            fm.Dock = DockStyle.Fill;
+            panelFriendList.Controls.Add(fm);
+            fm.Show();
+        }
+
         private void pictureBoxFriendListhide_Click(object sender, EventArgs e)
         {
             pictureBoxFriendList.Visible = true;

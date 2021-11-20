@@ -29,7 +29,6 @@ namespace DBUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.pictureBoxChatList = new System.Windows.Forms.PictureBox();
             this.pictureBoxFriendList = new System.Windows.Forms.PictureBox();
@@ -69,18 +68,21 @@ namespace DBUI
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panelMenu.Controls.Add(this.pictureBoxChatList);
             this.panelMenu.Controls.Add(this.pictureBoxFriendList);
+            this.panelMenu.Controls.Add(this.pictureBoxFriendListhide);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(65, 686);
+            this.panelMenu.Size = new System.Drawing.Size(93, 1029);
             this.panelMenu.TabIndex = 0;
             // 
             // pictureBoxChatList
             // 
             this.pictureBoxChatList.Image = global::DBUI.Properties.Resources.chat_bubble;
-            this.pictureBoxChatList.Location = new System.Drawing.Point(12, 177);
+            this.pictureBoxChatList.Location = new System.Drawing.Point(17, 266);
+            this.pictureBoxChatList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxChatList.Name = "pictureBoxChatList";
-            this.pictureBoxChatList.Size = new System.Drawing.Size(40, 40);
+            this.pictureBoxChatList.Size = new System.Drawing.Size(57, 60);
             this.pictureBoxChatList.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxChatList.TabIndex = 4;
             this.pictureBoxChatList.TabStop = false;
@@ -89,12 +91,14 @@ namespace DBUI
             // pictureBoxFriendList
             // 
             this.pictureBoxFriendList.Image = global::DBUI.Properties.Resources.user;
-            this.pictureBoxFriendList.Location = new System.Drawing.Point(12, 69);
+            this.pictureBoxFriendList.Location = new System.Drawing.Point(17, 104);
+            this.pictureBoxFriendList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxFriendList.Name = "pictureBoxFriendList";
-            this.pictureBoxFriendList.Size = new System.Drawing.Size(40, 40);
+            this.pictureBoxFriendList.Size = new System.Drawing.Size(57, 60);
             this.pictureBoxFriendList.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFriendList.TabIndex = 0;
             this.pictureBoxFriendList.TabStop = false;
+            this.pictureBoxFriendList.Click += new System.EventHandler(this.pictureBoxFriendList_Click);
             // 
             // panel2
             // 
@@ -117,9 +121,10 @@ namespace DBUI
             this.panelBorder.Controls.Add(this.pictureBoxMax);
             this.panelBorder.Controls.Add(this.pictureBoxMax2);
             this.panelBorder.Controls.Add(this.pictureBoxMini);
-            this.panelBorder.Location = new System.Drawing.Point(66, 0);
+            this.panelBorder.Location = new System.Drawing.Point(94, 0);
+            this.panelBorder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelBorder.Name = "panelBorder";
-            this.panelBorder.Size = new System.Drawing.Size(415, 60);
+            this.panelBorder.Size = new System.Drawing.Size(593, 90);
             this.panelBorder.TabIndex = 1;
             this.panelBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBorder_MouseDown);
             // 
@@ -127,9 +132,10 @@ namespace DBUI
             // 
             this.pictureBoxClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxClose.Image = global::DBUI.Properties.Resources.window_close_icon_135015;
-            this.pictureBoxClose.Location = new System.Drawing.Point(386, 5);
+            this.pictureBoxClose.Location = new System.Drawing.Point(551, 8);
+            this.pictureBoxClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxClose.Name = "pictureBoxClose";
-            this.pictureBoxClose.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxClose.Size = new System.Drawing.Size(21, 22);
             this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxClose.TabIndex = 3;
             this.pictureBoxClose.TabStop = false;
@@ -138,9 +144,10 @@ namespace DBUI
             // pictureBoxMax
             // 
             this.pictureBoxMax.Image = global::DBUI.Properties.Resources.window_maximize_icon_137012;
-            this.pictureBoxMax.Location = new System.Drawing.Point(371, 5);
+            this.pictureBoxMax.Location = new System.Drawing.Point(530, 8);
+            this.pictureBoxMax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxMax.Name = "pictureBoxMax";
-            this.pictureBoxMax.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxMax.Size = new System.Drawing.Size(21, 22);
             this.pictureBoxMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxMax.TabIndex = 3;
             this.pictureBoxMax.TabStop = false;
@@ -150,9 +157,10 @@ namespace DBUI
             // 
             this.pictureBoxMax2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxMax2.Image = global::DBUI.Properties.Resources.window_maximize_icon_181228;
-            this.pictureBoxMax2.Location = new System.Drawing.Point(370, 5);
+            this.pictureBoxMax2.Location = new System.Drawing.Point(529, 8);
+            this.pictureBoxMax2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxMax2.Name = "pictureBoxMax2";
-            this.pictureBoxMax2.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxMax2.Size = new System.Drawing.Size(21, 22);
             this.pictureBoxMax2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxMax2.TabIndex = 4;
             this.pictureBoxMax2.TabStop = false;
@@ -163,9 +171,10 @@ namespace DBUI
             // 
             this.pictureBoxMini.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxMini.Image = global::DBUI.Properties.Resources.window_minimize_icon_138009;
-            this.pictureBoxMini.Location = new System.Drawing.Point(354, 5);
+            this.pictureBoxMini.Location = new System.Drawing.Point(506, 8);
+            this.pictureBoxMini.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxMini.Name = "pictureBoxMini";
-            this.pictureBoxMini.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxMini.Size = new System.Drawing.Size(21, 22);
             this.pictureBoxMini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxMini.TabIndex = 4;
             this.pictureBoxMini.TabStop = false;
@@ -175,25 +184,28 @@ namespace DBUI
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(65, 0);
+            this.panel1.Location = new System.Drawing.Point(93, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 686);
+            this.panel1.Size = new System.Drawing.Size(1, 1029);
             this.panel1.TabIndex = 2;
-
+            // 
             // panelFriendList
             // 
             this.panelFriendList.AutoScroll = true;
-            this.panelFriendList.Location = new System.Drawing.Point(66, 59);
+            this.panelFriendList.Location = new System.Drawing.Point(94, 88);
+            this.panelFriendList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelFriendList.Name = "panelFriendList";
-            this.panelFriendList.Size = new System.Drawing.Size(415, 627);
+            this.panelFriendList.Size = new System.Drawing.Size(593, 940);
             this.panelFriendList.TabIndex = 38;
             // 
             // pictureBoxChatListhide
             // 
             this.pictureBoxChatListhide.Image = global::DBUI.Properties.Resources.chat_bubble__2_;
-            this.pictureBoxChatListhide.Location = new System.Drawing.Point(12, 177);
+            this.pictureBoxChatListhide.Location = new System.Drawing.Point(17, 266);
+            this.pictureBoxChatListhide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxChatListhide.Name = "pictureBoxChatListhide";
-            this.pictureBoxChatListhide.Size = new System.Drawing.Size(40, 40);
+            this.pictureBoxChatListhide.Size = new System.Drawing.Size(57, 60);
             this.pictureBoxChatListhide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxChatListhide.TabIndex = 15;
             this.pictureBoxChatListhide.TabStop = false;
@@ -202,9 +214,10 @@ namespace DBUI
             // pictureBoxBellhide
             // 
             this.pictureBoxBellhide.Image = global::DBUI.Properties.Resources.alarm_off__1_;
-            this.pictureBoxBellhide.Location = new System.Drawing.Point(12, 475);
+            this.pictureBoxBellhide.Location = new System.Drawing.Point(17, 712);
+            this.pictureBoxBellhide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxBellhide.Name = "pictureBoxBellhide";
-            this.pictureBoxBellhide.Size = new System.Drawing.Size(40, 40);
+            this.pictureBoxBellhide.Size = new System.Drawing.Size(57, 60);
             this.pictureBoxBellhide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxBellhide.TabIndex = 17;
             this.pictureBoxBellhide.TabStop = false;
@@ -214,9 +227,10 @@ namespace DBUI
             // pictureBoxSettingshide
             // 
             this.pictureBoxSettingshide.Image = global::DBUI.Properties.Resources.gear__1_;
-            this.pictureBoxSettingshide.Location = new System.Drawing.Point(12, 588);
+            this.pictureBoxSettingshide.Location = new System.Drawing.Point(17, 882);
+            this.pictureBoxSettingshide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxSettingshide.Name = "pictureBoxSettingshide";
-            this.pictureBoxSettingshide.Size = new System.Drawing.Size(40, 40);
+            this.pictureBoxSettingshide.Size = new System.Drawing.Size(57, 60);
             this.pictureBoxSettingshide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSettingshide.TabIndex = 16;
             this.pictureBoxSettingshide.TabStop = false;
@@ -225,9 +239,10 @@ namespace DBUI
             // pictureBoxBell
             // 
             this.pictureBoxBell.Image = global::DBUI.Properties.Resources.bell;
-            this.pictureBoxBell.Location = new System.Drawing.Point(12, 475);
+            this.pictureBoxBell.Location = new System.Drawing.Point(17, 712);
+            this.pictureBoxBell.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxBell.Name = "pictureBoxBell";
-            this.pictureBoxBell.Size = new System.Drawing.Size(40, 40);
+            this.pictureBoxBell.Size = new System.Drawing.Size(57, 60);
             this.pictureBoxBell.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxBell.TabIndex = 3;
             this.pictureBoxBell.TabStop = false;
@@ -236,9 +251,10 @@ namespace DBUI
             // pictureBoxSettings
             // 
             this.pictureBoxSettings.Image = global::DBUI.Properties.Resources.gear;
-            this.pictureBoxSettings.Location = new System.Drawing.Point(12, 588);
+            this.pictureBoxSettings.Location = new System.Drawing.Point(17, 882);
+            this.pictureBoxSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxSettings.Name = "pictureBoxSettings";
-            this.pictureBoxSettings.Size = new System.Drawing.Size(40, 40);
+            this.pictureBoxSettings.Size = new System.Drawing.Size(57, 60);
             this.pictureBoxSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSettings.TabIndex = 3;
             this.pictureBoxSettings.TabStop = false;
@@ -247,9 +263,10 @@ namespace DBUI
             // pictureBoxFriendListhide
             // 
             this.pictureBoxFriendListhide.Image = global::DBUI.Properties.Resources.user__1_;
-            this.pictureBoxFriendListhide.Location = new System.Drawing.Point(12, 69);
+            this.pictureBoxFriendListhide.Location = new System.Drawing.Point(17, 104);
+            this.pictureBoxFriendListhide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxFriendListhide.Name = "pictureBoxFriendListhide";
-            this.pictureBoxFriendListhide.Size = new System.Drawing.Size(40, 40);
+            this.pictureBoxFriendListhide.Size = new System.Drawing.Size(57, 60);
             this.pictureBoxFriendListhide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFriendListhide.TabIndex = 18;
             this.pictureBoxFriendListhide.TabStop = false;
@@ -258,10 +275,10 @@ namespace DBUI
             // 
             // FriendList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(479, 686);
+            this.ClientSize = new System.Drawing.Size(684, 1029);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelBorder);
             this.Controls.Add(this.pictureBoxChatListhide);
@@ -269,10 +286,10 @@ namespace DBUI
             this.Controls.Add(this.pictureBoxSettingshide);
             this.Controls.Add(this.pictureBoxBell);
             this.Controls.Add(this.pictureBoxSettings);
-            this.Controls.Add(this.pictureBoxFriendListhide);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelFriendList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FriendList";
             this.Text = "FriendList";
             this.Load += new System.EventHandler(this.FriendList_Load);
