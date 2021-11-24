@@ -73,7 +73,7 @@ namespace DBUI
                 MessageBox.Show("아이디와 비밀번호를 입력해주세요!!");
                 return;
             }
-            if (DBManager.GetInstance().exist("SELECT EXISTS (SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "') AS exist;") == 1) {
+            if (DBManager.GetInstance().exist("SELECT EXISTS (SELECT * FROM CHAT.UserInfo WHERE UID = '"+myTextBoxID.Text+"') AS exist;") == 1) {
                 DataTable dt = DBManager.GetInstance().select("SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "';", "Login").Tables["Login"];
                 string str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
                 foreach(DataRow data in dt.Rows)

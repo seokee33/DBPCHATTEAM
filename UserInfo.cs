@@ -15,11 +15,13 @@ namespace DBUI
         private DateTime Birth;
         private string NickName;
         private string Name;
+        private int ImageID;
+
         public UserInfo()
         {
         }
 
-        public UserInfo(int seq, string uID, string password, string address, DateTime birth, string nickName, string name)
+        public UserInfo(int seq, string uID, string password, string address, DateTime birth, string nickName, string name, int imageID)
         {
             Seq = seq;
             UID = uID;
@@ -28,7 +30,7 @@ namespace DBUI
             Birth = birth;
             NickName = nickName;
             Name = name;
-
+            ImageID = imageID;
         }
         public UserInfo(int seq, string uID, string address, DateTime birth, string nickName)
         {
@@ -37,6 +39,17 @@ namespace DBUI
             Address = address;
             Birth = birth;
             NickName = nickName;
+        }
+
+        public UserInfo(int seq, string UID, string password, string address, DateTime birth, string nickName, string name)
+        {
+            Seq = seq;
+            this.UID = UID;
+            this.Password = password;
+            this.Address = address;
+            Birth = birth;
+            NickName = nickName;
+            Name = name;
         }
 
         public string get_NickName()
@@ -54,6 +67,11 @@ namespace DBUI
         public string get_UID()
         {
             return this.UID;
+        }
+
+        public int get_ImageID()
+        {
+            return this.ImageID;
         }
     }
 }

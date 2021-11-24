@@ -88,7 +88,7 @@ namespace DBUI
             this.roundPictureBoxProfilePoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundPictureBoxProfilePoto.TabIndex = 15;
             this.roundPictureBoxProfilePoto.TabStop = false;
-            this.roundPictureBoxProfilePoto.Click += new System.EventHandler(this.roundPictureBoxProfilePoto_Click);
+            //this.roundPictureBoxProfilePoto.Click += new System.EventHandler(this.roundPictureBoxProfilePoto_Click);
             // 
             // myTextBoxNickName
             // 

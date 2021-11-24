@@ -14,7 +14,7 @@ namespace DBUI
     {
 
         private bool id_Duplicate;
-
+        
         public SignUp()
         {
             InitializeComponent();
@@ -82,38 +82,39 @@ namespace DBUI
             UserInfo user = new UserInfo();
             Encry encry = new Encry();
             string str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
-            DBManager.GetInstance().executeQuerry("INSERT INTO CHAT.UserInfo (UID, Password, Address, Birth, NickName, Name) VALUE ('" + myTextBoxID.Text + "', '" + str_Encry + "', '" + myTextBoxAdress.Text + "', '" + myTextBoxBirth.Text + "', '" + myTextBoxNickName.Text + "', '" + myTextBoxName.Text + "')");
-
+            DBManager.GetInstance().executeQuerry("INSERT INTO CHAT.UserInfo (UID, Password, Address, Birth, NickName, Name) VALUE ('" + myTextBoxID.Text + "', '" + str_Encry + "', '" + myTextBoxAdress.Text + "', '" + myTextBoxBirth.Text + "', '" + myTextBoxNickName.Text + "', '" + myTextBoxName.Text + "');");
+            DataTable dt = DBManager.GetInstance().select2("SELECT Seq FROM CHAT.UserInfo where UID = '" + myTextBoxID.Text + "';");
+            int imageID = Convert.ToInt32(dt.Rows[0][0]);
+            DBManager.GetInstance().insert_Image(roundPictureBoxProfilePoto, "INSERT INTO CHAT.Blob(id, Image) VALUES(@id, @img)", imageID);
             MessageBox.Show("회원가입이 완료 되었습니다.");
 
             this.Close();
         }
-
+        //프로필 사진 등록
         private void roundedPictureBoxAddPoto_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Select Image";
             openFileDialog.Filter = "( *.bmp; *.jpg; *.png; *.jpeg) | *.BMP; *.JPG; *.PNG; *.JPEG";
-
+            
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 roundPictureBoxProfilePoto.Image = Bitmap.FromFile(openFileDialog.FileName);
-
+                //roundPictureBoxProfilePoto.Tag = openFileDialog.FileName;
             }
         }
 
-        private void roundPictureBoxProfilePoto_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Select Image";
-            openFileDialog.Filter = "( *.bmp; *.jpg; *.png; *.jpeg) | *.BMP; *.JPG; *.PNG; *.JPEG";
+        //private void roundPictureBoxProfilePoto_Click(object sender, EventArgs e)
+        //{
+        //    OpenFileDialog openFileDialog = new OpenFileDialog();
+        //    openFileDialog.Title = "Select Image";
+        //    openFileDialog.Filter = "( *.bmp; *.jpg; *.png; *.jpeg) | *.BMP; *.JPG; *.PNG; *.JPEG";
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                roundPictureBoxProfilePoto.Image = Bitmap.FromFile(openFileDialog.FileName);
-
-            }
-        }
+        //    if (openFileDialog.ShowDialog() == DialogResult.OK)
+        //    {
+        //        roundPictureBoxProfilePoto.Image = Bitmap.FromFile(openFileDialog.FileName);
+        //    }
+        //}
 
         private void buttonDuplicateCheck_Click(object sender, EventArgs e)
         {
