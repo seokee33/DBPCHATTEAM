@@ -30,18 +30,18 @@ namespace DBUI
 
         private void populatItems()
         {
-            friendsList = new List<UserInfo>();
             UserInfo friend = new UserInfo();
-            List<UserInfo> users = DBManager.GetInstance().select_Friends("SELECT  u.Seq, u.UID, u.Address, u.Birth, u.NickName, u.Image From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = " + LoginUser.GetInstance().get_User().get_Seq() + ";");
+
+            friendsList = DBManager.GetInstance().select_Friends("SELECT  u.Seq, u.UID, u.Address, u.Birth, u.NickName, u.Image From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = " + LoginUser.GetInstance().get_User().get_Seq() + ";");
 
             flowLayoutPanelFriendList.Controls.Clear();
-            FriendListForm[] friendListForm = new FriendListForm[users.Count];
-            for (int i = 0; i < users.Count; i++)
+            FriendListForm[] friendListForm = new FriendListForm[friendsList.Count];
+            for (int i = 0; i < friendsList.Count; i++)
             {
                 friendListForm[i] = new FriendListForm();
-                friendListForm[i].FriendListName = users[i].get_NickName();
-                if(users[i].get_PB() != null)
-                    friendListForm[i].FriendListProfile = users[i].get_PB().Image;
+                friendListForm[i].FriendListName = friendsList[i].get_NickName();
+                if(friendsList[i].get_PB() != null)
+                    friendListForm[i].FriendListProfile = friendsList[i].get_PB().Image;
 
 
                 // 사진 db에서 받아오기
