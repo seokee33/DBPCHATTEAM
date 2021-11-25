@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -71,7 +72,7 @@ namespace DBUI
                 }
             }
         }
-        public void insert_Image(PictureBox pbxImage,string sql,int imageID)
+        public void insert_Image(PictureBox pbxImage,string sql,string imageID)
         {
             MemoryStream ms = new MemoryStream();
             pbxImage.Image.Save(ms,pbxImage.Image.RawFormat);
@@ -79,17 +80,52 @@ namespace DBUI
             try{
                 conn.Open();
                 MySqlCommand command = new MySqlCommand(sql, conn);
-                command.Parameters.Add("@id", MySqlDbType.Int32,11);
-                command.Parameters.Add("@img", MySqlDbType.Blob);
+                
+                command.Parameters.Add("@Image", MySqlDbType.Blob);
 
-                command.Parameters["@id"].Value = imageID;
-                command.Parameters["@img"].Value = img;
+                command.Parameters["@Image"].Value = img;
+                command.ExecuteNonQuery();
                 conn.Close();
             }catch(Exception e){
                 Console.WriteLine(e);
             }
             
         }
+        public List<UserInfo> select_User(string SQL)
+        {
+            List<UserInfo> result = new List<UserInfo>();
+            //string SQL = "SELECT * FROM CHAT.UserInfo;";
+            DataTable datatable = new DataTable();//DB로 부터 가져온 값을 넣는 곳(DataSet)
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = SQL;
+            da.SelectCommand = cmd;
+            conn.Open();
+            da.Fill(datatable);
+            conn.Close();
+            Byte[] bytes = null;
+            foreach (DataRow data in datatable.Rows)
+            {
+                RoundPictureBox pb = new RoundPictureBox();
+                try
+                {
+                    bytes = (byte[])data[5];
+                    if (bytes != null)
+                    {
+                        pb.Image = new Bitmap(new MemoryStream(bytes));
+                    }
+                }
+                catch
+                {
+                    pb = null;
+                }
+
+                result.Add(new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]),Convert.ToString(data[2]),Convert.ToDateTime(data[3]),Convert.ToString(data[4]), pb));
+            }
+
+            return result;
+        }
+
 
         public int exist(string SQL)
         {

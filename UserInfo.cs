@@ -16,12 +16,13 @@ namespace DBUI
         private string NickName;
         private string Name;
         private int ImageID;
+        private RoundPictureBox pb;
 
         public UserInfo()
         {
         }
 
-        public UserInfo(int seq, string uID, string password, string address, DateTime birth, string nickName, string name, int imageID)
+        public UserInfo(int seq, string uID, string password, string address, DateTime birth, string nickName, string name,RoundPictureBox pb)
         {
             Seq = seq;
             UID = uID;
@@ -30,15 +31,16 @@ namespace DBUI
             Birth = birth;
             NickName = nickName;
             Name = name;
-            ImageID = imageID;
+            this.pb = pb;
         }
-        public UserInfo(int seq, string uID, string address, DateTime birth, string nickName)
+        public UserInfo(int seq, string uID, string address, DateTime birth, string nickName,RoundPictureBox pb)
         {
             Seq = seq;
             UID = uID;
             Address = address;
             Birth = birth;
             NickName = nickName;
+            this.pb = pb;
         }
 
         public UserInfo(int seq, string UID, string password, string address, DateTime birth, string nickName, string name)
@@ -72,6 +74,10 @@ namespace DBUI
         public int get_ImageID()
         {
             return this.ImageID;
+        }
+        public RoundPictureBox get_PB()
+        {
+            return this.pb;
         }
     }
 }

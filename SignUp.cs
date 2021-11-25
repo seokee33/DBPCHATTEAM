@@ -82,10 +82,7 @@ namespace DBUI
             UserInfo user = new UserInfo();
             Encry encry = new Encry();
             string str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
-            DBManager.GetInstance().executeQuerry("INSERT INTO CHAT.UserInfo (UID, Password, Address, Birth, NickName, Name) VALUE ('" + myTextBoxID.Text + "', '" + str_Encry + "', '" + myTextBoxAdress.Text + "', '" + myTextBoxBirth.Text + "', '" + myTextBoxNickName.Text + "', '" + myTextBoxName.Text + "');");
-            DataTable dt = DBManager.GetInstance().select2("SELECT Seq FROM CHAT.UserInfo where UID = '" + myTextBoxID.Text + "';");
-            int imageID = Convert.ToInt32(dt.Rows[0][0]);
-            DBManager.GetInstance().insert_Image(roundPictureBoxProfilePoto, "INSERT INTO CHAT.Blob(id, Image) VALUES(@id, @img)", imageID);
+            DBManager.GetInstance().insert_Image(roundPictureBoxProfilePoto,"INSERT INTO CHAT.UserInfo (UID, Password, Address, Birth, NickName, Name, Image) VALUE ('" + myTextBoxID.Text + "', '" + str_Encry + "', '" + myTextBoxAdress.Text + "', '" + myTextBoxBirth.Text + "', '" + myTextBoxNickName.Text + "', '" + myTextBoxName.Text + "',@Image)", myTextBoxID.Text);
             MessageBox.Show("회원가입이 완료 되었습니다.");
 
             this.Close();
@@ -100,7 +97,6 @@ namespace DBUI
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 roundPictureBoxProfilePoto.Image = Bitmap.FromFile(openFileDialog.FileName);
-                //roundPictureBoxProfilePoto.Tag = openFileDialog.FileName;
             }
         }
 

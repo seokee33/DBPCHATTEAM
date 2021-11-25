@@ -146,6 +146,7 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginUser.cs" />
     <Compile Include="NewChat.cs">
       <SubType>Form</SubType>
     </Compile>

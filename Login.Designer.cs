@@ -70,6 +70,7 @@ namespace DBUI
             this.checkBoxAutoLogin.TabIndex = 3;
             this.checkBoxAutoLogin.Text = "로그인 상태 유지";
             this.checkBoxAutoLogin.UseVisualStyleBackColor = true;
+            this.checkBoxAutoLogin.CheckedChanged += new System.EventHandler(this.checkBoxAutoLogin_CheckedChanged);
             // 
             // labelSignUp
             // 

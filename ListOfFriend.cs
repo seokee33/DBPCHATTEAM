@@ -31,16 +31,21 @@ namespace DBUI
         {
             friendsList = new List<UserInfo>();
             UserInfo friend = new UserInfo();
-            DataTable dt = DBManager.GetInstance().select("SELECT f.UserID, u.Seq, u.UID, u.Address, u.Birth, u.NickName From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = "+UserData.Ct.get_Seq()+";","SelectFriendsList").Tables["SelectFriendsList"];
-            foreach(DataRow data in dt.Rows)
-                friendsList.Add(new UserInfo( Convert.ToInt32(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5])));
+            List<UserInfo> users = DBManager.GetInstance().select_User("SELECT  u.Seq, u.UID, u.Address, u.Birth, u.NickName, u.Image From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = " + UserData.Ct.get_Seq() + ";");
+            //DataTable dt = DBManager.GetInstance().select("SELECT f.UserID, u.Seq, u.UID, u.Address, u.Birth, u.NickName From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = "+UserData.Ct.get_Seq()+";","SelectFriendsList").Tables["SelectFriendsList"];
+            //foreach(DataRow data in dt.Rows)
+            //    friendsList.Add(new UserInfo( Convert.ToInt32(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5])));
 
             flowLayoutPanelFriendList.Controls.Clear();
-            FriendListForm[] friendListForm = new FriendListForm[friendsList.Count];
-            for (int i = 0; i < friendsList.Count; i++)
+            FriendListForm[] friendListForm = new FriendListForm[users.Count];
+            for (int i = 0; i < users.Count; i++)
             {
                 friendListForm[i] = new FriendListForm();
-                friendListForm[i].FriendListName = friendsList[i].get_NickName();
+                friendListForm[i].FriendListName = users[i].get_NickName();
+                if(users[i].get_PB() != null)
+                    friendListForm[i].FriendListProfile = users[i].get_PB().Image;
+
+
                 // 사진 db에서 받아오기
 
                 if (flowLayoutPanelFriendList.Controls.Count < 0)
