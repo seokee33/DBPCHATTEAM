@@ -19,7 +19,8 @@ namespace DBUI
             InitializeComponent();
             friendsList = new List<UserInfo>();
             this.MouseWheel += new MouseEventHandler(PanelFriendList_MouseWheel);
-            
+            labelMyProfileName.Text = LoginUser.GetInstance().get_User().get_NickName();
+            roundPictureBoxMyProfilePoto = LoginUser.GetInstance().get_User().get_PB();
         }
         private void PanelFriendList_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -31,10 +32,7 @@ namespace DBUI
         {
             friendsList = new List<UserInfo>();
             UserInfo friend = new UserInfo();
-            List<UserInfo> users = DBManager.GetInstance().select_User("SELECT  u.Seq, u.UID, u.Address, u.Birth, u.NickName, u.Image From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = " + UserData.Ct.get_Seq() + ";");
-            //DataTable dt = DBManager.GetInstance().select("SELECT f.UserID, u.Seq, u.UID, u.Address, u.Birth, u.NickName From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = "+UserData.Ct.get_Seq()+";","SelectFriendsList").Tables["SelectFriendsList"];
-            //foreach(DataRow data in dt.Rows)
-            //    friendsList.Add(new UserInfo( Convert.ToInt32(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5])));
+            List<UserInfo> users = DBManager.GetInstance().select_Friends("SELECT  u.Seq, u.UID, u.Address, u.Birth, u.NickName, u.Image From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = " + LoginUser.GetInstance().get_User().get_Seq() + ";");
 
             flowLayoutPanelFriendList.Controls.Clear();
             FriendListForm[] friendListForm = new FriendListForm[users.Count];

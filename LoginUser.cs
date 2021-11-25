@@ -25,6 +25,10 @@ namespace DBUI
         {
             this.user = user;
         }
+        public UserInfo get_User()
+        {
+            return this.user;
+        }
 
 
     }

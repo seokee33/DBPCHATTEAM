@@ -52,7 +52,8 @@ namespace DBUI
 
         private void buttonAddFriendID_Click(object sender, EventArgs e)
         {
-            UserInfo user = UserData.Ct;
+            //UserInfo user = UserData.Ct;
+            UserInfo user = LoginUser.GetInstance().get_User();
             UserInfo friend = new UserInfo();
             if (DBManager.GetInstance().exist("SELECT EXISTS (SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxFriendID.Text + "') AS exist;") == 1)
             {

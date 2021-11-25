@@ -91,7 +91,7 @@ namespace DBUI
             }
             
         }
-        public List<UserInfo> select_User(string SQL)
+        public List<UserInfo> select_Friends(string SQL)
         {
             List<UserInfo> result = new List<UserInfo>();
             //string SQL = "SELECT * FROM CHAT.UserInfo;";

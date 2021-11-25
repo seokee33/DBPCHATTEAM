@@ -70,7 +70,10 @@ namespace DBUI
         {
             return this.UID;
         }
-
+        public DateTime get_Birth()
+        {
+            return this.Birth;
+        }
         public int get_ImageID()
         {
             return this.ImageID;

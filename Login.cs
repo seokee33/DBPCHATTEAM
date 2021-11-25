@@ -102,7 +102,8 @@ namespace DBUI
                             sw.WriteLine("");
                             sw.Close();
                         }
-                        UserData.Ct = user;
+                        LoginUser.GetInstance().set_User(user);
+                        //UserData.Ct = user;
                         FriendList fl = new FriendList();
                         this.Hide();
                         fl.Show();
@@ -150,7 +151,8 @@ namespace DBUI
                             sw.WriteLine("");
                             sw.Close();
                         }
-                        UserData.Ct = user;
+                        LoginUser.GetInstance().set_User(user);
+                        //UserData.Ct = user;
                         FriendList fl = new FriendList();
                         this.Hide();
                         fl.Show();
