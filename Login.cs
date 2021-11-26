@@ -71,57 +71,7 @@ namespace DBUI
 
             UserInfo user = new UserInfo();
             Encry encry = new Encry();
-            if (auto_Login_Check)
-            {
-                if (myTextBoxID.Text.Equals("아이디") || myTextBoxID.Text.Length == 0 || myTextBoxPW.Text.Equals("비밀번호") || myTextBoxPW.Text.Length == 0)
-                {
-                    MessageBox.Show("아이디와 비밀번호를 입력해주세요!!");
-                    return;
-                }
-                if (DBManager.GetInstance().exist("SELECT EXISTS (SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "') AS exist;") == 1)
-                {
-                    DataTable dt = DBManager.GetInstance().select2("SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "';");
-                    string str_Encry = myTextBoxPW.Text;
-                    foreach (DataRow data in dt.Rows)
-                        user = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]), Convert.ToString(data[6]));
-                    if (str_Encry.Equals(user.get_Password()))
-                    {
-                        if (checkBoxAutoLogin.Checked)
-                        {
-                            StreamWriter sw = new StreamWriter(new FileStream("autoLogin.txt", FileMode.Create));
-                            sw.WriteLine(1);
-                            sw.WriteLine(user.get_UID());
-                            sw.WriteLine(user.get_Password());
-                            sw.Close();
-                        }
-                        else
-                        {
-                            StreamWriter sw = new StreamWriter(new FileStream("autoLogin.txt", FileMode.Create));
-                            sw.WriteLine(0);
-                            sw.WriteLine("");
-                            sw.WriteLine("");
-                            sw.Close();
-                        }
-                        LoginUser.GetInstance().set_User(user);
-                        //UserData.Ct = user;
-                        FriendList fl = new FriendList();
-                        this.Hide();
-                        fl.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("비밀번호를 다시 확인해주세요!!");
-                        return;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("아이디와 비번을 확인하세요!!");
-                    return;
-                }
-            }
-            else
-            {
+
                 if (myTextBoxID.Text.Equals("아이디") || myTextBoxID.Text.Length == 0 || myTextBoxPW.Text.Equals("비밀번호") || myTextBoxPW.Text.Length == 0)
                 {
                     MessageBox.Show("아이디와 비밀번호를 입력해주세요!!");
@@ -168,7 +118,6 @@ namespace DBUI
                     MessageBox.Show("아이디와 비번을 확인하세요!!");
                     return;
                 }
-            }
         }
         private void Auto_Login()
         {
@@ -202,6 +151,7 @@ namespace DBUI
         {
             if(checkBoxAutoLogin.Checked == false)
             {
+                auto_Login_Check = false;
                 myTextBoxID.Text = "";
                 myTextBoxPW.Text = "";
             }
