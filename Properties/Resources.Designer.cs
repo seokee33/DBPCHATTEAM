@@ -213,6 +213,16 @@ namespace DBUI.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap premium_icon_sign_out_5825398 {
+            get {
+                object obj = ResourceManager.GetObject("premium-icon-sign-out-5825398", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap substract {
             get {
                 object obj = ResourceManager.GetObject("substract", resourceCulture);

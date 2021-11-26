@@ -361,5 +361,8 @@
   <ItemGroup>
     <None Include="Resources\message.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium-icon-sign-out-5825398.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
