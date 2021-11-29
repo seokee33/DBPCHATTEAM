@@ -80,7 +80,10 @@ namespace DBUI
         }
         public RoundPictureBox get_PB()
         {
-            return this.pb;
+            if (this.pb != null)
+                return this.pb;
+            else
+                return null;
         }
     }
 }

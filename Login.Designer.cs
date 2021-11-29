@@ -103,6 +103,7 @@ namespace DBUI
             this.myTextBoxPW.Size = new System.Drawing.Size(332, 27);
             this.myTextBoxPW.TabIndex = 6;
             this.myTextBoxPW.Text = "비밀번호";
+            this.myTextBoxPW.UseSystemPasswordChar = true;
             // 
             // panelBorder
             // 

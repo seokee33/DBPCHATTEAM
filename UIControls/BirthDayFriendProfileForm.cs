@@ -36,8 +36,7 @@ namespace DBUI.UIControls
 
         private void BirthDayFriendProfile_Click(object sender, EventArgs e)
         {
-            ChatRoom chatroom = new ChatRoom();
-            chatroom.Show();
+
         }
 
 

@@ -64,7 +64,9 @@ namespace DBUI
             {
                 birthDayFriendListsform[i] = new BirthDayFriendProfileForm();
                 birthDayFriendListsform[i].BDFriendName = birthdayFriends[i].get_NickName();
-                birthDayFriendListsform[i].BDFriendProfile = birthdayFriends[i].get_PB().Image;
+                if(birthdayFriends[i].get_PB() != null)
+                    birthDayFriendListsform[i].BDFriendProfile = birthdayFriends[i].get_PB().Image;
+
                 // 사진 db에서 받아오기
 
                 if (flowLayoutPanelBirthDayFriendList.Controls.Count < 0)
