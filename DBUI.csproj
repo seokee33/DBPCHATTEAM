@@ -210,7 +210,6 @@
     <Compile Include="UIControls\RoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserData.cs" />
     <Compile Include="UserInfo.cs" />
     <EmbeddedResource Include="AddFriendID.resx">
       <DependentUpon>AddFriendID.cs</DependentUpon>

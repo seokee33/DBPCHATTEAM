@@ -82,14 +82,13 @@ namespace DBUI
                 foreach (DataRow data in dt.Rows)
                     user = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]), Convert.ToString(data[6]));
 
-
                 if (str_Encry.Equals(user.get_Password()))
                 {
                     LoginUser.GetInstance().set_User(user);
                     write_Auto_Login(LoginUser.GetInstance().get_User().get_UID(), LoginUser.GetInstance().get_User().get_Password());
                     FriendList fl = new FriendList();
                     fl.Show();
-                    this.Close();
+                    this.Hide();
                     
                 }
                 else
