@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -215,5 +216,19 @@ namespace DBUI
             fm.Show();
         }
 
+        private void pictureBoxLogout_Click(object sender, EventArgs e)
+        {
+            LoginUser.GetInstance().set_User(new UserInfo());
+            StreamWriter sr = new StreamWriter(new FileStream("autoLogin.txt", FileMode.Create));
+            sr.WriteLine(0);
+            sr.WriteLine("");
+            sr.WriteLine("");
+            sr.Close();
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+
+
+        }
     }
 }
