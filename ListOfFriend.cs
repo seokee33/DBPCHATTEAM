@@ -93,9 +93,9 @@ namespace DBUI
                 friendListForm[i] = new FriendListForm(this);
                 friendListForm[i].FriendListName = searchFriend[i].get_NickName();
                 if (friendsList[i].get_PB() != null)
-                    friendListForm[i].FriendListProfile = friendsList[i].get_PB().Image;
-                // 사진 db에서 받아오기
-
+                    friendListForm[i].FriendListProfile = searchFriend[i].get_PB().Image;
+                
+                
                 if (flowLayoutPanelFriendList.Controls.Count < 0)
                 {
                     flowLayoutPanelFriendList.Controls.Clear();
