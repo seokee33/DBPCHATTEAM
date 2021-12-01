@@ -22,6 +22,7 @@ namespace DBUI
             labelMyProfileName.Text = LoginUser.GetInstance().get_User().get_NickName();
             roundPictureBoxMyProfilePoto = LoginUser.GetInstance().get_User().get_PB();
         }
+
         private void PanelFriendList_MouseWheel(object sender, MouseEventArgs e)
         {
             panelFriendList.Focus();

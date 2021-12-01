@@ -91,6 +91,42 @@ namespace DBUI
             }
             
         }
+
+        //public UserInfo select_profile(string SQL)
+        //{
+        //    UserInfo user = new UserInfo();
+        //    DataTable datatable = new DataTable();
+        //    MySqlDataAdapter da = new MySqlDataAdapter();
+        //    MySqlCommand cmd = conn.CreateCommand();
+        //    cmd.CommandText = SQL;
+        //    da.SelectCommand = cmd;
+        //    conn.Open();
+        //    da.Fill(datatable);
+        //    conn.Close();
+        //    Byte[] bytes = null;
+        //    foreach (DataRow data in datatable.Rows)
+        //    {
+        //        RoundPictureBox pb = new RoundPictureBox();
+        //        try
+        //        {
+        //            bytes = (byte[])data[5];
+        //            if (bytes != null)
+        //            {
+        //                pb.Image = new Bitmap(new MemoryStream(bytes));
+        //            }
+        //        }
+        //        catch
+        //        {
+        //            pb = null;
+        //        }
+
+        //        user = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToDateTime(data[3]), Convert.ToString(data[4]), pb));
+        //    }
+
+        //    return result;
+
+        //}
+
         public List<UserInfo> select_Friends(string SQL)
         {
             List<UserInfo> result = new List<UserInfo>();
