@@ -31,13 +31,27 @@ namespace DBUI
 
         private void populatItems()
         {
-            ChatListForm[] chatlistform = new ChatListForm[10];
+            DataTable dt = DBManager.GetInstance().select("SELECT * FROM CHAT.User_Chat_Room WHERE UserSeq = '" + LoginUser.GetInstance().get_User().get_UID() + "';");
+            List<int> roomList = new List<int>();
+            foreach (DataRow data in dt.Rows)
+                roomList.Add(Convert.ToInt32(data[2]));
 
-            for (int i = 0; i < chatlistform.Length; i++)
+            
+            ChatListForm[] chatListForms = new ChatListForm[roomList.Count];
+            for (int i = 0; i < roomList.Count; i++)
             {
-                chatlistform[i] = new ChatListForm();
-                chatlistform[i].FriendName = "ㅇㅇㅇ";
-                chatlistform[i].ChatMsg = "zzz";
+                DataTable friend = DBManager.GetInstance().select("SELECT * FROM CHAT.User_Chat_Room WHERE RoomID = '" + roomList[i] + "';");
+                string name ="";
+                foreach(DataRow data in friend.Rows)
+                {
+                    if (!Convert.ToString(data[1]).Equals(LoginUser.GetInstance().get_User().get_UID()))
+                    {
+                        name = Convert.ToString(data[1]);
+                    }
+                }
+                chatListForms[i] = new ChatListForm();
+                chatListForms[i].FriendName = name;
+                //chatListForms[i].ChatMsg = "zzz";
                 // 사진 db에서 받아오기
 
                 if (flowLayoutPanelChatList.Controls.Count < 0)
@@ -45,7 +59,7 @@ namespace DBUI
                     flowLayoutPanelChatList.Controls.Clear();
                 }
                 else
-                    flowLayoutPanelChatList.Controls.Add(chatlistform[i]);
+                    flowLayoutPanelChatList.Controls.Add(chatListForms[i]);
             }
         }
 

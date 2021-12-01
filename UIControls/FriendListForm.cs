@@ -20,17 +20,28 @@ namespace DBUI.UIControls
         }
 
         #region Properties
-
+        private string _UID;
         private int _fNum;
         private string _name;
         private Image _profile;
+        private int _friends_Seq;
 
+
+        public string UID
+        {
+            get { return _UID; }
+            set { _UID = value; }
+        }
         public int friendNum
         {
             get { return _fNum; }
             set { _fNum = value; }
         }
-
+        public int friends_Seq
+        {
+            get { return _friends_Seq; }
+            set { _friends_Seq = value; }
+        }
         public string FriendListName
         {
             get { return _name; }
@@ -58,8 +69,22 @@ namespace DBUI.UIControls
 
         private void FriendProfile_Click(object sender, EventArgs e)
         {
-            ChatRoom chatroom = new ChatRoom();
+            int roomNum = _fNum;
+            if(DBManager.GetInstance().exist("SELECT EXISTS(SELECT * FROM CHAT.User_Chat_Room WHERE RoomID = '" + _fNum + "') AS exist; ") == 0)
+            {
+                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`, `RoomID`) VALUES ('" + LoginUser.GetInstance().get_User().get_UID() + "', '" + _fNum + "');");
+                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`, `RoomID`) VALUES ('" + _UID + "', '" + _fNum + "');");
+            }
+
+            ChatRoom chatroom = new ChatRoom(_fNum);
             chatroom.Show();
+
+
+
+            //DataTable dt = DBManager.GetInstance().select("SELECT AUTO_INCREMENT FROM information_schema.tables WHERE table_name = 'User_Chat_Room';");
+            //int room_Num = Convert.ToInt32(dt.Rows[0][0]);
+            //DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`, `RoomID`) VALUES ('"+LoginUser.GetInstance().get_User().get_Seq()+"', '"+room_Num+"');");
+            //DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`, `RoomID`) VALUES ('" + _friends_Seq + "', '" + room_Num + "');");
         }
     }
 }

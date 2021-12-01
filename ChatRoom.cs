@@ -12,7 +12,7 @@ namespace DBUI
 {
     public partial class ChatRoom : Form
     {
-        public ChatRoom()
+        public ChatRoom(int roomNum)
         {
             InitializeComponent();
         }

@@ -43,9 +43,11 @@ namespace DBUI
             for (int i = 0; i < friendsList.Count; i++)
             {
                 friendListForm[i] = new FriendListForm(this);
+                friendListForm[i].UID = friendsList[i].get_UID();
                 friendListForm[i].friendNum = friendsList[i].get_FriendNum();
                 friendListForm[i].FriendListName = friendsList[i].get_NickName();
-                if(friendsList[i].get_PB() != null)
+                friendListForm[i].friends_Seq = friendsList[i].get_Seq();
+                if (friendsList[i].get_PB() != null)
                     friendListForm[i].FriendListProfile = friendsList[i].get_PB().Image;
 
 

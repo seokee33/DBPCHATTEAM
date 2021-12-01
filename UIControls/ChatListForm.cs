@@ -43,8 +43,8 @@ namespace DBUI.UIControls
 
         private void FriendProfile_Click(object sender, EventArgs e)
         {
-            ChatRoom chatroom = new ChatRoom();
-            chatroom.Show();
+            //ChatRoom chatroom = new ChatRoom();
+            //chatroom.Show();
         }
 
         private void FixToolStripMenuItem_Click(object sender, EventArgs e)
