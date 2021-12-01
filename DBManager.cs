@@ -72,7 +72,7 @@ namespace DBUI
                 }
             }
         }
-        public void insert_Image(PictureBox pbxImage,string sql,string imageID)
+        public void insert_Image(PictureBox pbxImage,string sql)
         {
             MemoryStream ms = new MemoryStream();
             pbxImage.Image.Save(ms,pbxImage.Image.RawFormat);

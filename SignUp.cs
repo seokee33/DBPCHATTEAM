@@ -82,7 +82,7 @@ namespace DBUI
             UserInfo user = new UserInfo();
             Encry encry = new Encry();
             string str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
-            DBManager.GetInstance().insert_Image(roundPictureBoxProfilePoto,"INSERT INTO CHAT.UserInfo (UID, Password, Address, Birth, NickName, Name, Image) VALUE ('" + myTextBoxID.Text + "', '" + str_Encry + "', '" + myTextBoxAdress.Text + "', '" + myTextBoxBirth.Text + "', '" + myTextBoxNickName.Text + "', '" + myTextBoxName.Text + "',@Image)", myTextBoxID.Text);
+            DBManager.GetInstance().insert_Image(roundPictureBoxProfilePoto,"INSERT INTO CHAT.UserInfo (UID, Password, Address, Birth, NickName, Name, Image) VALUE ('" + myTextBoxID.Text + "', '" + str_Encry + "', '" + myTextBoxAdress.Text + "', '" + myTextBoxBirth.Text + "', '" + myTextBoxNickName.Text + "', '" + myTextBoxName.Text + "',@Image)");
             MessageBox.Show("회원가입이 완료 되었습니다.");
 
             this.Close();
