@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBUI.UIControls;
 //panelFriendList 내용담은 Form
+
+
 namespace DBUI
 {
     public partial class ListOfFriend : Form

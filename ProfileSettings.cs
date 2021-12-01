@@ -32,6 +32,7 @@ namespace DBUI
         }
         private void init()
         {
+            roundPictureBoxProfilePoto.Image = LoginUser.GetInstance().get_User().get_PB().Image;
             myTextBoxAdress.Text = LoginUser.GetInstance().get_User().get_Address();
             myTextBoxName.Text = LoginUser.GetInstance().get_User().get_Name();
             myTextBoxPW.Text = LoginUser.GetInstance().get_User().get_Password();
