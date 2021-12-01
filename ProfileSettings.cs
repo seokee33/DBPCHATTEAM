@@ -35,7 +35,7 @@ namespace DBUI
             myTextBoxAdress.Text = LoginUser.GetInstance().get_User().get_Address();
             myTextBoxName.Text = LoginUser.GetInstance().get_User().get_Name();
             myTextBoxPW.Text = LoginUser.GetInstance().get_User().get_Password();
-            myTextBoxBirthDay.Text = LoginUser.GetInstance().get_User().get_Birth().ToString();
+            myTextBoxBirthDay.Text = LoginUser.GetInstance().get_User().get_Birth().ToString("yyyy-MM-dd");
             myTextBoxNickName.Text = LoginUser.GetInstance().get_User().get_NickName();
         }
         private void button1_Click(object sender, EventArgs e)
