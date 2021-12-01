@@ -20,7 +20,8 @@ namespace DBUI
             friendsList = new List<UserInfo>();
             this.MouseWheel += new MouseEventHandler(PanelFriendList_MouseWheel);
             labelMyProfileName.Text = LoginUser.GetInstance().get_User().get_NickName();
-            roundPictureBoxMyProfilePoto = LoginUser.GetInstance().get_User().get_PB();
+            if(LoginUser.GetInstance().get_User().get_PB()!=null)
+                roundPictureBoxMyProfilePoto.Image = LoginUser.GetInstance().get_User().get_PB().Image;
         }
 
         private void PanelFriendList_MouseWheel(object sender, MouseEventArgs e)

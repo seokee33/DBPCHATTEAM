@@ -18,8 +18,16 @@ namespace DBUI.UIControls
         }
 
         #region Properties
+
+        private int _fNum;
         private string _name;
         private Image _profile;
+
+        public int friendNum
+        {
+            get { return _fNum; }
+            set { _fNum = value; }
+        }
 
         public string FriendListName
         {
@@ -41,7 +49,7 @@ namespace DBUI.UIControls
 
         private void DeleteFriendToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void FriendProfile_Click(object sender, EventArgs e)

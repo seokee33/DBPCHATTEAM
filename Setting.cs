@@ -49,9 +49,7 @@ namespace DBUI
 
                     if (DBManager.GetInstance().exist("SELECT EXISTS (SELECT * FROM CHAT.UserInfo WHERE UID = '" + id + "') AS exist;") == 1)
                     {
-                        DataTable dt = DBManager.GetInstance().select2("SELECT * FROM CHAT.UserInfo WHERE UID = '" + id + "';");
-                        foreach (DataRow data in dt.Rows)
-                            user = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]), Convert.ToString(data[6]));
+                        user = DBManager.GetInstance().select_profile("SELECT * FROM CHAT.UserInfo WHERE UID = '" + id + "';");
 
                         if (pw.Equals(user.get_Password()))
                         {
