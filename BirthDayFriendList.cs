@@ -52,7 +52,7 @@ namespace DBUI
         private void populatItems()
         { 
             
-            List<UserInfo> users = DBManager.GetInstance().select_Friends("SELECT  u.Seq, u.UID, u.Address, u.Birth, u.NickName, u.Image From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = " + LoginUser.GetInstance().get_User().get_Seq() + ";");
+            List<UserInfo> users = DBManager.GetInstance().select_Friends("SELECT f.Seq, u.Seq, u.UID, u.Address, u.Birth, u.NickName, u.Image From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = " + LoginUser.GetInstance().get_User().get_Seq() + ";");
             List<UserInfo> birthdayFriends = new List<UserInfo>();
             foreach(UserInfo user in users)
             {

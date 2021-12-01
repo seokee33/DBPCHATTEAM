@@ -34,13 +34,14 @@ namespace DBUI
         {
             UserInfo friend = new UserInfo();
 
-            friendsList = DBManager.GetInstance().select_Friends("SELECT  u.Seq, u.UID, u.Address, u.Birth, u.NickName, u.Image From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = " + LoginUser.GetInstance().get_User().get_Seq() + ";");
+            friendsList = DBManager.GetInstance().select_Friends("SELECT f.seq, u.Seq, u.UID, u.Address, u.Birth, u.NickName, u.Image From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = " + LoginUser.GetInstance().get_User().get_Seq() + ";");
 
             flowLayoutPanelFriendList.Controls.Clear();
             FriendListForm[] friendListForm = new FriendListForm[friendsList.Count];
             for (int i = 0; i < friendsList.Count; i++)
             {
-                friendListForm[i] = new FriendListForm();
+                friendListForm[i] = new FriendListForm(this);
+                friendListForm[i].friendNum = friendsList[i].get_FriendNum();
                 friendListForm[i].FriendListName = friendsList[i].get_NickName();
                 if(friendsList[i].get_PB() != null)
                     friendListForm[i].FriendListProfile = friendsList[i].get_PB().Image;
@@ -89,8 +90,10 @@ namespace DBUI
             FriendListForm[] friendListForm = new FriendListForm[searchFriend.Count];
             for (int i = 0; i < searchFriend.Count; i++)
             {
-                friendListForm[i] = new FriendListForm();
+                friendListForm[i] = new FriendListForm(this);
                 friendListForm[i].FriendListName = searchFriend[i].get_NickName();
+                if (friendsList[i].get_PB() != null)
+                    friendListForm[i].FriendListProfile = friendsList[i].get_PB().Image;
                 // 사진 db에서 받아오기
 
                 if (flowLayoutPanelFriendList.Controls.Count < 0)

@@ -12,9 +12,11 @@ namespace DBUI.UIControls
 {
     public partial class FriendListForm : UserControl
     {
-        public FriendListForm()
+        ListOfFriend listform;
+        public FriendListForm(ListOfFriend list)
         {
             InitializeComponent();
+            this.listform = list;
         }
 
         #region Properties
@@ -49,7 +51,9 @@ namespace DBUI.UIControls
 
         private void DeleteFriendToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            DBManager.GetInstance().executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`Seq` = '"+ _fNum + "');");
+            listform.ListOfFriend_Load(sender, e);
+
         }
 
         private void FriendProfile_Click(object sender, EventArgs e)

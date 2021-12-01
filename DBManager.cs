@@ -158,7 +158,7 @@ namespace DBUI
                 RoundPictureBox pb = new RoundPictureBox();
                 try
                 {
-                    bytes = (byte[])data[5];
+                    bytes = (byte[])data[6];
                     if (bytes != null)
                     {
                         pb.Image = new Bitmap(new MemoryStream(bytes));
@@ -169,7 +169,7 @@ namespace DBUI
                     pb = null;
                 }
 
-                result.Add(new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToDateTime(data[3]), Convert.ToString(data[4]), pb));
+                result.Add(new UserInfo(Convert.ToInt32(data[0]),Convert.ToInt32(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]), pb));
             }
 
             return result;

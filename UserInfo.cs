@@ -31,6 +31,7 @@ namespace DBUI
         }
         public UserInfo(int seq, string uID, string password, string address, DateTime birth, string nickName, string name,RoundPictureBox pb)
         {
+
             Seq = seq;
             UID = uID;
             Password = password;
@@ -40,8 +41,9 @@ namespace DBUI
             Name = name;
             this.pb = pb;
         }
-        public UserInfo(int seq, string uID, string address, DateTime birth, string nickName,RoundPictureBox pb)
+        public UserInfo(int fNum,int seq, string uID, string address, DateTime birth, string nickName,RoundPictureBox pb)
         {
+            this.friendNum = fNum;
             Seq = seq;
             UID = uID;
             Address = address;
@@ -49,6 +51,7 @@ namespace DBUI
             NickName = nickName;
             this.pb = pb;
         }
+
 
         public UserInfo(int v1, string v2, string v3, string v4, DateTime dateTime, string v5, string v6)
         {
@@ -65,7 +68,10 @@ namespace DBUI
         //    this.Name = name;
         //    this.pb = pb;
         //}
-        
+        public int get_FriendNum()
+        {
+            return this.friendNum;
+        }
         public string get_NickName()
         {
             return this.NickName;
