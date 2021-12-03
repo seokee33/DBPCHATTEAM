@@ -188,6 +188,18 @@
     <Compile Include="UIControls\ChatListForm.Designer.cs">
       <DependentUpon>ChatListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIControls\Chatmsg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIControls\Chatmsg.Designer.cs">
+      <DependentUpon>Chatmsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Chatsendmsg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIControls\Chatsendmsg.Designer.cs">
+      <DependentUpon>Chatsendmsg.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIControls\CircularButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -205,6 +217,18 @@
     </Compile>
     <Compile Include="UIControls\GroupChatForm.Designer.cs">
       <DependentUpon>GroupChatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Image.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIControls\Image.Designer.cs">
+      <DependentUpon>Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Imagesend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIControls\Imagesend.Designer.cs">
+      <DependentUpon>Imagesend.cs</DependentUpon>
     </Compile>
     <Compile Include="UIControls\NewChatForm.cs">
       <SubType>UserControl</SubType>
@@ -274,11 +298,23 @@
     <EmbeddedResource Include="UIControls\ChatListForm.resx">
       <DependentUpon>ChatListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UIControls\Chatmsg.resx">
+      <DependentUpon>Chatmsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIControls\Chatsendmsg.resx">
+      <DependentUpon>Chatsendmsg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UIControls\FriendListForm.resx">
       <DependentUpon>FriendListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIControls\GroupChatForm.resx">
       <DependentUpon>GroupChatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIControls\Image.resx">
+      <DependentUpon>Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIControls\Imagesend.resx">
+      <DependentUpon>Imagesend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIControls\NewChatForm.resx">
       <DependentUpon>NewChatForm.cs</DependentUpon>
