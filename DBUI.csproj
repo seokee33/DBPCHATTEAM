@@ -375,5 +375,8 @@
   <ItemGroup>
     <None Include="Resources\premium-icon-sign-out-5825398.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-smiling-emoticon-square-face-40157.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

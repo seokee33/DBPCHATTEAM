@@ -29,30 +29,37 @@ namespace DBUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelBorder = new System.Windows.Forms.Panel();
             this.pictureBoxMax = new System.Windows.Forms.PictureBox();
             this.pictureBoxMini = new System.Windows.Forms.PictureBox();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.pictureBoxMax2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBoxNewChat = new System.Windows.Forms.PictureBox();
             this.buttonMessageSend = new System.Windows.Forms.Button();
             this.textBoxMessageSend = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelFDName = new System.Windows.Forms.Label();
-            this.roundPictureBoxFDpoto = new DBUI.RoundPictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxMessage = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.listViewChatBox = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.contextMenuStripEmoticon = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.em1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.em2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.em3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax2)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewChat)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxFDpoto)).BeginInit();
+            this.contextMenuStripEmoticon.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBorder
@@ -120,6 +127,8 @@ namespace DBUI
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.pictureBoxNewChat);
             this.panel3.Controls.Add(this.buttonMessageSend);
             this.panel3.Controls.Add(this.textBoxMessageSend);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -128,12 +137,23 @@ namespace DBUI
             this.panel3.Size = new System.Drawing.Size(400, 95);
             this.panel3.TabIndex = 13;
             // 
+            // pictureBoxNewChat
+            // 
+            this.pictureBoxNewChat.ContextMenuStrip = this.contextMenuStripEmoticon;
+            this.pictureBoxNewChat.Image = global::DBUI.Properties.Resources.free_icon_smiling_emoticon_square_face_40157;
+            this.pictureBoxNewChat.Location = new System.Drawing.Point(355, 15);
+            this.pictureBoxNewChat.Name = "pictureBoxNewChat";
+            this.pictureBoxNewChat.Size = new System.Drawing.Size(40, 40);
+            this.pictureBoxNewChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxNewChat.TabIndex = 32;
+            this.pictureBoxNewChat.TabStop = false;
+            // 
             // buttonMessageSend
             // 
             this.buttonMessageSend.BackColor = System.Drawing.Color.White;
             this.buttonMessageSend.FlatAppearance.BorderSize = 0;
             this.buttonMessageSend.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMessageSend.Location = new System.Drawing.Point(344, 15);
+            this.buttonMessageSend.Location = new System.Drawing.Point(301, 15);
             this.buttonMessageSend.Name = "buttonMessageSend";
             this.buttonMessageSend.Size = new System.Drawing.Size(48, 64);
             this.buttonMessageSend.TabIndex = 2;
@@ -147,14 +167,13 @@ namespace DBUI
             this.textBoxMessageSend.Location = new System.Drawing.Point(12, 15);
             this.textBoxMessageSend.Multiline = true;
             this.textBoxMessageSend.Name = "textBoxMessageSend";
-            this.textBoxMessageSend.Size = new System.Drawing.Size(326, 64);
+            this.textBoxMessageSend.Size = new System.Drawing.Size(283, 64);
             this.textBoxMessageSend.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel1.Controls.Add(this.labelFDName);
-            this.panel1.Controls.Add(this.roundPictureBoxFDpoto);
             this.panel1.Controls.Add(this.buttonSearch);
             this.panel1.Controls.Add(this.textBoxSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -172,16 +191,6 @@ namespace DBUI
             this.labelFDName.Size = new System.Drawing.Size(103, 54);
             this.labelFDName.TabIndex = 4;
             this.labelFDName.Text = "이름";
-            // 
-            // roundPictureBoxFDpoto
-            // 
-            this.roundPictureBoxFDpoto.Image = global::DBUI.Properties.Resources.프로필;
-            this.roundPictureBoxFDpoto.Location = new System.Drawing.Point(27, 15);
-            this.roundPictureBoxFDpoto.Name = "roundPictureBoxFDpoto";
-            this.roundPictureBoxFDpoto.Size = new System.Drawing.Size(60, 60);
-            this.roundPictureBoxFDpoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundPictureBoxFDpoto.TabIndex = 3;
-            this.roundPictureBoxFDpoto.TabStop = false;
             // 
             // buttonSearch
             // 
@@ -213,17 +222,6 @@ namespace DBUI
             this.panel2.Size = new System.Drawing.Size(400, 1);
             this.panel2.TabIndex = 16;
             // 
-            // textBoxMessage
-            // 
-            this.textBoxMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxMessage.Location = new System.Drawing.Point(0, 189);
-            this.textBoxMessage.Multiline = true;
-            this.textBoxMessage.Name = "textBoxMessage";
-            this.textBoxMessage.ReadOnly = true;
-            this.textBoxMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxMessage.Size = new System.Drawing.Size(400, 393);
-            this.textBoxMessage.TabIndex = 17;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
@@ -233,14 +231,63 @@ namespace DBUI
             this.panel4.Size = new System.Drawing.Size(400, 1);
             this.panel4.TabIndex = 18;
             // 
+            // listViewChatBox
+            // 
+            this.listViewChatBox.HideSelection = false;
+            this.listViewChatBox.Location = new System.Drawing.Point(0, 189);
+            this.listViewChatBox.Name = "listViewChatBox";
+            this.listViewChatBox.Size = new System.Drawing.Size(400, 393);
+            this.listViewChatBox.TabIndex = 19;
+            this.listViewChatBox.UseCompatibleStateImageBehavior = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(350, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 15);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "*우클릭";
+            // 
+            // contextMenuStripEmoticon
+            // 
+            this.contextMenuStripEmoticon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.em1ToolStripMenuItem,
+            this.em2ToolStripMenuItem,
+            this.em3ToolStripMenuItem});
+            this.contextMenuStripEmoticon.Name = "contextMenuStripEmoticon";
+            this.contextMenuStripEmoticon.Size = new System.Drawing.Size(130, 70);
+            // 
+            // em1ToolStripMenuItem
+            // 
+            this.em1ToolStripMenuItem.Image = global::DBUI.Properties.Resources.message;
+            this.em1ToolStripMenuItem.Name = "em1ToolStripMenuItem";
+            this.em1ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.em1ToolStripMenuItem.Text = "이모티콘1";
+            // 
+            // em2ToolStripMenuItem
+            // 
+            this.em2ToolStripMenuItem.Image = global::DBUI.Properties.Resources.pin;
+            this.em2ToolStripMenuItem.Name = "em2ToolStripMenuItem";
+            this.em2ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.em2ToolStripMenuItem.Text = "이모티콘2";
+            // 
+            // em3ToolStripMenuItem
+            // 
+            this.em3ToolStripMenuItem.Image = global::DBUI.Properties.Resources.balloons;
+            this.em3ToolStripMenuItem.Name = "em3ToolStripMenuItem";
+            this.em3ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.em3ToolStripMenuItem.Text = "이모티콘3";
+            // 
             // ChatRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(400, 686);
+            this.Controls.Add(this.listViewChatBox);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.textBoxMessage);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -255,11 +302,11 @@ namespace DBUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewChat)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxFDpoto)).EndInit();
+            this.contextMenuStripEmoticon.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -277,9 +324,15 @@ namespace DBUI
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBoxMessage;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label labelFDName;
         private RoundPictureBox roundPictureBoxFDpoto;
+        private System.Windows.Forms.ListView listViewChatBox;
+        private System.Windows.Forms.PictureBox pictureBoxNewChat;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripEmoticon;
+        private System.Windows.Forms.ToolStripMenuItem em1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem em2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem em3ToolStripMenuItem;
     }
 }
