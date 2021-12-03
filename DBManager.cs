@@ -44,13 +44,13 @@ namespace DBUI
                 conn.Close();
                 return dt;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
                 Console.WriteLine(SQL);
             }
             return dt;
-            
+
         }
         // UPDATE,DELETE,INSERT
         public void executeQuerry(string SQL)
@@ -169,6 +169,8 @@ namespace DBUI
         public List<UserInfo> select_Friends(string SQL)
         {
             List<UserInfo> result = new List<UserInfo>();
+            //try
+            //{
             //string SQL = "SELECT * FROM CHAT.UserInfo;";
             DataTable datatable = new DataTable();//DB로 부터 가져온 값을 넣는 곳(DataSet)
             MySqlDataAdapter da = new MySqlDataAdapter();
@@ -195,12 +197,28 @@ namespace DBUI
                     pb = null;
                 }
 
-                result.Add(new UserInfo(Convert.ToInt32(data[0]),Convert.ToInt32(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]), pb));
+                result.Add(new UserInfo(Convert.ToInt32(data[0]), Convert.ToInt32(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]), pb));
             }
-
+            //}
+            //catch
+            //{
+            //    return null;
+            //}
             return result;
         }
 
+        public void init()
+        {
+            try
+            {
+                conn.Close();
+            }
+            catch
+            {
+                return;
+            }
+            
+        }
         //DB 정보의 유무를 확인하는 쿼리
         public int exist(string SQL)
         {

@@ -33,8 +33,10 @@ namespace DBUI
         {
             DataTable dt = DBManager.GetInstance().select("SELECT * FROM CHAT.User_Chat_Room WHERE UserSeq = '" + LoginUser.GetInstance().get_User().get_UID() + "';");
             List<int> roomList = new List<int>();
+            if (dt == null)
+                return;
             foreach (DataRow data in dt.Rows)
-                roomList.Add(Convert.ToInt32(data[2]));
+                roomList.Add(Convert.ToInt32(data[3]));
 
             
             ChatListForm[] chatListForms = new ChatListForm[roomList.Count];

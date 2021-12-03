@@ -71,10 +71,10 @@ namespace DBUI.UIControls
         private void FriendProfile_Click(object sender, EventArgs e)
         {
             int roomNum = _fNum;
-            if(DBManager.GetInstance().exist("SELECT EXISTS(SELECT * FROM CHAT.User_Chat_Room WHERE RoomID = '" + _fNum + "' and UserSeq = '"+_UID+"') AS exist; ") == 0)
+            if(DBManager.GetInstance().exist("SELECT EXISTS(SELECT * FROM CHAT.User_Chat_Room WHERE `UserSeq` = '" + LoginUser.GetInstance().get_User().get_UID() + "' and `FriendSeq` ='" + _UID + "' ) AS exist; ") == 0)
             {
-                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`, `RoomID`) VALUES ('" + LoginUser.GetInstance().get_User().get_UID() + "', '" + _fNum + "');");
-                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`, `RoomID`) VALUES ('" + _UID + "', '" + _fNum + "');");
+                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`,`FriendSeq`, `RoomID`) VALUES ('" + LoginUser.GetInstance().get_User().get_UID() + "','" + _UID + "', '" + _fNum + "');");
+                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`,`FriendSeq`, `RoomID`) VALUES ('" + _UID + "','" + LoginUser.GetInstance().get_User().get_UID() + "', '" + _fNum + "');");
             }
 
             ChatRoom chatroom = new ChatRoom(_fNum);
