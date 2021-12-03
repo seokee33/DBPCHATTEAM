@@ -119,6 +119,12 @@
     <Compile Include="ChatRoom.Designer.cs">
       <DependentUpon>ChatRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChatSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatSearch.Designer.cs">
+      <DependentUpon>ChatSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBManager.cs" />
     <Compile Include="Encry.cs" />
     <Compile Include="FriendList.cs">
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChatRoom.resx">
       <DependentUpon>ChatRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChatSearch.resx">
+      <DependentUpon>ChatSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FriendList.resx">
       <DependentUpon>FriendList.cs</DependentUpon>
