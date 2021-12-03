@@ -62,7 +62,8 @@ namespace DBUI.UIControls
 
         private void DeleteFriendToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DBManager.GetInstance().executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`Seq` = '"+ _fNum + "');");
+            DBManager.GetInstance().executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`UserID` = '"+ LoginUser.GetInstance().get_User().get_Seq() + "'and `FriendID` = '"+_fNum+"');");
+            DBManager.GetInstance().executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`UserID` = '" + _fNum + "'and `FriendID` = '" + LoginUser.GetInstance().get_User().get_Seq() + "');");
             listform.ListOfFriend_Load(sender, e);
 
         }
@@ -70,7 +71,7 @@ namespace DBUI.UIControls
         private void FriendProfile_Click(object sender, EventArgs e)
         {
             int roomNum = _fNum;
-            if(DBManager.GetInstance().exist("SELECT EXISTS(SELECT * FROM CHAT.User_Chat_Room WHERE RoomID = '" + _fNum + "') AS exist; ") == 0)
+            if(DBManager.GetInstance().exist("SELECT EXISTS(SELECT * FROM CHAT.User_Chat_Room WHERE RoomID = '" + _fNum + "' and UserSeq = '"+_UID+"') AS exist; ") == 0)
             {
                 DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`, `RoomID`) VALUES ('" + LoginUser.GetInstance().get_User().get_UID() + "', '" + _fNum + "');");
                 DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`, `RoomID`) VALUES ('" + _UID + "', '" + _fNum + "');");

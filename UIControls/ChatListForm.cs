@@ -21,6 +21,7 @@ namespace DBUI.UIControls
         private string _name;
         private Image _profile;
         private string _mgs;
+        private int _roomNum;
 
         public string FriendName
         {
@@ -28,6 +29,11 @@ namespace DBUI.UIControls
             set { _name = value; labelName.Text = value; }
         }
 
+        public int RoomNum
+        {
+            get { return _roomNum; }
+            set { _roomNum = value; }
+        }
         public string ChatMsg
         {
             get { return _mgs; }
@@ -43,8 +49,8 @@ namespace DBUI.UIControls
 
         private void FriendProfile_Click(object sender, EventArgs e)
         {
-            //ChatRoom chatroom = new ChatRoom();
-            //chatroom.Show();
+            ChatRoom chatroom = new ChatRoom(_roomNum);
+            chatroom.Show();
         }
 
         private void FixToolStripMenuItem_Click(object sender, EventArgs e)
