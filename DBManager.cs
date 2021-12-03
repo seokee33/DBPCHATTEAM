@@ -31,17 +31,26 @@ namespace DBUI
         // SELECT
         public DataTable select(string SQL)
         {
-
-            ds.Clear();
-            MySqlDataAdapter da = new MySqlDataAdapter();
-            MySqlCommand cmd = conn.CreateCommand();
             DataTable dt = new DataTable();
-            cmd.CommandText = SQL;
-            da.SelectCommand = cmd;
-            conn.Open();
-            da.Fill(dt);
-            conn.Close();
+            try
+            {
+                ds.Clear();
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = SQL;
+                da.SelectCommand = cmd;
+                conn.Open();
+                da.Fill(dt);
+                conn.Close();
+                return dt;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                Console.WriteLine(SQL);
+            }
             return dt;
+            
         }
         // UPDATE,DELETE,INSERT
         public void executeQuerry(string SQL)
@@ -52,6 +61,23 @@ namespace DBUI
                 {
                     conn.Open();
                     MySqlCommand command = new MySqlCommand(SQL, conn);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+            }
+        }
+        public void msgexecuteQuerry(string SQL)
+        {
+            MySqlConnection msg_conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
+            using (msg_conn)
+            {
+                try
+                {
+                    msg_conn.Open();
+                    MySqlCommand command = new MySqlCommand(SQL, msg_conn);
                     command.ExecuteNonQuery();
                 }
                 catch (Exception ex)

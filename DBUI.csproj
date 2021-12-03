@@ -147,6 +147,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginUser.cs" />
+    <Compile Include="ChatMessage.cs" />
     <Compile Include="NewChat.cs">
       <SubType>Form</SubType>
     </Compile>

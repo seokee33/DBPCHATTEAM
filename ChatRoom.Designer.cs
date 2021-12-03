@@ -38,13 +38,13 @@ namespace DBUI
             this.buttonMessageSend = new System.Windows.Forms.Button();
             this.textBoxMessageSend = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelFDName = new System.Windows.Forms.Label();
+            this.roundPictureBoxFDpoto = new DBUI.RoundPictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxMessage = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.roundPictureBoxFDpoto = new DBUI.RoundPictureBox();
-            this.labelFDName = new System.Windows.Forms.Label();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMini)).BeginInit();
@@ -139,6 +139,7 @@ namespace DBUI
             this.buttonMessageSend.TabIndex = 2;
             this.buttonMessageSend.Text = "전송";
             this.buttonMessageSend.UseVisualStyleBackColor = false;
+            this.buttonMessageSend.Click += new System.EventHandler(this.buttonMessageSend_Click);
             // 
             // textBoxMessageSend
             // 
@@ -161,6 +162,26 @@ namespace DBUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 121);
             this.panel1.TabIndex = 14;
+            // 
+            // labelFDName
+            // 
+            this.labelFDName.AutoSize = true;
+            this.labelFDName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelFDName.Location = new System.Drawing.Point(114, 40);
+            this.labelFDName.Name = "labelFDName";
+            this.labelFDName.Size = new System.Drawing.Size(31, 15);
+            this.labelFDName.TabIndex = 4;
+            this.labelFDName.Text = "이름";
+            // 
+            // roundPictureBoxFDpoto
+            // 
+            this.roundPictureBoxFDpoto.Image = global::DBUI.Properties.Resources.프로필;
+            this.roundPictureBoxFDpoto.Location = new System.Drawing.Point(27, 15);
+            this.roundPictureBoxFDpoto.Name = "roundPictureBoxFDpoto";
+            this.roundPictureBoxFDpoto.Size = new System.Drawing.Size(60, 60);
+            this.roundPictureBoxFDpoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundPictureBoxFDpoto.TabIndex = 3;
+            this.roundPictureBoxFDpoto.TabStop = false;
             // 
             // buttonSearch
             // 
@@ -208,26 +229,6 @@ namespace DBUI
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(400, 1);
             this.panel4.TabIndex = 18;
-            // 
-            // roundPictureBoxFDpoto
-            // 
-            this.roundPictureBoxFDpoto.Image = global::DBUI.Properties.Resources.프로필;
-            this.roundPictureBoxFDpoto.Location = new System.Drawing.Point(27, 15);
-            this.roundPictureBoxFDpoto.Name = "roundPictureBoxFDpoto";
-            this.roundPictureBoxFDpoto.Size = new System.Drawing.Size(60, 60);
-            this.roundPictureBoxFDpoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundPictureBoxFDpoto.TabIndex = 3;
-            this.roundPictureBoxFDpoto.TabStop = false;
-            // 
-            // labelFDName
-            // 
-            this.labelFDName.AutoSize = true;
-            this.labelFDName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelFDName.Location = new System.Drawing.Point(114, 40);
-            this.labelFDName.Name = "labelFDName";
-            this.labelFDName.Size = new System.Drawing.Size(31, 15);
-            this.labelFDName.TabIndex = 4;
-            this.labelFDName.Text = "이름";
             // 
             // ChatRoom
             // 
