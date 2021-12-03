@@ -54,7 +54,7 @@ namespace DBUI
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
             thread.Abort();
-            DBManager.GetInstance().init();
+            //DBManager.GetInstance().init();
             this.Close();
         }
 

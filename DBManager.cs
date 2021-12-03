@@ -14,7 +14,6 @@ namespace DBUI
 {
     class DBManager
     {
-        MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
         DataSet ds = new DataSet();
 
         private DBManager()
@@ -31,10 +30,11 @@ namespace DBUI
         // SELECT
         public DataTable select(string SQL)
         {
+            MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
+
             DataTable dt = new DataTable();
             try
             {
-                ds.Clear();
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = SQL;
@@ -46,15 +46,23 @@ namespace DBUI
             }
             catch (Exception e)
             {
+                conn.Close();
                 Console.WriteLine(e.ToString());
                 Console.WriteLine(SQL);
             }
-            return dt;
+            finally
+            {
+                conn.Close();
+            }
+
+            return null;
 
         }
         // UPDATE,DELETE,INSERT
         public void executeQuerry(string SQL)
         {
+        MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
+
             using (conn)
             {
                 try
@@ -67,10 +75,15 @@ namespace DBUI
                 {
                     Console.WriteLine(ex.ToString());
                 }
+                finally
+                {
+                    conn.Close();
+                }
             }
         }
         public void msgexecuteQuerry(string SQL)
         {
+
             MySqlConnection msg_conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
             using (msg_conn)
             {
@@ -84,12 +97,18 @@ namespace DBUI
                 {
                     Console.WriteLine(ex.ToString());
                 }
+                finally
+                {
+                    msg_conn.Close();
+                }
             }
         }
         // 이미지가 포함된 정보를 DB에 넣을때 사용하는 쿼리
         // EX) 유저
         public void insert_Image(PictureBox pbxImage, string sql)
         {
+            MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
+
             MemoryStream ms = new MemoryStream();
             pbxImage.Image.Save(ms, pbxImage.Image.RawFormat);
             byte[] img = ms.ToArray();
@@ -107,10 +126,16 @@ namespace DBUI
             {
                 Console.WriteLine(e);
             }
+            finally
+            {
+                conn.Close();
+            }
 
         }
         public void update_Image(PictureBox pbxImage, string sql)
         {
+            MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
+
             MemoryStream ms = new MemoryStream();
             pbxImage.Image.Save(ms, pbxImage.Image.RawFormat);
             byte[] img = ms.ToArray();
@@ -133,6 +158,7 @@ namespace DBUI
         // 유저 한명을 가져오는 쿼리
         public UserInfo select_profile(string SQL)
         {
+            MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
             UserInfo user = new UserInfo();
             DataTable datatable = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter();
@@ -157,6 +183,10 @@ namespace DBUI
             {
                 pb = null;
             }
+            finally
+            {
+                conn.Close();
+            }
 
             user = new UserInfo(Convert.ToInt32(datatable.Rows[0][0]), Convert.ToString(datatable.Rows[0][1]), Convert.ToString(datatable.Rows[0][2]), Convert.ToString(datatable.Rows[0][3]), Convert.ToDateTime(datatable.Rows[0][4]), Convert.ToString(datatable.Rows[0][5]), Convert.ToString(datatable.Rows[0][6]), pb);
 
@@ -168,6 +198,9 @@ namespace DBUI
         //친구목록을 가져오는 쿼리문
         public List<UserInfo> select_Friends(string SQL)
         {
+
+            MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
+
             List<UserInfo> result = new List<UserInfo>();
             //try
             //{
@@ -196,6 +229,10 @@ namespace DBUI
                 {
                     pb = null;
                 }
+                finally
+                {
+                    conn.Close();
+                }
 
                 result.Add(new UserInfo(Convert.ToInt32(data[0]), Convert.ToInt32(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]), pb));
             }
@@ -209,6 +246,7 @@ namespace DBUI
 
         public void init()
         {
+            MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
             try
             {
                 conn.Close();
@@ -217,11 +255,17 @@ namespace DBUI
             {
                 return;
             }
-            
+            finally
+            {
+                conn.Close();
+            }
+
         }
         //DB 정보의 유무를 확인하는 쿼리
         public int exist(string SQL)
         {
+            MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
+
             using (conn)
             {
                 try
@@ -241,6 +285,10 @@ namespace DBUI
                 {
                     Console.WriteLine(ex.ToString());
                     return 99999;
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
         }

@@ -74,8 +74,8 @@ namespace DBUI.UIControls
             int roomNum;
             if(DBManager.GetInstance().exist("SELECT EXISTS(SELECT * FROM CHAT.User_Chat_Room WHERE `UserSeq` = '" + LoginUser.GetInstance().get_User().get_UID() + "' and `FriendSeq` ='" + _UID + "' ) AS exist; ") == 0)
             {
-                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`,`FriendSeq`, `RoomID`) VALUES ('" + LoginUser.GetInstance().get_User().get_UID() + "','" + _UID + "', '" + _fNum + "');");
-                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`,`FriendSeq`, `RoomID`) VALUES ('" + _UID + "','" + LoginUser.GetInstance().get_User().get_UID() + "', '" + _fNum + "');");
+                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`,`FriendSeq`, `RoomID`,`Top`) VALUES ('" + LoginUser.GetInstance().get_User().get_UID() + "','" + _UID + "', '" + _fNum + "','0');");
+                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`,`FriendSeq`, `RoomID`,`Top`) VALUES ('" + _UID + "','" + LoginUser.GetInstance().get_User().get_UID() + "', '" + _fNum + "','0');");
                 DataTable dt = DBManager.GetInstance().select("SELECT `RoomID` FROM CHAT.User_Chat_Room WHERE `UserSeq` = '" + LoginUser.GetInstance().get_User().get_UID() + "' and `FriendSeq` ='" + _UID + "';");
                 roomNum = Convert.ToInt32(dt.Rows[0][0]);
 

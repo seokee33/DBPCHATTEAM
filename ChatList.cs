@@ -50,7 +50,7 @@ namespace DBUI
                     ChatListForm chat = new ChatListForm(this);
                     chat.FriendName = roomList[i].FriendSeq;
                     chat.RoomNum = roomList[i].RoomID;
-                    chat.Top = roomList[i].Top;
+                    chat.Chat_Top = roomList[i].Top;
                     chat.Seq = roomList[i].Seq;
                     NoneChatList.Add(chat);
                 }
@@ -59,7 +59,7 @@ namespace DBUI
                     ChatListForm chat = new ChatListForm(this);
                     chat.FriendName = roomList[i].FriendSeq;
                     chat.RoomNum = roomList[i].RoomID;
-                    chat.Top = roomList[i].Top;
+                    chat.Chat_Top = roomList[i].Top;
                     chat.Seq = roomList[i].Seq;
                     chat.pictureBoxPin.Visible = true;
                     TopChatList.Add(chat);
@@ -111,7 +111,7 @@ namespace DBUI
                     ChatListForm chat = new ChatListForm(this);
                     chat.FriendName = name;
                     chat.RoomNum = roomNum;
-                    chat.Top = top;
+                    chat.Chat_Top = top;
                     NoneChatList.Add(chat);
                 }
                 else
@@ -119,7 +119,7 @@ namespace DBUI
                     ChatListForm chat = new ChatListForm(this);
                     chat.FriendName = name;
                     chat.RoomNum = roomNum;
-                    chat.Top = top;
+                    chat.Chat_Top = top;
                     chat.pictureBoxPin.Visible = true;
                     TopChatList.Add(chat);
                 }

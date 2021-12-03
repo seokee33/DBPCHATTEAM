@@ -37,7 +37,7 @@ namespace DBUI.UIControls
             get { return _name; }
             set { _name = value; labelName.Text = value; }
         }
-        public int Top
+        public int Chat_Top
         {
             get { return _top; }
             set { _top = value; }
