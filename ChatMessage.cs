@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DBUI
 {
-    class ChatMessage
+    public class ChatMessage
     {
         private DateTime date;
         private string user_ID;

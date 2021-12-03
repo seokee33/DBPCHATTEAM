@@ -36,7 +36,12 @@ namespace DBUI
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.pictureBoxMax2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxNewChat = new System.Windows.Forms.PictureBox();
+            this.contextMenuStripEmoticon = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.em1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.em2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.em3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonMessageSend = new System.Windows.Forms.Button();
             this.textBoxMessageSend = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,11 +51,6 @@ namespace DBUI
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.listViewChatBox = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.contextMenuStripEmoticon = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.em1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.em2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.em3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMini)).BeginInit();
@@ -58,8 +58,8 @@ namespace DBUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewChat)).BeginInit();
-            this.panel1.SuspendLayout();
             this.contextMenuStripEmoticon.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBorder
@@ -72,7 +72,7 @@ namespace DBUI
             this.panelBorder.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBorder.Location = new System.Drawing.Point(0, 0);
             this.panelBorder.Name = "panelBorder";
-            this.panelBorder.Size = new System.Drawing.Size(400, 60);
+            this.panelBorder.Size = new System.Drawing.Size(400, 32);
             this.panelBorder.TabIndex = 10;
             this.panelBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBorder_MouseDown);
             // 
@@ -137,6 +137,16 @@ namespace DBUI
             this.panel3.Size = new System.Drawing.Size(400, 95);
             this.panel3.TabIndex = 13;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(350, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 15);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "*우클릭";
+            // 
             // pictureBoxNewChat
             // 
             this.pictureBoxNewChat.ContextMenuStrip = this.contextMenuStripEmoticon;
@@ -147,108 +157,6 @@ namespace DBUI
             this.pictureBoxNewChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxNewChat.TabIndex = 32;
             this.pictureBoxNewChat.TabStop = false;
-            // 
-            // buttonMessageSend
-            // 
-            this.buttonMessageSend.BackColor = System.Drawing.Color.White;
-            this.buttonMessageSend.FlatAppearance.BorderSize = 0;
-            this.buttonMessageSend.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMessageSend.Location = new System.Drawing.Point(301, 15);
-            this.buttonMessageSend.Name = "buttonMessageSend";
-            this.buttonMessageSend.Size = new System.Drawing.Size(48, 64);
-            this.buttonMessageSend.TabIndex = 2;
-            this.buttonMessageSend.Text = "전송";
-            this.buttonMessageSend.UseVisualStyleBackColor = false;
-            this.buttonMessageSend.Click += new System.EventHandler(this.buttonMessageSend_Click);
-            // 
-            // textBoxMessageSend
-            // 
-            this.textBoxMessageSend.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMessageSend.Location = new System.Drawing.Point(12, 15);
-            this.textBoxMessageSend.Multiline = true;
-            this.textBoxMessageSend.Name = "textBoxMessageSend";
-            this.textBoxMessageSend.Size = new System.Drawing.Size(283, 64);
-            this.textBoxMessageSend.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel1.Controls.Add(this.labelFDName);
-            this.panel1.Controls.Add(this.buttonSearch);
-            this.panel1.Controls.Add(this.textBoxSearch);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 60);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 121);
-            this.panel1.TabIndex = 14;
-            // 
-            // labelFDName
-            // 
-            this.labelFDName.AutoSize = true;
-            this.labelFDName.Font = new System.Drawing.Font("맑은 고딕", 30F);
-            this.labelFDName.Location = new System.Drawing.Point(113, 15);
-            this.labelFDName.Name = "labelFDName";
-            this.labelFDName.Size = new System.Drawing.Size(103, 54);
-            this.labelFDName.TabIndex = 4;
-            this.labelFDName.Text = "이름";
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.BackColor = System.Drawing.Color.White;
-            this.buttonSearch.FlatAppearance.BorderSize = 0;
-            this.buttonSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch.Location = new System.Drawing.Point(333, 80);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(48, 28);
-            this.buttonSearch.TabIndex = 2;
-            this.buttonSearch.Text = "검색";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.Location = new System.Drawing.Point(25, 83);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(291, 23);
-            this.textBoxSearch.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 181);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(400, 1);
-            this.panel2.TabIndex = 16;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 590);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(400, 1);
-            this.panel4.TabIndex = 18;
-            // 
-            // listViewChatBox
-            // 
-            this.listViewChatBox.HideSelection = false;
-            this.listViewChatBox.Location = new System.Drawing.Point(0, 189);
-            this.listViewChatBox.Name = "listViewChatBox";
-            this.listViewChatBox.Size = new System.Drawing.Size(400, 393);
-            this.listViewChatBox.TabIndex = 19;
-            this.listViewChatBox.UseCompatibleStateImageBehavior = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(350, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 15);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "*우클릭";
             // 
             // contextMenuStripEmoticon
             // 
@@ -280,6 +188,98 @@ namespace DBUI
             this.em3ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.em3ToolStripMenuItem.Text = "이모티콘3";
             // 
+            // buttonMessageSend
+            // 
+            this.buttonMessageSend.BackColor = System.Drawing.Color.White;
+            this.buttonMessageSend.FlatAppearance.BorderSize = 0;
+            this.buttonMessageSend.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMessageSend.Location = new System.Drawing.Point(301, 15);
+            this.buttonMessageSend.Name = "buttonMessageSend";
+            this.buttonMessageSend.Size = new System.Drawing.Size(48, 64);
+            this.buttonMessageSend.TabIndex = 2;
+            this.buttonMessageSend.Text = "전송";
+            this.buttonMessageSend.UseVisualStyleBackColor = false;
+            this.buttonMessageSend.Click += new System.EventHandler(this.buttonMessageSend_Click);
+            // 
+            // textBoxMessageSend
+            // 
+            this.textBoxMessageSend.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMessageSend.Location = new System.Drawing.Point(12, 15);
+            this.textBoxMessageSend.Multiline = true;
+            this.textBoxMessageSend.Name = "textBoxMessageSend";
+            this.textBoxMessageSend.Size = new System.Drawing.Size(283, 64);
+            this.textBoxMessageSend.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panel1.Controls.Add(this.labelFDName);
+            this.panel1.Controls.Add(this.buttonSearch);
+            this.panel1.Controls.Add(this.textBoxSearch);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 32);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(400, 121);
+            this.panel1.TabIndex = 14;
+            // 
+            // labelFDName
+            // 
+            this.labelFDName.AutoSize = true;
+            this.labelFDName.Font = new System.Drawing.Font("맑은 고딕", 30F);
+            this.labelFDName.Location = new System.Drawing.Point(12, 12);
+            this.labelFDName.Name = "labelFDName";
+            this.labelFDName.Size = new System.Drawing.Size(103, 54);
+            this.labelFDName.TabIndex = 4;
+            this.labelFDName.Text = "이름";
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.White;
+            this.buttonSearch.FlatAppearance.BorderSize = 0;
+            this.buttonSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.Location = new System.Drawing.Point(332, 75);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(48, 28);
+            this.buttonSearch.TabIndex = 2;
+            this.buttonSearch.Text = "검색";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.Location = new System.Drawing.Point(21, 80);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(291, 23);
+            this.textBoxSearch.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 153);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(400, 1);
+            this.panel2.TabIndex = 16;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 590);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(400, 1);
+            this.panel4.TabIndex = 18;
+            // 
+            // listViewChatBox
+            // 
+            this.listViewChatBox.HideSelection = false;
+            this.listViewChatBox.Location = new System.Drawing.Point(0, 153);
+            this.listViewChatBox.Name = "listViewChatBox";
+            this.listViewChatBox.Size = new System.Drawing.Size(400, 438);
+            this.listViewChatBox.TabIndex = 19;
+            this.listViewChatBox.UseCompatibleStateImageBehavior = false;
+            // 
             // ChatRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -303,9 +303,9 @@ namespace DBUI
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewChat)).EndInit();
+            this.contextMenuStripEmoticon.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.contextMenuStripEmoticon.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

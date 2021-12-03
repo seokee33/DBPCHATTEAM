@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DBUI
 {
-    class ChatInfo
+    public class ChatInfo
     {
         private int _Seq;
         private string _UserSeq;

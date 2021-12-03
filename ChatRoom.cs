@@ -113,7 +113,7 @@ namespace DBUI
                     {
                         try
                         {
-                            textBoxMessage.BeginInvoke(new Action(() => textBoxMessage.Text += (msg.Get_UserID() + " : " + msg.get_Msg() + Environment.NewLine)));
+                            //textBoxMessage.BeginInvoke(new Action(() => textBoxMessage.Text += (msg.Get_UserID() + " : " + msg.get_Msg() + Environment.NewLine)));
                         }
                         catch
                         {
@@ -132,7 +132,14 @@ namespace DBUI
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-
+            if (textBoxSearch.Text.Length == 0)
+            {
+                MessageBox.Show("검색어를 입력해주세요");
+                return;
+            }
+                
+            ChatSearch search = new ChatSearch(textBoxSearch.Text, message);
+            search.Show();
         }
     }
 }

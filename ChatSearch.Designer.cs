@@ -45,7 +45,7 @@ namespace DBUI
             this.panelBorder.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBorder.Location = new System.Drawing.Point(0, 0);
             this.panelBorder.Name = "panelBorder";
-            this.panelBorder.Size = new System.Drawing.Size(384, 60);
+            this.panelBorder.Size = new System.Drawing.Size(384, 40);
             this.panelBorder.TabIndex = 12;
             // 
             // pictureBoxClose
@@ -64,7 +64,7 @@ namespace DBUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(12, 75);
+            this.label1.Location = new System.Drawing.Point(12, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 13;
@@ -72,10 +72,10 @@ namespace DBUI
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(16, 119);
+            this.textBoxSearch.Location = new System.Drawing.Point(16, 78);
             this.textBoxSearch.Multiline = true;
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(356, 125);
+            this.textBoxSearch.Size = new System.Drawing.Size(356, 185);
             this.textBoxSearch.TabIndex = 14;
             // 
             // buttonOK

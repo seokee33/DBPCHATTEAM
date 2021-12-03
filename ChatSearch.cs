@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace DBUI
 {
     public partial class ChatSearch : Form
     {
-        public ChatSearch()
+        string msg;
+        List<ChatMessage> msgList;
+        public ChatSearch(string msg, List<ChatMessage> msgList)
         {
             InitializeComponent();
+            this.msg = msg;
+            this.msgList = msgList;
+            search();
         }
 
         #region 상단부분
@@ -39,6 +45,16 @@ namespace DBUI
 
         #endregion
 
+
+        private void search()
+        {
+            textBoxSearch.Text = "";
+            foreach (ChatMessage m in msgList)
+            {
+                if (m.get_Msg().Contains(msg))
+                    textBoxSearch.Text += "["+m.Get_Date()+"]" +m.Get_UserID()+ " : " + m.get_Msg()+ Environment.NewLine;
+            }
+        }
         private void buttonOK_Click(object sender, EventArgs e)
         {
             this.Close();
