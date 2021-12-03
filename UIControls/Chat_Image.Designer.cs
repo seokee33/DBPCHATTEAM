@@ -1,7 +1,7 @@
 ﻿
 namespace DBUI.UIControls
 {
-    partial class Image
+    partial class Chat_Image
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -36,18 +36,18 @@ namespace DBUI.UIControls
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(166, 164);
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // Image
+            // Chat_Image
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Image";
+            this.Name = "Chat_Image";
             this.Size = new System.Drawing.Size(570, 170);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

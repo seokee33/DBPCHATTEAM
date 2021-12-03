@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DBUI.UIControls
 {
-    public partial class Image : UserControl
+    public partial class Chat_Image : UserControl
     {
-        public Image()
+        public Chat_Image()
         {
             InitializeComponent();
         }
