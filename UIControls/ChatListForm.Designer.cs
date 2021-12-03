@@ -51,7 +51,7 @@ namespace DBUI.UIControls
             this.labelName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.labelName.Location = new System.Drawing.Point(116, 22);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(240, 21);
+            this.labelName.Size = new System.Drawing.Size(102, 21);
             this.labelName.TabIndex = 37;
             this.labelName.Text = "이름";
             // 
@@ -99,6 +99,7 @@ namespace DBUI.UIControls
             this.panelFriendProfile.Name = "panelFriendProfile";
             this.panelFriendProfile.Size = new System.Drawing.Size(390, 96);
             this.panelFriendProfile.TabIndex = 39;
+            this.panelFriendProfile.Click += new System.EventHandler(this.panelFriendProfile_Click);
             // 
             // pictureBoxPin
             // 
@@ -118,7 +119,7 @@ namespace DBUI.UIControls
             this.labelMsg.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.labelMsg.Location = new System.Drawing.Point(123, 50);
             this.labelMsg.Name = "labelMsg";
-            this.labelMsg.Size = new System.Drawing.Size(245, 21);
+            this.labelMsg.Size = new System.Drawing.Size(71, 21);
             this.labelMsg.TabIndex = 40;
             this.labelMsg.Text = "내용";
             // 
@@ -148,6 +149,6 @@ namespace DBUI.UIControls
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem FixToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DeleteMsgToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBoxPin;
+        public System.Windows.Forms.PictureBox pictureBoxPin;
     }
 }

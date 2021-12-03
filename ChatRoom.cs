@@ -14,12 +14,15 @@ namespace DBUI
     public partial class ChatRoom : Form
     {
         int roomNum;
+        string friendName;
         Thread thread;
         List<ChatMessage> message = new List<ChatMessage>();
-        public ChatRoom(int roomNum)
+        public ChatRoom(int roomNum, string friendName)
         {
             InitializeComponent();
             this.roomNum = roomNum;
+            this.friendName = friendName;
+            labelFDName.Text = friendName;
             try
             {
                 thread = new Thread(() => get_Message());
@@ -124,6 +127,11 @@ namespace DBUI
         {
             DBManager.GetInstance().msgexecuteQuerry("INSERT INTO `CHAT`.`ChatMessage` (`Message_Date`, `user_id`,`room_id`, `message`) VALUES ('" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + LoginUser.GetInstance().get_User().get_UID() + "', '" + roomNum + "','" + textBoxMessageSend.Text + "');");
             textBoxMessageSend.Text = "";
+
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -166,10 +166,10 @@ namespace DBUI
             // labelFDName
             // 
             this.labelFDName.AutoSize = true;
-            this.labelFDName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelFDName.Location = new System.Drawing.Point(114, 40);
+            this.labelFDName.Font = new System.Drawing.Font("맑은 고딕", 30F);
+            this.labelFDName.Location = new System.Drawing.Point(113, 15);
             this.labelFDName.Name = "labelFDName";
-            this.labelFDName.Size = new System.Drawing.Size(31, 15);
+            this.labelFDName.Size = new System.Drawing.Size(103, 54);
             this.labelFDName.TabIndex = 4;
             this.labelFDName.Text = "이름";
             // 
@@ -194,6 +194,7 @@ namespace DBUI
             this.buttonSearch.TabIndex = 2;
             this.buttonSearch.Text = "검색";
             this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -218,6 +219,8 @@ namespace DBUI
             this.textBoxMessage.Location = new System.Drawing.Point(0, 189);
             this.textBoxMessage.Multiline = true;
             this.textBoxMessage.Name = "textBoxMessage";
+            this.textBoxMessage.ReadOnly = true;
+            this.textBoxMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxMessage.Size = new System.Drawing.Size(400, 393);
             this.textBoxMessage.TabIndex = 17;
             // 

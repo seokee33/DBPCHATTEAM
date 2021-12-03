@@ -107,6 +107,7 @@
     <Compile Include="BirthDayFriendList.Designer.cs">
       <DependentUpon>BirthDayFriendList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChatInfo.cs" />
     <Compile Include="ChatList.cs">
       <SubType>Form</SubType>
     </Compile>

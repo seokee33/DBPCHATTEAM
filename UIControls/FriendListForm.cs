@@ -86,7 +86,7 @@ namespace DBUI.UIControls
                 roomNum = Convert.ToInt32(dt.Rows[0][0]);
             }
 
-            ChatRoom chatroom = new ChatRoom(roomNum);
+            ChatRoom chatroom = new ChatRoom(roomNum, _UID);
             chatroom.Show();
 
 

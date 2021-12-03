@@ -88,7 +88,7 @@ namespace DBUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(349, 82);
+            this.ClientSize = new System.Drawing.Size(349, 113);
             this.Controls.Add(this.panelBorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Bell";
