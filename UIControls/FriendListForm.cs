@@ -17,6 +17,7 @@ namespace DBUI.UIControls
         {
             InitializeComponent();
             this.listform = list;
+
         }
 
         #region Properties
@@ -62,7 +63,7 @@ namespace DBUI.UIControls
 
         private void DeleteFriendToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DBManager.GetInstance().executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`UserID` = '"+ LoginUser.GetInstance().get_User().get_Seq() + "'and `FriendID` = '"+_fNum+"');");
+            DBManager.GetInstance().executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`UserID` = '"+ LoginUser.GetInstance().get_User().get_UID() + "'and `FriendID` = '"+_fNum+"');");
             DBManager.GetInstance().executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`UserID` = '" + _fNum + "'and `FriendID` = '" + LoginUser.GetInstance().get_User().get_Seq() + "');");
             listform.ListOfFriend_Load(sender, e);
 
@@ -70,14 +71,22 @@ namespace DBUI.UIControls
 
         private void FriendProfile_Click(object sender, EventArgs e)
         {
-            int roomNum = _fNum;
+            int roomNum;
             if(DBManager.GetInstance().exist("SELECT EXISTS(SELECT * FROM CHAT.User_Chat_Room WHERE `UserSeq` = '" + LoginUser.GetInstance().get_User().get_UID() + "' and `FriendSeq` ='" + _UID + "' ) AS exist; ") == 0)
             {
                 DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`,`FriendSeq`, `RoomID`) VALUES ('" + LoginUser.GetInstance().get_User().get_UID() + "','" + _UID + "', '" + _fNum + "');");
                 DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`,`FriendSeq`, `RoomID`) VALUES ('" + _UID + "','" + LoginUser.GetInstance().get_User().get_UID() + "', '" + _fNum + "');");
+                DataTable dt = DBManager.GetInstance().select("SELECT `RoomID` FROM CHAT.User_Chat_Room WHERE `UserSeq` = '" + LoginUser.GetInstance().get_User().get_UID() + "' and `FriendSeq` ='" + _UID + "';");
+                roomNum = Convert.ToInt32(dt.Rows[0][0]);
+
+            }
+            else
+            {
+                DataTable dt = DBManager.GetInstance().select("SELECT `RoomID` FROM CHAT.User_Chat_Room WHERE `UserSeq` = '" + LoginUser.GetInstance().get_User().get_UID() + "' and `FriendSeq` ='" + _UID + "';");
+                roomNum = Convert.ToInt32(dt.Rows[0][0]);
             }
 
-            ChatRoom chatroom = new ChatRoom(_fNum);
+            ChatRoom chatroom = new ChatRoom(roomNum);
             chatroom.Show();
 
 
