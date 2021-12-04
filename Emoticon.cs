@@ -35,16 +35,14 @@ namespace DBUI
             List<EmoticonInfo> emoticons = DBManager.GetInstance().select_Emoticon("SELECT * FROM CHAT.Emoticon;");
 
             emoticon_PB.Controls.Clear();
-            EmoticonItem[] emoticonItem = new EmoticonItem[emoticons.Count];
+            Emoticonitem[] emoticonItem = new Emoticonitem[emoticons.Count];
             for (int i = 0; i < emoticons.Count; i++)
             {
-                emoticonItem[i] = new EmoticonItem();
-                emoticonItem[i].Dock = DockStyle.Top;
+                emoticonItem[i] = new Emoticonitem();
                 emoticonItem[i].Seq = emoticons[i].Seq;
-                
 
-                if (emoticonItem[i].PB != null)
-                    emoticonItem[i].PB.Image = emoticons[i].PB.Image;
+                if (emoticons[i].PB != null)
+                    emoticonItem[i].PB = emoticons[i].PB;
 
                 // 사진 db에서 받아오기
                 if (emoticon_PB.Controls.Count > 0)
@@ -52,8 +50,9 @@ namespace DBUI
                     emoticon_PB.Controls.Clear();
                 }
                 
-                //emoticon_PB.Controls.Add(emoticonItem[i]);
+                emoticon_PB.Controls.Add(emoticonItem[i]);
             }
         }
+
     }
 }

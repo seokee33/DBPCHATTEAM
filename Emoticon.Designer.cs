@@ -29,25 +29,13 @@ namespace DBUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.panelBorder = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.emoticon_PB = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.panelBorder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBoxClose
-            // 
-            this.pictureBoxClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxClose.Image = global::DBUI.Properties.Resources.window_close_icon_135015;
-            this.pictureBoxClose.Location = new System.Drawing.Point(210, 12);
-            this.pictureBoxClose.Name = "pictureBoxClose";
-            this.pictureBoxClose.Size = new System.Drawing.Size(19, 18);
-            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxClose.TabIndex = 5;
-            this.pictureBoxClose.TabStop = false;
-            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
             // 
             // panelBorder
             // 
@@ -67,8 +55,21 @@ namespace DBUI
             this.flowLayoutPanel1.Size = new System.Drawing.Size(403, 384);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
+            // pictureBoxClose
+            // 
+            this.pictureBoxClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxClose.Image = global::DBUI.Properties.Resources.window_close_icon_135015;
+            this.pictureBoxClose.Location = new System.Drawing.Point(210, 12);
+            this.pictureBoxClose.Name = "pictureBoxClose";
+            this.pictureBoxClose.Size = new System.Drawing.Size(19, 18);
+            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxClose.TabIndex = 5;
+            this.pictureBoxClose.TabStop = false;
+            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
+            // 
             // emoticon_PB
             // 
+            this.emoticon_PB.AutoScroll = true;
             this.emoticon_PB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.emoticon_PB.Location = new System.Drawing.Point(0, 38);
             this.emoticon_PB.Name = "emoticon_PB";
@@ -87,8 +88,8 @@ namespace DBUI
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Emoticon";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             this.panelBorder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             this.ResumeLayout(false);
 
         }

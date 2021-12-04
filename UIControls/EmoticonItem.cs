@@ -10,15 +10,14 @@ using System.Windows.Forms;
 
 namespace DBUI.UIControls
 {
-    public partial class EmoticonItem : Form
+    public partial class Emoticonitem : UserControl
     {
-        public EmoticonItem()
+        private int _Seq;
+        private PictureBox _PB;
+        public Emoticonitem()
         {
             InitializeComponent();
         }
-        private int _Seq;
-        private PictureBox _PB;
-
         public int Seq
         {
             get { return this._Seq; }
@@ -29,7 +28,5 @@ namespace DBUI.UIControls
             get { return this._PB; }
             set { _PB = value; }
         }
-
-
     }
 }

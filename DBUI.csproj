@@ -219,11 +219,11 @@
     <Compile Include="UIControls\ColorChangeTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UIControls\EmoticonItem.cs">
-      <SubType>Form</SubType>
+    <Compile Include="UIControls\Emoticonitem.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UIControls\EmoticonItem.Designer.cs">
-      <DependentUpon>EmoticonItem.cs</DependentUpon>
+    <Compile Include="UIControls\Emoticonitem.Designer.cs">
+      <DependentUpon>Emoticonitem.cs</DependentUpon>
     </Compile>
     <Compile Include="UIControls\FriendListForm.cs">
       <SubType>UserControl</SubType>
@@ -324,8 +324,8 @@
     <EmbeddedResource Include="UIControls\Chat_Image.resx">
       <DependentUpon>Chat_Image.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UIControls\EmoticonItem.resx">
-      <DependentUpon>EmoticonItem.cs</DependentUpon>
+    <EmbeddedResource Include="UIControls\Emoticonitem.resx">
+      <DependentUpon>Emoticonitem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIControls\FriendListForm.resx">
       <DependentUpon>FriendListForm.cs</DependentUpon>
