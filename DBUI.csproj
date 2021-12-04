@@ -127,6 +127,13 @@
       <DependentUpon>ChatSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="DBManager.cs" />
+    <Compile Include="Emoticon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emoticon.Designer.cs">
+      <DependentUpon>Emoticon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmoticonInfo.cs" />
     <Compile Include="Encry.cs" />
     <Compile Include="FriendList.cs">
       <SubType>Form</SubType>
@@ -212,6 +219,12 @@
     <Compile Include="UIControls\ColorChangeTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UIControls\EmoticonItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIControls\EmoticonItem.Designer.cs">
+      <DependentUpon>EmoticonItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIControls\FriendListForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -257,9 +270,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChatRoom.resx">
       <DependentUpon>ChatRoom.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ChatSearch.resx">
       <DependentUpon>ChatSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emoticon.resx">
+      <DependentUpon>Emoticon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FriendList.resx">
       <DependentUpon>FriendList.cs</DependentUpon>
@@ -306,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UIControls\Chat_Image.resx">
       <DependentUpon>Chat_Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIControls\EmoticonItem.resx">
+      <DependentUpon>EmoticonItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIControls\FriendListForm.resx">
       <DependentUpon>FriendListForm.cs</DependentUpon>

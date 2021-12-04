@@ -195,6 +195,48 @@ namespace DBUI
 
         }
 
+
+        public List<EmoticonInfo> select_Emoticon(string SQL)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
+            List<EmoticonInfo> emoticons = new List<EmoticonInfo>();
+            DataTable datatable = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = SQL;
+            da.SelectCommand = cmd;
+            conn.Open();
+            da.Fill(datatable);
+            conn.Close();
+            Byte[] bytes = null;
+
+            PictureBox pb = new PictureBox();
+            try
+            {
+                foreach(DataRow data in datatable.Rows)
+                {
+                    bytes = (byte[])data[1];
+                    if (bytes != null)
+                    {
+                        pb.Image = new Bitmap(new MemoryStream(bytes));
+                    }
+                    emoticons.Add(new EmoticonInfo(Convert.ToInt32(data[0]),pb));
+                }
+                
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+            return emoticons;
+
+        }
         //친구목록을 가져오는 쿼리문
         public List<UserInfo> select_Friends(string SQL)
         {

@@ -141,5 +141,11 @@ namespace DBUI
             ChatSearch search = new ChatSearch(textBoxSearch.Text, message);
             search.Show();
         }
+
+        private void pictureBoxNewChat_Click(object sender, EventArgs e)
+        {
+            emoticon emoticon = new emoticon(roomNum,friendName);
+            emoticon.Show();
+        }
     }
 }
