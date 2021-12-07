@@ -251,7 +251,7 @@ namespace DBUI
             List<ChatMessage> list = new List<ChatMessage>();
             while (true)
             {
-                string SQL = "SELECT msg.user_id, msg.message FROM CHAT.ChatMessage as msg Join(SELECT RoomID FROM CHAT.User_Chat_Room where UserSeq = '" + LoginUser.GetInstance().get_User().get_UID() + "') as room on msg.room_id = room.RoomID where date_format(msg.Message_Date,'%Y-%m-%d %H:%i:%S')> date_format('" + DateTime.Now.AddSeconds(-2).ToString("yyyy-MM-dd HH:mm:ss") + "', '%Y-%m-%d %H:%i:%S') and msg.user_id != '" + LoginUser.GetInstance().get_User().get_UID() + "';";
+                string SQL = "SELECT msg.user_id, msg.message FROM CHAT.ChatMessage as msg Join(SELECT RoomID FROM CHAT.User_Chat_Room where UserSeq = '" + LoginUser.GetInstance().get_User().get_UID() + "') as room on msg.room_id = room.RoomID where date_format(msg.Message_Date,'%Y-%m-%d %H:%i:%S')> date_format('" + DateTime.Now.AddSeconds(-5).ToString("yyyy-MM-dd HH:mm:ss") + "', '%Y-%m-%d %H:%i:%S') and msg.user_id != '" + LoginUser.GetInstance().get_User().get_UID() + "';";
                 dt = DBManager.GetInstance().Alarm_select(SQL);
                 list = new List<ChatMessage>();
                 foreach (DataRow data in dt.Rows)
