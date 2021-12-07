@@ -126,6 +126,7 @@
     <Compile Include="ChatSearch.Designer.cs">
       <DependentUpon>ChatSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alarm.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Emoticon.cs">
       <SubType>Form</SubType>

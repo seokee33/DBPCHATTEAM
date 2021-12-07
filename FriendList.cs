@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,11 +14,22 @@ namespace DBUI
 {
     public partial class FriendList : Form
     {
+        Thread thread;
         public FriendList()
         {
             InitializeComponent();
             this.panelBorder.MouseDown += panelBorder_MouseDown;
             this.MouseWheel += new MouseEventHandler(PanelFriendList_MouseWheel);
+
+            try
+            {
+                thread = new Thread(() => get_Message());
+                thread.Start();
+            }
+            catch
+            {
+                Console.WriteLine("챗 스레드 종료");
+            }
         }
 
         #region 상단부분
@@ -114,6 +126,7 @@ namespace DBUI
 
         private void pictureBoxBell_Click(object sender, EventArgs e)
         {
+            Setting.GetInstance().set_alarmn(false);
             pictureBoxBell.Visible = false;
             pictureBoxBellhide.Visible = true;
 
@@ -122,6 +135,7 @@ namespace DBUI
 
         private void pictureBoxBellhide_Click(object sender, EventArgs e)
         {
+            Setting.GetInstance().set_alarmn(true);
             pictureBoxBell.Visible = true;
             pictureBoxBellhide.Visible = false;
 
@@ -228,6 +242,41 @@ namespace DBUI
             Login login = new Login();
             login.Show();
 
+
+        }
+
+        private void get_Message()
+        {
+            string SQL = "SELECT msg.user_id, msg.message FROM CHAT.ChatMessage as msg Join(SELECT RoomID FROM CHAT.User_Chat_Room where UserSeq = '" + LoginUser.GetInstance().get_User().get_UID() + "') as room on msg.room_id = room.RoomID where date_format(msg.Message_Date,'%Y-%m-%d %H:%i:%S')> date_format('" + DateTime.Now.AddSeconds(-2)+"', '%Y-%m-%d %H:%i:%S') and msg.user_id != '"+LoginUser.GetInstance().get_User().get_UID()+"';";
+            DataTable dt;
+            List<ChatMessage> list = new List<ChatMessage>();
+            Bell bell;
+            while (true)
+            {
+                dt = DBManager.GetInstance().Alarm_select(SQL);
+
+                foreach (DataRow data in dt.Rows)
+                {
+                    list.Add(new ChatMessage(Convert.ToString(data[0]), Convert.ToString(data[1])));
+                }
+                if (list.Count > 0)
+                {
+                    foreach (ChatMessage msg in list)
+                    {
+                        bell = new Bell(msg.Get_UserID(),msg.get_Msg());
+                        if (bell.InvokeRequired)
+                        {
+                            bell.BeginInvoke(new Action(() =>
+                            {
+                                bell.Show();
+                                Thread.Sleep(3);
+                                bell.Close();
+                            }
+                            ));
+                        }
+                    }
+                }
+            }
 
         }
     }

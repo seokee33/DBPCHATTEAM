@@ -26,7 +26,36 @@ namespace DBUI
         {
             return instance_;
         }
+        public DataTable Alarm_select(string SQL)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
 
+            DataTable dt = new DataTable();
+            try
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = SQL;
+                da.SelectCommand = cmd;
+                conn.Open();
+                da.Fill(dt);
+                conn.Close();
+                return dt;
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                Console.WriteLine(e.ToString());
+                Console.WriteLine(SQL);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return null;
+
+        }
         // SELECT
         public DataTable select(string SQL)
         {

@@ -13,6 +13,7 @@ namespace DBUI
     class Setting
     {
         private bool auto_Login;
+        private bool alarm;
         private Setting()
         {
         }
@@ -33,6 +34,14 @@ namespace DBUI
             this.auto_Login = value;
         }
 
+        public bool get_alarm()
+        {
+            return this.alarm;
+        }
+        public void set_alarmn(bool alarm)
+        {
+            this.alarm = alarm;
+        }
 
         public bool Auto_Login()
         {

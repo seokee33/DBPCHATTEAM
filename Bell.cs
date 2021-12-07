@@ -29,10 +29,16 @@ namespace DBUI
         #endregion
 
         #region 생성자 - NoticeForm()
-
-        public Bell() {
+        public Bell()
+        {
             InitializeComponent();
             this.pictureBoxClose.Click += closePictureBox_Click;
+        }
+        public Bell(string id,string msg) {
+            InitializeComponent();
+            this.pictureBoxClose.Click += closePictureBox_Click;
+            alarm_ID.Text = id;
+            alarm_msg.Text = msg;
         }
 
         #endregion

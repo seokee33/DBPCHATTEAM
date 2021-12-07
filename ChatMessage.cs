@@ -14,7 +14,11 @@ namespace DBUI
         private string Msg;
         private int room_ID;
         private PictureBox _PB;
-
+        public ChatMessage(string user_ID, string msg)
+        {
+            this.user_ID = user_ID;
+            this.Msg = msg;
+        }
         public ChatMessage(DateTime date, string user_ID, string msg, PictureBox pb)
         {
             this.date = date;
