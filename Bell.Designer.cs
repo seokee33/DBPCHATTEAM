@@ -33,8 +33,8 @@ namespace DBUI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
-            this.alarm_msg = new DBUI.UIControls.MyTextBox();
-            this.alarm_ID = new DBUI.UIControls.MyTextBox();
+            this.alarm_ID = new System.Windows.Forms.TextBox();
+            this.alarm_msg = new System.Windows.Forms.TextBox();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
@@ -49,14 +49,14 @@ namespace DBUI
             this.panelBorder.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBorder.Location = new System.Drawing.Point(0, 0);
             this.panelBorder.Name = "panelBorder";
-            this.panelBorder.Size = new System.Drawing.Size(349, 20);
+            this.panelBorder.Size = new System.Drawing.Size(359, 20);
             this.panelBorder.TabIndex = 6;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::DBUI.Properties.Resources.message;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(15, 15);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -78,45 +78,41 @@ namespace DBUI
             // 
             this.pictureBoxClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxClose.Image = global::DBUI.Properties.Resources.window_close_icon_135015;
-            this.pictureBoxClose.Location = new System.Drawing.Point(331, 2);
+            this.pictureBoxClose.Location = new System.Drawing.Point(341, 2);
             this.pictureBoxClose.Name = "pictureBoxClose";
             this.pictureBoxClose.Size = new System.Drawing.Size(15, 15);
             this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxClose.TabIndex = 4;
             this.pictureBoxClose.TabStop = false;
             // 
+            // alarm_ID
+            // 
+            this.alarm_ID.Location = new System.Drawing.Point(12, 28);
+            this.alarm_ID.Name = "alarm_ID";
+            this.alarm_ID.Size = new System.Drawing.Size(100, 21);
+            this.alarm_ID.TabIndex = 9;
+            // 
             // alarm_msg
             // 
-            this.alarm_msg.BorderColor = System.Drawing.Color.Blue;
             this.alarm_msg.Location = new System.Drawing.Point(12, 55);
             this.alarm_msg.Multiline = true;
             this.alarm_msg.Name = "alarm_msg";
-            this.alarm_msg.ReadOnly = true;
-            this.alarm_msg.Size = new System.Drawing.Size(325, 46);
-            this.alarm_msg.TabIndex = 7;
-            // 
-            // alarm_ID
-            // 
-            this.alarm_ID.BorderColor = System.Drawing.Color.Blue;
-            this.alarm_ID.Location = new System.Drawing.Point(12, 27);
-            this.alarm_ID.Name = "alarm_ID";
-            this.alarm_ID.ReadOnly = true;
-            this.alarm_ID.Size = new System.Drawing.Size(100, 21);
-            this.alarm_ID.TabIndex = 8;
+            this.alarm_msg.Size = new System.Drawing.Size(334, 55);
+            this.alarm_msg.TabIndex = 10;
             // 
             // Bell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(349, 113);
-            this.Controls.Add(this.alarm_ID);
+            this.ClientSize = new System.Drawing.Size(359, 121);
             this.Controls.Add(this.alarm_msg);
+            this.Controls.Add(this.alarm_ID);
             this.Controls.Add(this.panelBorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Bell";
             this.Text = "Bell";
-            this.Load += new System.EventHandler(this.Bell_Load);
+            //this.Load += new System.EventHandler(this.Bell_Load);
             this.panelBorder.ResumeLayout(false);
             this.panelBorder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -132,7 +128,7 @@ namespace DBUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBoxClose;
-        private UIControls.MyTextBox alarm_msg;
-        private UIControls.MyTextBox alarm_ID;
+        private System.Windows.Forms.TextBox alarm_ID;
+        private System.Windows.Forms.TextBox alarm_msg;
     }
 }

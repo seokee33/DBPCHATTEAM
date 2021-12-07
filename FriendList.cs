@@ -247,14 +247,13 @@ namespace DBUI
 
         private void get_Message()
         {
-            string SQL = "SELECT msg.user_id, msg.message FROM CHAT.ChatMessage as msg Join(SELECT RoomID FROM CHAT.User_Chat_Room where UserSeq = '" + LoginUser.GetInstance().get_User().get_UID() + "') as room on msg.room_id = room.RoomID where date_format(msg.Message_Date,'%Y-%m-%d %H:%i:%S')> date_format('" + DateTime.Now.AddSeconds(-2)+"', '%Y-%m-%d %H:%i:%S') and msg.user_id != '"+LoginUser.GetInstance().get_User().get_UID()+"';";
             DataTable dt;
             List<ChatMessage> list = new List<ChatMessage>();
-            Bell bell;
             while (true)
             {
+                string SQL = "SELECT msg.user_id, msg.message FROM CHAT.ChatMessage as msg Join(SELECT RoomID FROM CHAT.User_Chat_Room where UserSeq = '" + LoginUser.GetInstance().get_User().get_UID() + "') as room on msg.room_id = room.RoomID where date_format(msg.Message_Date,'%Y-%m-%d %H:%i:%S')> date_format('" + DateTime.Now.AddSeconds(-2).ToString("yyyy-MM-dd HH:mm:ss") + "', '%Y-%m-%d %H:%i:%S') and msg.user_id != '" + LoginUser.GetInstance().get_User().get_UID() + "';";
                 dt = DBManager.GetInstance().Alarm_select(SQL);
-
+                list = new List<ChatMessage>();
                 foreach (DataRow data in dt.Rows)
                 {
                     list.Add(new ChatMessage(Convert.ToString(data[0]), Convert.ToString(data[1])));
@@ -263,21 +262,52 @@ namespace DBUI
                 {
                     foreach (ChatMessage msg in list)
                     {
-                        bell = new Bell(msg.Get_UserID(),msg.get_Msg());
-                        if (bell.InvokeRequired)
-                        {
-                            bell.BeginInvoke(new Action(() =>
-                            {
-                                bell.Show();
-                                Thread.Sleep(3);
-                                bell.Close();
-                            }
-                            ));
-                        }
+                        Bell bell = new Bell(msg.Get_UserID(), msg.get_Msg());
+                        bell.Show();
+                        Thread.Sleep(5000);
+                        bell.Close();
+                        //if (this.InvokeRequired)
+                        //{
+                        //    this.BeginInvoke(new Action(() =>
+                        //    {
+                        //        //bell.alarm_msg.begininvoke(new action(() => bell.show()));
+                        //        //bell.alarm_id.begininvoke(new action(() => bell.alarm_id.text += msg.get_userid()));
+                        //        //bell.alarm_msg.begininvoke(new action(() => bell.alarm_msg.text += msg.get_msg()));
+
+                        //        //bell.alarm_msg.begininvoke(new action(() => bell.close()));
+                        //        //bell.Invoke((MethodInvoker)delegate () {
+                        //        //    bell.alarm_ID.Text = msg.Get_UserID();
+                        //        //    bell.alarm_msg.Text += msg.get_Msg();
+                        //        //    bell.Show();
+                        //        //});
+                        //        bell.Show();
+                        //        Thread.Sleep(5);
+                        //        bell.Close();
+
+                        //    }
+                        //    ));
+                        //}
                     }
                 }
             }
 
+        }
+
+        private void MethodWithLoadingBar()
+        {
+           // Thread t1 = new Thread(ShowLoading);
+            //t1.Start();/
+            // Do the Main GUI Work Here
+            //t1.Abort();
+        }
+
+        private void ShowLoading(string id, string msg)
+        {
+            Thread.Sleep(1000); //Uncomment this if you want to delay the display 
+                                //(So Loading Bar only shows if the Method takes longer than 1 Second)
+            Bell bell = new Bell();
+            //bell.alarm_ID.Text = "Try to Connect...";
+            bell.ShowDialog();
         }
     }
 }

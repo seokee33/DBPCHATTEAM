@@ -229,6 +229,7 @@ namespace DBUI
             this.textBoxMessage.Multiline = true;
             this.textBoxMessage.Name = "textBoxMessage";
             this.textBoxMessage.ReadOnly = true;
+            this.textBoxMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxMessage.Size = new System.Drawing.Size(400, 438);
             this.textBoxMessage.TabIndex = 19;
             // 
