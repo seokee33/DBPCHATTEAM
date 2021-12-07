@@ -10,15 +10,13 @@ using System.Windows.Forms;
 
 namespace DBUI.UIControls
 {
-
-    public partial class Chatmsg : UserControl
+    public partial class chatSendImage : UserControl
     {
-        public Chatmsg(string name, string msg)
+        public chatSendImage(string name, PictureBox pb)
         {
             InitializeComponent();
             lb_name.Text = name;
-            tb_msg.Text = msg;
+            pb_Emoticon.Image = pb.Image;
         }
-
     }
 }

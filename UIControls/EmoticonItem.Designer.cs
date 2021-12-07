@@ -29,21 +29,10 @@ namespace DBUI.UIControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.pb_emoticon = new System.Windows.Forms.PictureBox();
             this.emoticon_Seq = new System.Windows.Forms.Label();
+            this.pb_emoticon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_emoticon)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pb_emoticon
-            // 
-            this.pb_emoticon.BackColor = System.Drawing.Color.Transparent;
-            this.pb_emoticon.Location = new System.Drawing.Point(17, 32);
-            this.pb_emoticon.Margin = new System.Windows.Forms.Padding(2);
-            this.pb_emoticon.Name = "pb_emoticon";
-            this.pb_emoticon.Size = new System.Drawing.Size(116, 109);
-            this.pb_emoticon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_emoticon.TabIndex = 5;
-            this.pb_emoticon.TabStop = false;
             // 
             // emoticon_Seq
             // 
@@ -55,13 +44,25 @@ namespace DBUI.UIControls
             this.emoticon_Seq.TabIndex = 4;
             this.emoticon_Seq.Text = "1";
             // 
-            // Emoticonitems
+            // pb_emoticon
+            // 
+            this.pb_emoticon.Image = global::DBUI.Properties.Resources.add_friend__1_;
+            this.pb_emoticon.Location = new System.Drawing.Point(3, 33);
+            this.pb_emoticon.Name = "pb_emoticon";
+            this.pb_emoticon.Size = new System.Drawing.Size(144, 114);
+            this.pb_emoticon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_emoticon.TabIndex = 5;
+            this.pb_emoticon.TabStop = false;
+            this.pb_emoticon.DoubleClick += new System.EventHandler(this.pb_emoticon_DoubleClick);
+            // 
+            // Emoticonitem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pb_emoticon);
             this.Controls.Add(this.emoticon_Seq);
-            this.Name = "Emoticonitems";
+            this.Name = "Emoticonitem";
             ((System.ComponentModel.ISupportInitialize)(this.pb_emoticon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -69,8 +70,7 @@ namespace DBUI.UIControls
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pb_emoticon;
         private System.Windows.Forms.Label emoticon_Seq;
+        private System.Windows.Forms.PictureBox pb_emoticon;
     }
 }

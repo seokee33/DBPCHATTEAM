@@ -194,7 +194,58 @@ namespace DBUI
             return user;
 
         }
+        public List<ChatMessage> select_MSG(string SQL)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
 
+            List<ChatMessage> chats = new List<ChatMessage>();
+            DataTable datatable = new DataTable();
+
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = SQL;
+            da.SelectCommand = cmd;
+            conn.Open();
+            da.Fill(datatable);
+            conn.Close();
+            Byte[] bytes = null;
+
+            try
+            {
+                foreach (DataRow data in datatable.Rows)
+                {
+                    PictureBox pb = new PictureBox();
+                    try
+                    {
+                        bytes = (byte[])data[3];
+                        if (bytes == null)
+                        {
+                            pb = null;
+                        }
+                        else
+                            pb.Image = new Bitmap(new MemoryStream(bytes));
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.ToString());
+                    }
+                    pb = null;
+                    chats.Add(new ChatMessage(Convert.ToDateTime(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), pb));
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+            return chats;
+
+        }
 
         public List<EmoticonInfo> select_Emoticon(string SQL)
         {
@@ -210,11 +261,11 @@ namespace DBUI
             conn.Close();
             Byte[] bytes = null;
 
-            PictureBox pb = new PictureBox();
             try
             {
                 foreach(DataRow data in datatable.Rows)
                 {
+                    PictureBox pb = new PictureBox();
                     bytes = (byte[])data[1];
                     if (bytes != null)
                     {

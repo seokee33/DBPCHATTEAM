@@ -44,7 +44,7 @@ namespace DBUI
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.chat_Panel = new System.Windows.Forms.Panel();
+            this.textBoxMessage = new System.Windows.Forms.TextBox();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMini)).BeginInit();
@@ -223,13 +223,14 @@ namespace DBUI
             this.panel4.Size = new System.Drawing.Size(400, 1);
             this.panel4.TabIndex = 18;
             // 
-            // chat_Panel
+            // textBoxMessage
             // 
-            this.chat_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chat_Panel.Location = new System.Drawing.Point(0, 154);
-            this.chat_Panel.Name = "chat_Panel";
-            this.chat_Panel.Size = new System.Drawing.Size(400, 436);
-            this.chat_Panel.TabIndex = 19;
+            this.textBoxMessage.Location = new System.Drawing.Point(0, 153);
+            this.textBoxMessage.Multiline = true;
+            this.textBoxMessage.Name = "textBoxMessage";
+            this.textBoxMessage.ReadOnly = true;
+            this.textBoxMessage.Size = new System.Drawing.Size(400, 438);
+            this.textBoxMessage.TabIndex = 19;
             // 
             // ChatRoom
             // 
@@ -237,7 +238,7 @@ namespace DBUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(400, 686);
-            this.Controls.Add(this.chat_Panel);
+            this.Controls.Add(this.textBoxMessage);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -257,6 +258,7 @@ namespace DBUI
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -278,6 +280,6 @@ namespace DBUI
         private System.Windows.Forms.Label labelFDName;
         private RoundPictureBox roundPictureBoxFDpoto;
         private System.Windows.Forms.PictureBox pictureBoxNewChat;
-        private System.Windows.Forms.Panel chat_Panel;
+        private System.Windows.Forms.TextBox textBoxMessage;
     }
 }

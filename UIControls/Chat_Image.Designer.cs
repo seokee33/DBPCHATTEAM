@@ -29,33 +29,51 @@ namespace DBUI.UIControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pb_Emoticon = new System.Windows.Forms.PictureBox();
+            this.lb_name = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Emoticon)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pb_Emoticon
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(166, 164);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pb_Emoticon.BackColor = System.Drawing.Color.Transparent;
+            this.pb_Emoticon.Location = new System.Drawing.Point(3, 30);
+            this.pb_Emoticon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_Emoticon.Name = "pb_Emoticon";
+            this.pb_Emoticon.Size = new System.Drawing.Size(116, 109);
+            this.pb_Emoticon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_Emoticon.TabIndex = 2;
+            this.pb_Emoticon.TabStop = false;
+            // 
+            // lb_name
+            // 
+            this.lb_name.AutoSize = true;
+            this.lb_name.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lb_name.Location = new System.Drawing.Point(6, 6);
+            this.lb_name.Name = "lb_name";
+            this.lb_name.Size = new System.Drawing.Size(63, 20);
+            this.lb_name.TabIndex = 3;
+            this.lb_name.Text = "label1";
             // 
             // Chat_Image
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.lb_name);
+            this.Controls.Add(this.pb_Emoticon);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Chat_Image";
-            this.Size = new System.Drawing.Size(570, 170);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Size = new System.Drawing.Size(404, 146);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Emoticon)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pb_Emoticon;
+        private System.Windows.Forms.Label lb_name;
     }
 }

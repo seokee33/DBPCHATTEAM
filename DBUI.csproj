@@ -201,6 +201,12 @@
     <Compile Include="UIControls\Chatmsg.Designer.cs">
       <DependentUpon>Chatmsg.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIControls\chatSendImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIControls\chatSendImage.Designer.cs">
+      <DependentUpon>chatSendImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIControls\Chatsendmsg.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -317,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UIControls\Chatmsg.resx">
       <DependentUpon>Chatmsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIControls\chatSendImage.resx">
+      <DependentUpon>chatSendImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIControls\Chatsendmsg.resx">
       <DependentUpon>Chatsendmsg.cs</DependentUpon>

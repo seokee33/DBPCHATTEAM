@@ -29,41 +29,43 @@ namespace DBUI.UIControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tb_msg = new System.Windows.Forms.TextBox();
+            this.lb_name = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox3
+            // tb_msg
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(45, 34);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(358, 55);
-            this.textBox3.TabIndex = 2;
+            this.tb_msg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tb_msg.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_msg.Font = new System.Drawing.Font("굴림", 15F);
+            this.tb_msg.Location = new System.Drawing.Point(13, 25);
+            this.tb_msg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_msg.Multiline = true;
+            this.tb_msg.Name = "tb_msg";
+            this.tb_msg.ReadOnly = true;
+            this.tb_msg.Size = new System.Drawing.Size(251, 37);
+            this.tb_msg.TabIndex = 2;
             // 
-            // textBox4
+            // lb_name
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.Location = new System.Drawing.Point(27, 21);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(395, 79);
-            this.textBox4.TabIndex = 3;
+            this.lb_name.AutoSize = true;
+            this.lb_name.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lb_name.Location = new System.Drawing.Point(10, 1);
+            this.lb_name.Name = "lb_name";
+            this.lb_name.Size = new System.Drawing.Size(63, 20);
+            this.lb_name.TabIndex = 4;
+            this.lb_name.Text = "label1";
             // 
             // Chatmsg
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.lb_name);
+            this.Controls.Add(this.tb_msg);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Chatmsg";
-            this.Size = new System.Drawing.Size(570, 120);
+            this.Size = new System.Drawing.Size(399, 80);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -71,7 +73,7 @@ namespace DBUI.UIControls
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tb_msg;
+        private System.Windows.Forms.Label lb_name;
     }
 }

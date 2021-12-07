@@ -38,18 +38,19 @@ namespace DBUI
             Emoticonitem[] emoticonItem = new Emoticonitem[emoticons.Count];
             for (int i = 0; i < emoticons.Count; i++)
             {
-                emoticonItem[i] = new Emoticonitem();
+                emoticonItem[i] = new Emoticonitem(roomNum,this);
                 emoticonItem[i].Seq = emoticons[i].Seq;
-
+                
                 if (emoticons[i].PB != null)
                     emoticonItem[i].PB = emoticons[i].PB;
 
-                // 사진 db에서 받아오기
-                if (emoticon_PB.Controls.Count > 0)
-                {
-                    emoticon_PB.Controls.Clear();
-                }
-                
+            }
+            if (emoticon_PB.Controls.Count > 0)
+            {
+                emoticon_PB.Controls.Clear();
+            }
+            for (int i = 0; i < emoticons.Count; i++)
+            {
                 emoticon_PB.Controls.Add(emoticonItem[i]);
             }
         }

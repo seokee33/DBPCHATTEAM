@@ -1,7 +1,7 @@
 ﻿
 namespace DBUI.UIControls
 {
-    partial class Chatsendmsg
+    partial class chatSendImage
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -30,42 +30,41 @@ namespace DBUI.UIControls
         private void InitializeComponent()
         {
             this.lb_name = new System.Windows.Forms.Label();
-            this.tb_msg = new System.Windows.Forms.TextBox();
+            this.pb_Emoticon = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Emoticon)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_name
             // 
             this.lb_name.AutoSize = true;
             this.lb_name.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_name.Location = new System.Drawing.Point(333, 6);
+            this.lb_name.Location = new System.Drawing.Point(338, 13);
             this.lb_name.Name = "lb_name";
             this.lb_name.Size = new System.Drawing.Size(63, 20);
-            this.lb_name.TabIndex = 6;
+            this.lb_name.TabIndex = 5;
             this.lb_name.Text = "label1";
             // 
-            // tb_msg
+            // pb_Emoticon
             // 
-            this.tb_msg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tb_msg.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_msg.Font = new System.Drawing.Font("굴림", 15F);
-            this.tb_msg.Location = new System.Drawing.Point(146, 31);
-            this.tb_msg.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_msg.Multiline = true;
-            this.tb_msg.Name = "tb_msg";
-            this.tb_msg.ReadOnly = true;
-            this.tb_msg.Size = new System.Drawing.Size(251, 37);
-            this.tb_msg.TabIndex = 5;
+            this.pb_Emoticon.BackColor = System.Drawing.Color.Transparent;
+            this.pb_Emoticon.Location = new System.Drawing.Point(290, 39);
+            this.pb_Emoticon.Margin = new System.Windows.Forms.Padding(2);
+            this.pb_Emoticon.Name = "pb_Emoticon";
+            this.pb_Emoticon.Size = new System.Drawing.Size(116, 109);
+            this.pb_Emoticon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_Emoticon.TabIndex = 4;
+            this.pb_Emoticon.TabStop = false;
             // 
-            // Chatsendmsg
+            // chatSendImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.lb_name);
-            this.Controls.Add(this.tb_msg);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Chatsendmsg";
-            this.Size = new System.Drawing.Size(399, 75);
+            this.Controls.Add(this.pb_Emoticon);
+            this.Name = "chatSendImage";
+            this.Size = new System.Drawing.Size(408, 150);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Emoticon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -74,6 +73,6 @@ namespace DBUI.UIControls
         #endregion
 
         private System.Windows.Forms.Label lb_name;
-        private System.Windows.Forms.TextBox tb_msg;
+        private System.Windows.Forms.PictureBox pb_Emoticon;
     }
 }

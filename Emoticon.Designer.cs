@@ -70,6 +70,7 @@ namespace DBUI
             // emoticon_PB
             // 
             this.emoticon_PB.AutoScroll = true;
+            this.emoticon_PB.BackColor = System.Drawing.SystemColors.Window;
             this.emoticon_PB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.emoticon_PB.Location = new System.Drawing.Point(0, 38);
             this.emoticon_PB.Name = "emoticon_PB";
