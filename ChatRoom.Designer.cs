@@ -35,7 +35,6 @@ namespace DBUI
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.pictureBoxMax2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBoxNewChat = new System.Windows.Forms.PictureBox();
             this.buttonMessageSend = new System.Windows.Forms.Button();
             this.textBoxMessageSend = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,7 +50,6 @@ namespace DBUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax2)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewChat)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,7 +118,6 @@ namespace DBUI
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel3.Controls.Add(this.pictureBoxNewChat);
             this.panel3.Controls.Add(this.buttonMessageSend);
             this.panel3.Controls.Add(this.textBoxMessageSend);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -129,23 +126,12 @@ namespace DBUI
             this.panel3.Size = new System.Drawing.Size(400, 95);
             this.panel3.TabIndex = 13;
             // 
-            // pictureBoxNewChat
-            // 
-            this.pictureBoxNewChat.Image = global::DBUI.Properties.Resources.free_icon_smiling_emoticon_square_face_40157;
-            this.pictureBoxNewChat.Location = new System.Drawing.Point(355, 28);
-            this.pictureBoxNewChat.Name = "pictureBoxNewChat";
-            this.pictureBoxNewChat.Size = new System.Drawing.Size(40, 40);
-            this.pictureBoxNewChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxNewChat.TabIndex = 32;
-            this.pictureBoxNewChat.TabStop = false;
-            this.pictureBoxNewChat.Click += new System.EventHandler(this.pictureBoxNewChat_Click);
-            // 
             // buttonMessageSend
             // 
             this.buttonMessageSend.BackColor = System.Drawing.Color.White;
             this.buttonMessageSend.FlatAppearance.BorderSize = 0;
             this.buttonMessageSend.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMessageSend.Location = new System.Drawing.Point(301, 15);
+            this.buttonMessageSend.Location = new System.Drawing.Point(340, 15);
             this.buttonMessageSend.Name = "buttonMessageSend";
             this.buttonMessageSend.Size = new System.Drawing.Size(48, 64);
             this.buttonMessageSend.TabIndex = 2;
@@ -159,7 +145,7 @@ namespace DBUI
             this.textBoxMessageSend.Location = new System.Drawing.Point(12, 15);
             this.textBoxMessageSend.Multiline = true;
             this.textBoxMessageSend.Name = "textBoxMessageSend";
-            this.textBoxMessageSend.Size = new System.Drawing.Size(283, 64);
+            this.textBoxMessageSend.Size = new System.Drawing.Size(322, 64);
             this.textBoxMessageSend.TabIndex = 1;
             // 
             // panel1
@@ -255,7 +241,6 @@ namespace DBUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMax2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewChat)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -280,7 +265,6 @@ namespace DBUI
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label labelFDName;
         private RoundPictureBox roundPictureBoxFDpoto;
-        private System.Windows.Forms.PictureBox pictureBoxNewChat;
         private System.Windows.Forms.TextBox textBoxMessage;
     }
 }

@@ -444,5 +444,8 @@
   <ItemGroup>
     <None Include="Resources\free-icon-smiling-emoticon-square-face-40157.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\star.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,7 +13,7 @@ namespace DBUI
     class Setting
     {
         private bool auto_Login;
-        private bool alarm;
+        private bool alarm = true;
         private Setting()
         {
         }

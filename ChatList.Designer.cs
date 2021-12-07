@@ -30,9 +30,7 @@ namespace DBUI
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBoxNewChat = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanelChatList = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewChat)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -44,17 +42,6 @@ namespace DBUI
             this.label2.Size = new System.Drawing.Size(50, 25);
             this.label2.TabIndex = 30;
             this.label2.Text = "채팅";
-            // 
-            // pictureBoxNewChat
-            // 
-            this.pictureBoxNewChat.Image = global::DBUI.Properties.Resources.talk_bubble_with_plus_sign;
-            this.pictureBoxNewChat.Location = new System.Drawing.Point(363, 575);
-            this.pictureBoxNewChat.Name = "pictureBoxNewChat";
-            this.pictureBoxNewChat.Size = new System.Drawing.Size(40, 40);
-            this.pictureBoxNewChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxNewChat.TabIndex = 31;
-            this.pictureBoxNewChat.TabStop = false;
-            this.pictureBoxNewChat.Click += new System.EventHandler(this.pictureBoxNewChat_Click);
             // 
             // flowLayoutPanelChatList
             // 
@@ -71,13 +58,11 @@ namespace DBUI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(415, 627);
             this.Controls.Add(this.flowLayoutPanelChatList);
-            this.Controls.Add(this.pictureBoxNewChat);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChatList";
             this.Text = "ChatList";
             this.Load += new System.EventHandler(this.ChatList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewChat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,7 +71,6 @@ namespace DBUI
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBoxNewChat;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelChatList;
     }
 }
