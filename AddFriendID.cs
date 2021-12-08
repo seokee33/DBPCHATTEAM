@@ -63,7 +63,7 @@ namespace DBUI
                 //    friend = new UserInfo(Convert.ToInt32(data[0]), Convert.ToString(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]),Convert.ToString(data[6]));
 
                 DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`Friends` (`UserID`, `FriendID`,`Top`) VALUES ('"+user.get_Seq()+"', '"+dt.Rows[0][0]+"','0');");
-                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`Friends` (`UserID`, `FriendID`) VALUES ('" + dt.Rows[0][0] + "', '" + user.get_Seq()  + "','0');");
+                DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`Friends` (`UserID`, `FriendID`,`Top`) VALUES ('" + dt.Rows[0][0] + "', '" + user.get_Seq()  + "','0');");
                 listOfFriend.ListOfFriend_Load(sender, e);
                 this.Close();
             }
