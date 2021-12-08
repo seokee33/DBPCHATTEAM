@@ -63,8 +63,8 @@ namespace DBUI.UIControls
 
         private void DeleteFriendToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DBManager.GetInstance().executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`UserID` = '"+ LoginUser.GetInstance().get_User().get_UID() + "'and `FriendID` = '"+_fNum+"');");
-            DBManager.GetInstance().executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`UserID` = '" + _fNum + "'and `FriendID` = '" + LoginUser.GetInstance().get_User().get_Seq() + "');");
+            DBManager.GetInstance().Friend_Delete_executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`UserID` = '"+ LoginUser.GetInstance().get_User().get_Seq() + "'and `FriendID` = '"+ _friends_Seq + "');");
+            DBManager.GetInstance().Friend_Delete_executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`UserID` = '" + _friends_Seq + "'and `FriendID` = '" + LoginUser.GetInstance().get_User().get_Seq() + "');");
             listform.ListOfFriend_Load(sender, e);
 
         }

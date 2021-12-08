@@ -87,6 +87,8 @@ namespace DBUI
             return null;
 
         }
+        
+
         // UPDATE,DELETE,INSERT
         public void executeQuerry(string SQL)
         {
@@ -110,6 +112,30 @@ namespace DBUI
                 }
             }
         }
+
+        public void Friend_Delete_executeQuerry(string SQL)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=34.64.115.175;Port=3306;Database=CHAT;Uid=root;Pwd=dbp2021;Charset=utf8");
+
+            using (conn)
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlCommand command = new MySqlCommand(SQL, conn);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
         public void msgexecuteQuerry(string SQL)
         {
 
