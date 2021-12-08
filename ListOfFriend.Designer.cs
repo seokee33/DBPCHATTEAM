@@ -30,7 +30,6 @@ namespace DBUI
         private void InitializeComponent()
         {
             this.panelFriendList = new System.Windows.Forms.Panel();
-            this.btn_star_friend = new System.Windows.Forms.Button();
             this.flowLayoutPanelFriendList = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonFriendSearch = new System.Windows.Forms.Button();
             this.myTextBoxFriendSearch = new DBUI.UIControls.MyTextBox();
@@ -57,7 +56,6 @@ namespace DBUI
             // 
             // panelFriendList
             // 
-            this.panelFriendList.Controls.Add(this.btn_star_friend);
             this.panelFriendList.Controls.Add(this.flowLayoutPanelFriendList);
             this.panelFriendList.Controls.Add(this.buttonFriendSearch);
             this.panelFriendList.Controls.Add(this.myTextBoxFriendSearch);
@@ -71,16 +69,6 @@ namespace DBUI
             this.panelFriendList.Name = "panelFriendList";
             this.panelFriendList.Size = new System.Drawing.Size(415, 630);
             this.panelFriendList.TabIndex = 39;
-            // 
-            // btn_star_friend
-            // 
-            this.btn_star_friend.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btn_star_friend.Location = new System.Drawing.Point(358, 246);
-            this.btn_star_friend.Name = "btn_star_friend";
-            this.btn_star_friend.Size = new System.Drawing.Size(45, 34);
-            this.btn_star_friend.TabIndex = 53;
-            this.btn_star_friend.UseVisualStyleBackColor = true;
-            //this.btn_star_friend.Click += new System.EventHandler(this.btn_star_friend_Click);
             // 
             // flowLayoutPanelFriendList
             // 
@@ -180,7 +168,7 @@ namespace DBUI
             this.pictureBoxLine2.Image = global::DBUI.Properties.Resources.substract;
             this.pictureBoxLine2.Location = new System.Drawing.Point(24, 232);
             this.pictureBoxLine2.Name = "pictureBoxLine2";
-            this.pictureBoxLine2.Size = new System.Drawing.Size(328, 41);
+            this.pictureBoxLine2.Size = new System.Drawing.Size(376, 41);
             this.pictureBoxLine2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLine2.TabIndex = 45;
             this.pictureBoxLine2.TabStop = false;
@@ -268,6 +256,5 @@ namespace DBUI
         private RoundPictureBox roundPictureBoxMyProfilePoto;
         private System.Windows.Forms.PictureBox pictureBoxLine;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFriendList;
-        private System.Windows.Forms.Button btn_star_friend;
     }
 }

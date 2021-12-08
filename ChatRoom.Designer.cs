@@ -211,6 +211,7 @@ namespace DBUI
             // 
             // textBoxMessage
             // 
+            this.textBoxMessage.Font = new System.Drawing.Font("굴림", 15F);
             this.textBoxMessage.Location = new System.Drawing.Point(0, 153);
             this.textBoxMessage.Multiline = true;
             this.textBoxMessage.Name = "textBoxMessage";

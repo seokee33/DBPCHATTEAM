@@ -114,7 +114,12 @@ namespace DBUI
                     {
                         try
                         {
-                            textBoxMessage.BeginInvoke(new Action(() => textBoxMessage.Text += (msg.Get_UserID() + " : " + msg.get_Msg() + Environment.NewLine)));
+                            textBoxMessage.BeginInvoke(new Action(() => {
+                                textBoxMessage.Text += (msg.Get_UserID() + " : " + msg.get_Msg() + Environment.NewLine);
+                                textBoxMessage.SelectionStart = textBoxMessage.TextLength;
+                                textBoxMessage.ScrollToCaret();
+                            }
+                            ));
                         }
                         catch
                         {
@@ -122,6 +127,7 @@ namespace DBUI
                         }
                     }
                 }
+                
             }
         }
         private void buttonMessageSend_Click(object sender, EventArgs e)
