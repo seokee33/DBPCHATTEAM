@@ -63,8 +63,18 @@ namespace DBUI.UIControls
 
         private void DeleteFriendToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DBManager.GetInstance().executeQuerry("Delete FROM CHAT.ChatMessage where room_id = (Select RoomID FROM CHAT.User_Chat_Room where `Seq` = (SELECT Seq FROM CHAT.User_Chat_Room where (`UserSeq` = '" + LoginUser.GetInstance().get_User().get_UID() + "' and `FriendSeq` = '" + _UID + "')));");
+
+            DBManager.GetInstance().Friend_Delete_executeQuerry("Delete FROM CHAT.User_Chat_Room where (`UserSeq` = '" + LoginUser.GetInstance().get_User().get_UID() + "' and `FriendSeq` = '" + _UID + "');");
+            DBManager.GetInstance().Friend_Delete_executeQuerry("Delete FROM CHAT.User_Chat_Room where (`UserSeq` = '" + _UID + "' and `FriendSeq` = '" + LoginUser.GetInstance().get_User().get_UID() + "');");
+
             DBManager.GetInstance().Friend_Delete_executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`UserID` = '"+ LoginUser.GetInstance().get_User().get_Seq() + "'and `FriendID` = '"+ _friends_Seq + "');");
             DBManager.GetInstance().Friend_Delete_executeQuerry("DELETE FROM `CHAT`.`Friends` WHERE (`UserID` = '" + _friends_Seq + "'and `FriendID` = '" + LoginUser.GetInstance().get_User().get_Seq() + "');");
+
+            
+            //DBManager.GetInstance().Friend_Delete_executeQuerry("Delete FROM CHAT.User_Chat_Room where(Seq = (SELECT Seq FROM CHAT.User_Chat_Room where UserSeq = '" + LoginUser.GetInstance().get_User().get_UID() + "' and FriendSeq = '" + _UID + "'));");
+            //DBManager.GetInstance().Friend_Delete_executeQuerry("Delete FROM CHAT.User_Chat_Room where(Seq = (SELECT Seq FROM CHAT.User_Chat_Room where UserSeq = '" + _UID + "' and FriendSeq = '" + LoginUser.GetInstance().get_User().get_UID() + "'));");
+            
             listform.ListOfFriend_Load(sender, e);
 
         }
