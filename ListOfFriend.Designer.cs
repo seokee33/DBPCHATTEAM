@@ -30,6 +30,7 @@ namespace DBUI
         private void InitializeComponent()
         {
             this.panelFriendList = new System.Windows.Forms.Panel();
+            this.btn_star_friend = new System.Windows.Forms.Button();
             this.flowLayoutPanelFriendList = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonFriendSearch = new System.Windows.Forms.Button();
             this.myTextBoxFriendSearch = new DBUI.UIControls.MyTextBox();
@@ -44,7 +45,6 @@ namespace DBUI
             this.labelMyProfileName = new System.Windows.Forms.Label();
             this.roundPictureBoxMyProfilePoto = new DBUI.RoundPictureBox();
             this.pictureBoxLine = new System.Windows.Forms.PictureBox();
-            this.btn_star_friend = new System.Windows.Forms.Button();
             this.panelFriendList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddFriendID)).BeginInit();
             this.panelBirthDay.SuspendLayout();
@@ -71,6 +71,16 @@ namespace DBUI
             this.panelFriendList.Name = "panelFriendList";
             this.panelFriendList.Size = new System.Drawing.Size(415, 630);
             this.panelFriendList.TabIndex = 39;
+            // 
+            // btn_star_friend
+            // 
+            this.btn_star_friend.ForeColor = System.Drawing.Color.Cornsilk;
+            this.btn_star_friend.Location = new System.Drawing.Point(358, 246);
+            this.btn_star_friend.Name = "btn_star_friend";
+            this.btn_star_friend.Size = new System.Drawing.Size(45, 34);
+            this.btn_star_friend.TabIndex = 53;
+            this.btn_star_friend.UseVisualStyleBackColor = true;
+            //this.btn_star_friend.Click += new System.EventHandler(this.btn_star_friend_Click);
             // 
             // flowLayoutPanelFriendList
             // 
@@ -214,15 +224,6 @@ namespace DBUI
             this.pictureBoxLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLine.TabIndex = 24;
             this.pictureBoxLine.TabStop = false;
-            // 
-            // btn_star_friend
-            // 
-            this.btn_star_friend.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btn_star_friend.Location = new System.Drawing.Point(358, 246);
-            this.btn_star_friend.Name = "btn_star_friend";
-            this.btn_star_friend.Size = new System.Drawing.Size(45, 34);
-            this.btn_star_friend.TabIndex = 53;
-            this.btn_star_friend.UseVisualStyleBackColor = true;
             // 
             // ListOfFriend
             // 
