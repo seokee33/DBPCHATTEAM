@@ -86,6 +86,7 @@ namespace DBUI
                     write_Auto_Login(LoginUser.GetInstance().get_User().get_UID(), LoginUser.GetInstance().get_User().get_Password());
                     FriendList fl = new FriendList();
                     fl.Show();
+                    LoginFormValue.GetInstance().set_Login(this);
                     this.Hide();
                     
                 }

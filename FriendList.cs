@@ -51,6 +51,9 @@ namespace DBUI
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
+            if (LoginFormValue.GetInstance().get_Login() != null)
+                LoginFormValue.GetInstance().get_Login().Close();
+            this.Close();
             Application.Exit();
         }
 
@@ -244,7 +247,11 @@ namespace DBUI
 
 
         }
-
+        public void Alert(string name, string msg)
+        {
+            Alert frm = new Alert(name, msg);
+            Application.Run(frm);
+        }
         private void get_Message()
         {
             DataTable dt;
@@ -262,52 +269,25 @@ namespace DBUI
                 {
                     foreach (ChatMessage msg in list)
                     {
-                        Bell bell = new Bell(msg.Get_UserID(), msg.get_Msg());
-                        bell.Show();
-                        Thread.Sleep(5000);
-                        bell.Close();
-                        //if (this.InvokeRequired)
-                        //{
-                        //    this.BeginInvoke(new Action(() =>
-                        //    {
-                        //        //bell.alarm_msg.begininvoke(new action(() => bell.show()));
-                        //        //bell.alarm_id.begininvoke(new action(() => bell.alarm_id.text += msg.get_userid()));
-                        //        //bell.alarm_msg.begininvoke(new action(() => bell.alarm_msg.text += msg.get_msg()));
+                        //Bell bell = new Bell(msg.Get_UserID(), msg.get_Msg());
+                        //bell.Show();
+                        //Thread.Sleep(5000);
+                        //bell.Close();
+                        try
+                        {
+                            this.Alert(msg.Get_UserID(), msg.get_Msg());
+                        }
+                        catch
+                        {
+                            continue;
+                        }
 
-                        //        //bell.alarm_msg.begininvoke(new action(() => bell.close()));
-                        //        //bell.Invoke((MethodInvoker)delegate () {
-                        //        //    bell.alarm_ID.Text = msg.Get_UserID();
-                        //        //    bell.alarm_msg.Text += msg.get_Msg();
-                        //        //    bell.Show();
-                        //        //});
-                        //        bell.Show();
-                        //        Thread.Sleep(5);
-                        //        bell.Close();
-
-                        //    }
-                        //    ));
-                        //}
                     }
+                    Thread.Sleep(5000);
                 }
             }
 
         }
 
-        private void MethodWithLoadingBar()
-        {
-           // Thread t1 = new Thread(ShowLoading);
-            //t1.Start();/
-            // Do the Main GUI Work Here
-            //t1.Abort();
-        }
-
-        private void ShowLoading(string id, string msg)
-        {
-            Thread.Sleep(1000); //Uncomment this if you want to delay the display 
-                                //(So Loading Bar only shows if the Method takes longer than 1 Second)
-            Bell bell = new Bell();
-            //bell.alarm_ID.Text = "Try to Connect...";
-            bell.ShowDialog();
-        }
     }
 }

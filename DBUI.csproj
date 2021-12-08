@@ -95,6 +95,12 @@
     <Compile Include="AddFriendID.Designer.cs">
       <DependentUpon>AddFriendID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alert.Designer.cs">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bell.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,7 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginFormValue.cs" />
     <Compile Include="LoginUser.cs" />
     <Compile Include="ChatMessage.cs" />
     <Compile Include="NewChat.cs">
@@ -265,6 +272,9 @@
     <Compile Include="UserInfo.cs" />
     <EmbeddedResource Include="AddFriendID.resx">
       <DependentUpon>AddFriendID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alert.resx">
+      <DependentUpon>Alert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bell.resx">
       <DependentUpon>Bell.cs</DependentUpon>
@@ -445,6 +455,7 @@
     <None Include="Resources\free-icon-smiling-emoticon-square-face-40157.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\close.png" />
     <Content Include="Resources\star.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
