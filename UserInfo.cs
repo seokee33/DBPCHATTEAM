@@ -18,6 +18,7 @@ namespace DBUI
         private int ImageID;
         private RoundPictureBox pb;
         private int friendNum;
+        private int top;
 
         public UserInfo()
         {
@@ -41,7 +42,7 @@ namespace DBUI
             Name = name;
             this.pb = pb;
         }
-        public UserInfo(int fNum,int seq, string uID, string address, DateTime birth, string nickName,RoundPictureBox pb)
+        public UserInfo(int fNum,int seq, string uID, string address, DateTime birth, string nickName,RoundPictureBox pb, int _top)
         {
             this.friendNum = fNum;
             Seq = seq;
@@ -50,6 +51,7 @@ namespace DBUI
             Birth = birth;
             NickName = nickName;
             this.pb = pb;
+            top = _top;
         }
 
 
@@ -110,6 +112,12 @@ namespace DBUI
                 return this.pb;
             else
                 return null;
+        }
+
+        public int Top
+        {
+            get { return top; }
+            set { top = value; }
         }
     }
 }

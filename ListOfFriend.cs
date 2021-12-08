@@ -32,39 +32,91 @@ namespace DBUI
         }
         //아이디로 친구추가
 
-        private void populatItems()
-        {
-            UserInfo friend = new UserInfo();
+        //private void populatItems()
+        //{
+        //    UserInfo friend = new UserInfo();
 
-            friendsList = DBManager.GetInstance().select_Friends("SELECT f.seq, u.Seq, u.UID, u.Address, u.Birth, u.NickName, u.Image From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = " + LoginUser.GetInstance().get_User().get_Seq() + ";");
+        //    friendsList = DBManager.GetInstance().select_Friends("SELECT f.seq, u.Seq, u.UID, u.Address, u.Birth, u.NickName, u.Image From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = " + LoginUser.GetInstance().get_User().get_Seq() + ";");
+
+        //    flowLayoutPanelFriendList.Controls.Clear();
+        //    FriendListForm[] friendListForm = new FriendListForm[friendsList.Count];
+        //    for (int i = 0; i < friendsList.Count; i++)
+        //    {
+        //        friendListForm[i] = new FriendListForm(this);
+        //        friendListForm[i].UID = friendsList[i].get_UID();
+        //        friendListForm[i].friendNum = friendsList[i].get_FriendNum();
+        //        friendListForm[i].FriendListName = friendsList[i].get_NickName();
+        //        friendListForm[i].friends_Seq = friendsList[i].get_Seq();
+        //        if (friendsList[i].get_PB() != null)
+        //            friendListForm[i].FriendListProfile = friendsList[i].get_PB().Image;
+
+
+        //        // 사진 db에서 받아오기
+
+        //        if (flowLayoutPanelFriendList.Controls.Count < 0)
+        //        {
+        //            flowLayoutPanelFriendList.Controls.Clear();
+        //        }
+        //        else
+        //            flowLayoutPanelFriendList.Controls.Add(friendListForm[i]);
+        //    }
+        //}
+
+        public void populatItems2()
+        {
+            UserInfo friends = new UserInfo();
+
+            friendsList = DBManager.GetInstance().select_Friends("SELECT f.seq, u.Seq, u.UID, u.Address, u.Birth, u.NickName, u.Image, f.Top From CHAT.Friends AS f JOIN CHAT.UserInfo AS u ON f.FriendID = u.Seq WHERE f.UserID = " + LoginUser.GetInstance().get_User().get_Seq() + ";");
 
             flowLayoutPanelFriendList.Controls.Clear();
-            FriendListForm[] friendListForm = new FriendListForm[friendsList.Count];
-            for (int i = 0; i < friendsList.Count; i++)
+            FriendListForm[] friendListForms = new FriendListForm[friendsList.Count];
+
+            List<FriendListForm> NoneFriendList = new List<FriendListForm>();
+            List<FriendListForm> TopFriendList = new List<FriendListForm>();
+            for(int i = 0; i< friendsList.Count; i++)
             {
-                friendListForm[i] = new FriendListForm(this);
-                friendListForm[i].UID = friendsList[i].get_UID();
-                friendListForm[i].friendNum = friendsList[i].get_FriendNum();
-                friendListForm[i].FriendListName = friendsList[i].get_NickName();
-                friendListForm[i].friends_Seq = friendsList[i].get_Seq();
-                if (friendsList[i].get_PB() != null)
-                    friendListForm[i].FriendListProfile = friendsList[i].get_PB().Image;
-
-
-                // 사진 db에서 받아오기
-
-                if (flowLayoutPanelFriendList.Controls.Count < 0)
+                if(friendsList[i].Top == 0)
                 {
-                    flowLayoutPanelFriendList.Controls.Clear();
+                    friendListForms[i] = new FriendListForm(this);
+                    friendListForms[i].UID = friendsList[i].get_UID();
+                    friendListForms[i].friendNum = friendsList[i].get_FriendNum();
+                    friendListForms[i].FriendListName = friendsList[i].get_NickName();
+                    friendListForms[i].friends_Seq = friendsList[i].get_Seq();
+                    friendListForms[i].friend_Top = friendsList[i].Top;
+                    if (friendsList[i].get_PB() != null)
+                        friendListForms[i].FriendListProfile = friendsList[i].get_PB().Image;
+                    NoneFriendList.Add(friendListForms[i]);
                 }
                 else
-                    flowLayoutPanelFriendList.Controls.Add(friendListForm[i]);
+                {
+                    friendListForms[i] = new FriendListForm(this);
+                    friendListForms[i].UID = friendsList[i].get_UID();
+                    friendListForms[i].friendNum = friendsList[i].get_FriendNum();
+                    friendListForms[i].FriendListName = friendsList[i].get_NickName();
+                    friendListForms[i].friends_Seq = friendsList[i].get_Seq();
+                    friendListForms[i].friend_Top = friendsList[i].Top;
+                    if(friendsList[i].get_PB() != null)
+                        friendListForms[i].FriendListProfile = friendsList[i].get_PB().Image;
+                    friendListForms[i].pictureBoxStar.Visible = true;
+                    TopFriendList.Add(friendListForms[i]);
+                }
             }
+            if(flowLayoutPanelFriendList.Controls.Count < 0)
+            {
+                flowLayoutPanelFriendList.Controls.Clear();
+            }
+
+            foreach (FriendListForm data in TopFriendList)
+                flowLayoutPanelFriendList.Controls.Add(data);
+
+            foreach (FriendListForm data in NoneFriendList)
+                flowLayoutPanelFriendList.Controls.Add(data);
         }
 
         public void ListOfFriend_Load(object sender, EventArgs e)
         {
-            populatItems();
+            //populatItems();
+            populatItems2();
         }
 
         private void pictureBoxAddFriendID_Click(object sender, EventArgs e)
