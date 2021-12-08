@@ -26,7 +26,6 @@ namespace DBUI.UIControls
         private string _name;
         private Image _profile;
         private int _friends_Seq;
-        private int top;
 
 
         public string UID
@@ -55,13 +54,6 @@ namespace DBUI.UIControls
             get { return _profile; }
             set { _profile = value; roundPictureBoxFriend.Image = value; }
         }
-
-        public int friend_Top
-        {
-            get { return top; }
-            set { top = value; }
-        }
-
         #endregion
 
         private void ChattingToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,23 +95,6 @@ namespace DBUI.UIControls
             //int room_Num = Convert.ToInt32(dt.Rows[0][0]);
             //DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`, `RoomID`) VALUES ('"+LoginUser.GetInstance().get_User().get_Seq()+"', '"+room_Num+"');");
             //DBManager.GetInstance().executeQuerry("INSERT INTO `CHAT`.`User_Chat_Room` (`UserSeq`, `RoomID`) VALUES ('" + _friends_Seq + "', '" + room_Num + "');");
-        }
-
-        private void 즐겨찾기ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (pictureBoxStar.Visible == false)
-            {
-                pictureBoxStar.Visible = true;
-                DBManager.GetInstance().executeQuerry("UPDATE CHAT.Friends SET Top = '1' WHERE UserID = '"+ LoginUser.GetInstance().get_User().get_Seq() +"' and FriendID = '"+ _friends_Seq +"';");
-                즐겨찾기ToolStripMenuItem.Text = "즐겨찾기 해제";
-            }
-            else
-            {
-                pictureBoxStar.Visible = false;
-                DBManager.GetInstance().executeQuerry("UPDATE CHAT.Friends SET Top = '0' WHERE UserID = '" + LoginUser.GetInstance().get_User().get_Seq() + "' and FriendID = '" + _friends_Seq + "';");
-                즐겨찾기ToolStripMenuItem.Text = "즐겨찾기";
-            }
-            listform.populatItems2();
         }
     }
 }

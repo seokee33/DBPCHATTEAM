@@ -446,7 +446,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\star.png" />
-    <None Include="Resources\star1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
