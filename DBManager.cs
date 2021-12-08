@@ -382,7 +382,7 @@ namespace DBUI
                     conn.Close();
                 }
 
-                result.Add(new UserInfo(Convert.ToInt32(data[0]), Convert.ToInt32(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]), pb));
+                result.Add(new UserInfo(Convert.ToInt32(data[0]), Convert.ToInt32(data[1]), Convert.ToString(data[2]), Convert.ToString(data[3]), Convert.ToDateTime(data[4]), Convert.ToString(data[5]), pb, Convert.ToInt32(data[7])));
             }
             //}
             //catch
