@@ -34,13 +34,12 @@ namespace DBUI.UIControls
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.FixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteMsgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roundPictureBoxFriend = new DBUI.RoundPictureBox();
             this.panelFriendProfile = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxPin = new System.Windows.Forms.PictureBox();
-            this.labelMsg = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxFriend)).BeginInit();
             this.panelFriendProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +48,7 @@ namespace DBUI.UIControls
             this.labelName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.labelName.ContextMenuStrip = this.contextMenuStrip1;
             this.labelName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelName.Location = new System.Drawing.Point(116, 22);
+            this.labelName.Location = new System.Drawing.Point(119, 38);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(102, 21);
             this.labelName.TabIndex = 37;
@@ -77,29 +76,28 @@ namespace DBUI.UIControls
             this.DeleteMsgToolStripMenuItem.Text = "대화삭제";
             this.DeleteMsgToolStripMenuItem.Click += new System.EventHandler(this.DeleteMsgToolStripMenuItem_Click);
             // 
-            // roundPictureBoxFriend
-            // 
-            this.roundPictureBoxFriend.ContextMenuStrip = this.contextMenuStrip1;
-            this.roundPictureBoxFriend.Image = global::DBUI.Properties.Resources.프로필;
-            this.roundPictureBoxFriend.Location = new System.Drawing.Point(30, 12);
-            this.roundPictureBoxFriend.Name = "roundPictureBoxFriend";
-            this.roundPictureBoxFriend.Size = new System.Drawing.Size(70, 70);
-            this.roundPictureBoxFriend.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundPictureBoxFriend.TabIndex = 38;
-            this.roundPictureBoxFriend.TabStop = false;
-            // 
             // panelFriendProfile
             // 
             this.panelFriendProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panelFriendProfile.ContextMenuStrip = this.contextMenuStrip1;
+            this.panelFriendProfile.Controls.Add(this.pictureBox1);
             this.panelFriendProfile.Controls.Add(this.pictureBoxPin);
             this.panelFriendProfile.Controls.Add(this.labelName);
-            this.panelFriendProfile.Controls.Add(this.labelMsg);
             this.panelFriendProfile.Location = new System.Drawing.Point(0, 0);
             this.panelFriendProfile.Name = "panelFriendProfile";
             this.panelFriendProfile.Size = new System.Drawing.Size(390, 96);
             this.panelFriendProfile.TabIndex = 39;
             this.panelFriendProfile.Click += new System.EventHandler(this.panelFriendProfile_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DBUI.Properties.Resources.messages;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(72, 61);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 42;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBoxPin
             // 
@@ -112,29 +110,17 @@ namespace DBUI.UIControls
             this.pictureBoxPin.TabStop = false;
             this.pictureBoxPin.Visible = false;
             // 
-            // labelMsg
-            // 
-            this.labelMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.labelMsg.ContextMenuStrip = this.contextMenuStrip1;
-            this.labelMsg.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelMsg.Location = new System.Drawing.Point(123, 50);
-            this.labelMsg.Name = "labelMsg";
-            this.labelMsg.Size = new System.Drawing.Size(71, 21);
-            this.labelMsg.TabIndex = 40;
-            this.labelMsg.Text = "내용";
-            // 
             // ChatListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.Controls.Add(this.roundPictureBoxFriend);
             this.Controls.Add(this.panelFriendProfile);
             this.Name = "ChatListForm";
             this.Size = new System.Drawing.Size(390, 96);
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBoxFriend)).EndInit();
             this.panelFriendProfile.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPin)).EndInit();
             this.ResumeLayout(false);
 
@@ -143,12 +129,11 @@ namespace DBUI.UIControls
         #endregion
 
         private System.Windows.Forms.Label labelName;
-        private RoundPictureBox roundPictureBoxFriend;
         private System.Windows.Forms.Panel panelFriendProfile;
-        private System.Windows.Forms.Label labelMsg;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem FixToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DeleteMsgToolStripMenuItem;
         public System.Windows.Forms.PictureBox pictureBoxPin;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

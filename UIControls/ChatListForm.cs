@@ -21,8 +21,6 @@ namespace DBUI.UIControls
 
         #region Properties
         private string _name;
-        private Image _profile;
-        private string _mgs;
         private int _roomNum;
         private int _top;
         private int _Seq;
@@ -47,17 +45,7 @@ namespace DBUI.UIControls
             get { return _roomNum; }
             set { _roomNum = value; }
         }
-        public string ChatMsg
-        {
-            get { return _mgs; }
-            set { _mgs = value; labelMsg.Text = value; }
-        }
 
-        public Image FriendProfile
-        {
-            get { return _profile; }
-            set { _profile = value; roundPictureBoxFriend.Image = value; }
-        }
         #endregion
 
         private void FriendProfile_Click(object sender, EventArgs e)
