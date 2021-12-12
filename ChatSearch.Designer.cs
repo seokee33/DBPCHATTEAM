@@ -47,6 +47,7 @@ namespace DBUI
             this.panelBorder.Name = "panelBorder";
             this.panelBorder.Size = new System.Drawing.Size(384, 40);
             this.panelBorder.TabIndex = 12;
+            this.panelBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBorder_MouseDown);
             // 
             // pictureBoxClose
             // 

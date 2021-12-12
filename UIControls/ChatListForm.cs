@@ -48,11 +48,6 @@ namespace DBUI.UIControls
 
         #endregion
 
-        private void FriendProfile_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void FixToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (pictureBoxPin.Visible == false)
@@ -81,6 +76,12 @@ namespace DBUI.UIControls
         }
 
         private void panelFriendProfile_Click(object sender, EventArgs e)
+        {
+            ChatRoom chatroom = new ChatRoom(_roomNum, _name);
+            chatroom.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             ChatRoom chatroom = new ChatRoom(_roomNum, _name);
             chatroom.Show();
