@@ -170,25 +170,33 @@ namespace DBUI
 
         private void auto_Input_Login()
         {
-            StreamReader sr = new StreamReader(new FileStream("autoLogin.txt", FileMode.Open));
-            int i_Auto_Check = Convert.ToInt32(sr.ReadLine());
-            if (i_Auto_Check == 1)
+            try
             {
-                Setting.GetInstance().set_Auto_Login(true);
-                string id = Convert.ToString(sr.ReadLine());
-                string pw = Convert.ToString(sr.ReadLine());
-                myTextBoxID.Text = id;
-                myTextBoxPW.Text = pw;
-                checkBoxAutoLogin.Checked = true;
-                sr.Close();
+                StreamReader sr = new StreamReader(new FileStream("autoLogin.txt", FileMode.Open));
+                int i_Auto_Check = Convert.ToInt32(sr.ReadLine());
+                if (i_Auto_Check == 1)
+                {
+                    Setting.GetInstance().set_Auto_Login(true);
+                    string id = Convert.ToString(sr.ReadLine());
+                    string pw = Convert.ToString(sr.ReadLine());
+                    myTextBoxID.Text = id;
+                    myTextBoxPW.Text = pw;
+                    checkBoxAutoLogin.Checked = true;
+                    sr.Close();
+                }
+                else
+                {
+                    Setting.GetInstance().set_Auto_Login(false);
+                    sr.Close();
+                    return;
+                }
             }
-            else 
+            catch
             {
-                Setting.GetInstance().set_Auto_Login(false);
-                sr.Close();
-                return;
             }
             
+                return;
+
         }
     }
 }
