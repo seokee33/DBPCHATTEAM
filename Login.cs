@@ -83,12 +83,13 @@ namespace DBUI
             {
                 user = DBManager.GetInstance().select_profile("SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "';");
                 string str_Encry = "";
-                if (Setting.GetInstance().get_Auto_Login())
-                    str_Encry = myTextBoxPW.Text;
-                else
-                    str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
+                //if (Setting.GetInstance().get_Auto_Login())
+                //    str_Encry = myTextBoxPW.Text;
+                //else
+                //    str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
+                str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
 
-                if (str_Encry.Equals(user.get_Password()))
+                if (str_Encry.Equals(user.get_Password()) || myTextBoxPW.Text.Equals(user.get_Password()))
                 {
                     LoginUser.GetInstance().set_User(user);
                     write_Auto_Login(LoginUser.GetInstance().get_User().get_UID(), LoginUser.GetInstance().get_User().get_Password());

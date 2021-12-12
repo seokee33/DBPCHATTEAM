@@ -236,11 +236,11 @@ namespace DBUI
         private void pictureBoxLogout_Click(object sender, EventArgs e)
         {
             LoginUser.GetInstance().set_User(new UserInfo());
-            StreamWriter sr = new StreamWriter(new FileStream("autoLogin.txt", FileMode.Create));
-            sr.WriteLine(0);
-            sr.WriteLine("");
-            sr.WriteLine("");
-            sr.Close();
+            //StreamWriter sr = new StreamWriter(new FileStream("autoLogin.txt", FileMode.Create));
+            //sr.WriteLine(0);
+            //sr.WriteLine("");
+            //sr.WriteLine("");
+            //sr.Close();
             this.Hide();
             Login login = new Login();
             login.Show();
