@@ -16,10 +16,11 @@ namespace DBUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if(Setting.GetInstance().Auto_Login())
-                Application.Run(new FriendList());
-            else
-                Application.Run(new Login());
+            //if(Setting.GetInstance().Auto_Login())
+            //    Application.Run(new FriendList());
+            //else
+            //    Application.Run(new Login());
+            Application.Run(new Login());
         }
     }
 }

@@ -40,7 +40,7 @@ namespace DBUI
         }
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         #endregion

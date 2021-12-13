@@ -31,9 +31,9 @@ namespace DBUI
         {
             this.components = new System.ComponentModel.Container();
             this.lb_Name = new System.Windows.Forms.Label();
-            this.lb_Msg = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lb_Msg = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,16 +46,6 @@ namespace DBUI
             this.lb_Name.Size = new System.Drawing.Size(57, 20);
             this.lb_Name.TabIndex = 0;
             this.lb_Name.Text = "label1";
-            // 
-            // lb_Msg
-            // 
-            this.lb_Msg.AutoSize = true;
-            this.lb_Msg.Font = new System.Drawing.Font("굴림", 20F);
-            this.lb_Msg.Location = new System.Drawing.Point(16, 51);
-            this.lb_Msg.Name = "lb_Msg";
-            this.lb_Msg.Size = new System.Drawing.Size(86, 27);
-            this.lb_Msg.TabIndex = 1;
-            this.lb_Msg.Text = "label2";
             // 
             // pictureBox1
             // 
@@ -72,14 +62,22 @@ namespace DBUI
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lb_Msg
+            // 
+            this.lb_Msg.Location = new System.Drawing.Point(21, 41);
+            this.lb_Msg.Multiline = true;
+            this.lb_Msg.Name = "lb_Msg";
+            this.lb_Msg.Size = new System.Drawing.Size(290, 53);
+            this.lb_Msg.TabIndex = 3;
+            // 
             // Alert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(351, 106);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lb_Msg);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lb_Name);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Alert";
@@ -93,8 +91,8 @@ namespace DBUI
         #endregion
 
         private System.Windows.Forms.Label lb_Name;
-        private System.Windows.Forms.Label lb_Msg;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox lb_Msg;
     }
 }

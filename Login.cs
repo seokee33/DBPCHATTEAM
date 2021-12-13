@@ -17,6 +17,7 @@ namespace DBUI
         {
             InitializeComponent();
             this.panelBorder.MouseDown += panelBorder_MouseDown;
+            auto_Input_Login();
         }
 
         private void panelBorder_MouseDown(object sender, MouseEventArgs e)
@@ -66,6 +67,52 @@ namespace DBUI
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            Login_Execute2();
+        }
+        private void Login_Execute2()
+        {
+            UserInfo user = new UserInfo();
+            Encry encry = new Encry();
+
+            if (myTextBoxID.Text.Equals("아이디") || myTextBoxID.Text.Length == 0 || myTextBoxPW.Text.Equals("비밀번호") || myTextBoxPW.Text.Length == 0)
+            {
+                MessageBox.Show("아이디와 비밀번호를 입력해주세요!!");
+                return;
+            }
+            if (DBManager.GetInstance().exist("SELECT EXISTS (SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "') AS exist;") == 1)
+            {
+                user = DBManager.GetInstance().select_profile("SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "';");
+                string str_Encry = "";
+                //if (Setting.GetInstance().get_Auto_Login())
+                //    str_Encry = myTextBoxPW.Text;
+                //else
+                //    str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
+                str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
+
+                if (str_Encry.Equals(user.get_Password()) || myTextBoxPW.Text.Equals(user.get_Password()))
+                {
+                    LoginUser.GetInstance().set_User(user);
+                    write_Auto_Login(LoginUser.GetInstance().get_User().get_UID(), LoginUser.GetInstance().get_User().get_Password());
+                    FriendList fl = new FriendList();
+                    fl.Show();
+                    LoginFormValue.GetInstance().set_Login(this);
+                    this.Hide();
+
+                }
+                else
+                {
+                    MessageBox.Show("비밀번호를 다시 확인해주세요!!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("아이디를 확인하세요!!");
+                return;
+            }
+        }
+        private void Login_Execute()
+        {
 
             UserInfo user = new UserInfo();
             Encry encry = new Encry();
@@ -79,7 +126,7 @@ namespace DBUI
             {
                 user = DBManager.GetInstance().select_profile("SELECT * FROM CHAT.UserInfo WHERE UID = '" + myTextBoxID.Text + "';");
                 string str_Encry = encry.EncryptString(myTextBoxPW.Text, myTextBoxPW.Text);
-               
+
                 if (str_Encry.Equals(user.get_Password()))
                 {
                     LoginUser.GetInstance().set_User(user);
@@ -88,7 +135,7 @@ namespace DBUI
                     fl.Show();
                     LoginFormValue.GetInstance().set_Login(this);
                     this.Hide();
-                    
+
                 }
                 else
                 {
@@ -118,6 +165,38 @@ namespace DBUI
                 sr.WriteLine("");
             }
             sr.Close();
+        }
+
+
+        private void auto_Input_Login()
+        {
+            try
+            {
+                StreamReader sr = new StreamReader(new FileStream("autoLogin.txt", FileMode.Open));
+                int i_Auto_Check = Convert.ToInt32(sr.ReadLine());
+                if (i_Auto_Check == 1)
+                {
+                    Setting.GetInstance().set_Auto_Login(true);
+                    string id = Convert.ToString(sr.ReadLine());
+                    string pw = Convert.ToString(sr.ReadLine());
+                    myTextBoxID.Text = id;
+                    myTextBoxPW.Text = pw;
+                    checkBoxAutoLogin.Checked = true;
+                    sr.Close();
+                }
+                else
+                {
+                    Setting.GetInstance().set_Auto_Login(false);
+                    sr.Close();
+                    return;
+                }
+            }
+            catch
+            {
+            }
+            
+                return;
+
         }
     }
 }
