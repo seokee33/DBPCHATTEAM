@@ -256,25 +256,39 @@ namespace DBUI
         {
             DataTable dt;
             List<ChatMessage> list = new List<ChatMessage>();
+            List<ChatMessage> getmsg = new List<ChatMessage>();
             while (true)
             {
                 if (!Setting.GetInstance().get_alarm())
                     continue;
-                string SQL = "SELECT msg.user_id, msg.message FROM CHAT.ChatMessage as msg Join(SELECT RoomID FROM CHAT.User_Chat_Room where UserSeq = '" + LoginUser.GetInstance().get_User().get_UID() + "') as room on msg.room_id = room.RoomID where date_format(msg.Message_Date,'%Y-%m-%d %H:%i:%S')> date_format('" + DateTime.Now.AddSeconds(-5).ToString("yyyy-MM-dd HH:mm:ss") + "', '%Y-%m-%d %H:%i:%S') and msg.user_id != '" + LoginUser.GetInstance().get_User().get_UID() + "';";
+                string SQL = "SELECT msg.user_id, msg.message , Message_Date FROM CHAT.ChatMessage as msg Join(SELECT RoomID FROM CHAT.User_Chat_Room where UserSeq = '" + LoginUser.GetInstance().get_User().get_UID() + "') as room on msg.room_id = room.RoomID where date_format(msg.Message_Date,'%Y-%m-%d %H:%i:%S')> date_format('" + DateTime.Now.AddSeconds(-5).ToString("yyyy-MM-dd HH:mm:ss") + "', '%Y-%m-%d %H:%i:%S') and msg.user_id != '" + LoginUser.GetInstance().get_User().get_UID() + "';";
+                //string SQL = "SELECT msg.user_id, msg.message, Message_Date FROM CHAT.ChatMessage as msg Join(SELECT RoomID FROM CHAT.User_Chat_Room where UserSeq = '" + LoginUser.GetInstance().get_User().get_UID() + "') as room on msg.room_id = room.RoomID where timediff(date_format(msg.Message_Date,'%Y-%m-%d %H:%i:%S'),date_format('" + DateTime.Now.AddSeconds(-5).ToString("yyyy-MM-dd HH:mm:ss") + "', '%Y-%m-%d %H:%i:%S')) = 0 and msg.user_id != '" + LoginUser.GetInstance().get_User().get_UID() + "';";
                 dt = DBManager.GetInstance().Alarm_select(SQL);
                 list = new List<ChatMessage>();
+                if (getmsg.Count != 0)
+                {
+                    if (DateTime.Compare(DateTime.Now, getmsg[getmsg.Count - 1].Get_Date()) > 10)
+                        getmsg = new List<ChatMessage>();
+                }
                 foreach (DataRow data in dt.Rows)
                 {
-                    list.Add(new ChatMessage(Convert.ToString(data[0]), Convert.ToString(data[1])));
+                    list.Add(new ChatMessage(Convert.ToString(data[0]), Convert.ToString(data[1]), Convert.ToDateTime(data[2])));
+                }
+                foreach (ChatMessage msg in getmsg)
+                {
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        if (DateTime.Compare(msg.Get_Date(), list[i].Get_Date()) == 0 && msg.Get_UserID().Equals(list[i].Get_UserID()))
+                        {
+                            list.RemoveAt(i);
+                        }
+                    }
                 }
                 if (list.Count > 0)
                 {
                     foreach (ChatMessage msg in list)
                     {
-                        //Bell bell = new Bell(msg.Get_UserID(), msg.get_Msg());
-                        //bell.Show();
-                        //Thread.Sleep(5000);
-                        //bell.Close();
+                        getmsg.Add(msg);
                         try
                         {
                             this.Alert(msg.Get_UserID(), msg.get_Msg());
@@ -285,11 +299,13 @@ namespace DBUI
                         }
 
                     }
-                    Thread.Sleep(5000);
+
                 }
+                //Thread.Sleep(5000);
             }
 
         }
+
 
     }
 }
