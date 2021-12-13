@@ -27,6 +27,13 @@ namespace DBUI
             this._PB = pb;
 
         }
+        public ChatMessage( string user_ID, string msg, DateTime date)
+        {
+            this.date = date;
+            this.user_ID = user_ID;
+            this.Msg = msg;
+
+        }
         public PictureBox get_PB()
         {
             return this._PB;
